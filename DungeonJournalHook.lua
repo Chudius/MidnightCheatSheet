@@ -12,7 +12,10 @@ local function GetTargetSpec()
     return MCS.journalTargetSpecKey or MCS:SpecKey()
 end
 local function GetTargetList()
-    return MCS.journalTargetList or MCS.activeListName
+    if MCS.journalTargetList then return MCS.journalTargetList end
+    if MCS.activeListName then return MCS.activeListName end
+    local names = MCS:GetListNames(GetTargetSpec())
+    return names and names[1] or "Raid ST"
 end
 
 local function GetItemFromButton(button)
