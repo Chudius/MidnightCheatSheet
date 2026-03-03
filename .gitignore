@@ -1,0 +1,9 @@
+# Dev-only files
+CLAUDE.md
+tools/
+docs/
+releases/
+.claude/
+.playwright-mcp/
+transcripts/
+*.jsonl

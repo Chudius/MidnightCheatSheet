@@ -1,0 +1,14 @@
+package-as: MidnightCheatSheet
+
+ignore:
+  - tools/*
+  - docs/*
+  - releases/*
+  - .claude/*
+  - .github/*
+  - .playwright-mcp/*
+  - CLAUDE.md
+  - README.md
+  - LICENSE
+  - .gitignore
+  - "Midnight Cheat Sheet.png"
