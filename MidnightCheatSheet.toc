@@ -5,6 +5,7 @@
 ## Version: 0.9.0
 ## SavedVariables: MCSdb
 ## Category: Character
+## X-Curse-Project-ID: 1476648
 
 Core.lua
 ItemDB.lua
