@@ -5,8 +5,31 @@
 ----------------------------------------------------------------------
 local _, MCS = ...
 
+local pairs, ipairs, format, type, tostring, tonumber = pairs, ipairs, format, type, tostring, tonumber
+local wipe, strtrim, select = wipe, strtrim, select
+local table_insert, table_sort = table.insert, table.sort
+local math_rad, math_deg, math_cos, math_sin, math_max, math_abs = math.rad, math.deg, math.cos, math.sin, math.max, math.abs
+local math_atan2 = math.atan2
+local CreateFrame = CreateFrame
+local GameTooltip = GameTooltip
+local IsAltKeyDown, IsShiftKeyDown = IsAltKeyDown, IsShiftKeyDown
+local GetCursorPosition = GetCursorPosition
+local GetCombatRating, GetCombatRatingBonus = GetCombatRating, GetCombatRatingBonus
+local GetItemQualityColor = GetItemQualityColor
+local ChatEdit_GetActiveWindow, ChatEdit_InsertLink = ChatEdit_GetActiveWindow, ChatEdit_InsertLink
+local ChatFrame_OpenChat = ChatFrame_OpenChat
+local C_Item = C_Item
+local C_CurrencyInfo = C_CurrencyInfo
+local C_Timer = C_Timer
+local STANDARD_TEXT_FONT = STANDARD_TEXT_FONT
+local RAID_CLASS_COLORS = RAID_CLASS_COLORS
+local Minimap = Minimap
+local UIParent = UIParent
+local GetTime = GetTime
+
 local W, H = 480, 560
 local PAD, ICON = 8, 22
+local recycleFrame = CreateFrame("Frame"); recycleFrame:Hide()
 local COL = {
     gold={1,.82,0}, white={1,1,1}, grey={.55,.55,.55},
     green={.2,1,.2}, red={1,.3,.3}, bg={.05,.05,.1,.92},
@@ -22,7 +45,7 @@ local pickerFrame
 
 local function CreatePicker()
     if pickerFrame then return pickerFrame end
-    local f = CreateFrame("Frame", "MCSWishlistPicker", UIParent, "BackdropTemplate")
+    local f = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
     f:SetSize(220, 40); f:SetFrameStrata("TOOLTIP"); f:SetFrameLevel(100)
     f:SetBackdrop({ bgFile="Interface\\Buttons\\WHITE8x8",
         edgeFile="Interface\\Tooltips\\UI-Tooltip-Border", edgeSize=12,
@@ -59,8 +82,8 @@ local function ShowPicker(itemID, source, anchor)
     local f = CreatePicker()
     -- Clear old elements
     for _, el in ipairs(f.elements) do
-        if el.Hide then pcall(el.Hide, el) end
-        if el.SetParent then pcall(el.SetParent, el, nil) end
+        el:Hide()
+        el:SetParent(recycleFrame)
     end
     wipe(f.elements)
 
@@ -80,7 +103,7 @@ local function ShowPicker(itemID, source, anchor)
     title:SetPoint("TOPLEFT", 8, -y)
     title:SetTextColor(0, .8, 1)
     title:SetText("Add/Remove from wishlists:")
-    table.insert(f.elements, title)
+    table_insert(f.elements, title)
     y = y + 15
 
     -- Build list for each spec
@@ -101,7 +124,7 @@ local function ShowPicker(itemID, source, anchor)
             specHdr:SetTextColor(r * .65, g * .65, b * .65)
             specHdr:SetText(specName)
         end
-        table.insert(f.elements, specHdr)
+        table_insert(f.elements, specHdr)
         y = y + 14
 
         -- One button per list under this spec
@@ -167,7 +190,7 @@ local function ShowPicker(itemID, source, anchor)
                 end)
             end
 
-            table.insert(f.elements, btn)
+            table_insert(f.elements, btn)
             y = y + 18
         end
 
@@ -184,7 +207,7 @@ local function ShowPicker(itemID, source, anchor)
     closeBtn:SetScript("OnClick", function() f:Hide() end)
     local clHL = closeBtn:CreateTexture(nil, "HIGHLIGHT")
     clHL:SetAllPoints(); clHL:SetColorTexture(1, 1, 1, .05)
-    table.insert(f.elements, closeBtn)
+    table_insert(f.elements, closeBtn)
     y = y + 18
 
     local pickerH = y + 4
@@ -248,15 +271,7 @@ local function OnTooltipSetItem(tooltip, data)
     tooltip:Show()
 end
 
--- Hook both GameTooltip and ItemRefTooltip
-if TooltipDataProcessor and TooltipDataProcessor.AddTooltipPostCall then
-    -- Modern (DF+) tooltip system
-    TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, OnTooltipSetItem)
-else
-    -- Fallback for older hook method
-    GameTooltip:HookScript("OnTooltipSetItem", OnTooltipSetItem)
-    ItemRefTooltip:HookScript("OnTooltipSetItem", OnTooltipSetItem)
-end
+TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, OnTooltipSetItem)
 
 ----------------------------------------------------------------------
 -- Chat link hook: Alt-click item links in chat → wishlist picker
@@ -309,7 +324,7 @@ local function Acquire(parent)
             ShowPicker(s._itemID, s._src, s)
         end
     end)
-    b._on = true; table.insert(pool, b); return b
+    b._on = true; table_insert(pool, b); return b
 end
 
 local function ReleaseAll()
@@ -352,24 +367,26 @@ local function Txt(p, y, text, r, g, b, sz, ind)
     fs:SetFont(STANDARD_TEXT_FONT,sz,""); fs:SetPoint("TOPLEFT",PAD+ind,-y)
     fs:SetPoint("RIGHT",-PAD,0); fs:SetJustifyH("LEFT"); fs:SetWordWrap(true)
     fs:SetTextColor(r or 1,g or 1,b or 1); fs:SetText(text)
-    table.insert(txts, fs); return y + fs:GetStringHeight() + 2
+    table_insert(txts, fs); return y + fs:GetStringHeight() + 2
 end
 local function Hdr(p, y, text)
     y = y + 6; y = Txt(p,y,text,unpack(COL.gold),13)
     local ln = p:CreateTexture(nil,"ARTWORK"); ln:SetColorTexture(.4,.35,.1,.6); ln:SetHeight(1)
     ln:SetPoint("TOPLEFT",PAD,-y); ln:SetPoint("RIGHT",-PAD,0)
-    table.insert(txts, ln); return y + 3
+    table_insert(txts, ln); return y + 3
 end
 local function ClearTxt()
     for _,o in ipairs(txts) do
-        if o and o.Hide then pcall(o.Hide, o) end
-        if o and o.SetParent then pcall(o.SetParent, o, nil) end
+        o:Hide()
+        o:SetParent(recycleFrame)
     end
     wipe(txts)
 end
 local function ClearC(c)
-    for _,ch in pairs({c:GetChildren()}) do pcall(ch.Hide, ch); pcall(ch.SetParent, ch, nil) end
-    for _,r  in pairs({c:GetRegions()})  do pcall(r.Hide, r);   pcall(r.SetParent, r, nil) end
+    local children = {c:GetChildren()}
+    for i = 1, #children do children[i]:Hide(); children[i]:SetParent(recycleFrame) end
+    local regions = {c:GetRegions()}
+    for i = 1, #regions do regions[i]:Hide(); regions[i]:SetParent(recycleFrame) end
 end
 
 ----------------------------------------------------------------------
@@ -390,7 +407,7 @@ local function SmallBtn(parent, w, text, anchor, offX, offY)
     local t = b:CreateFontString(nil,"OVERLAY","GameFontNormal")
     t:SetFont(STANDARD_TEXT_FONT,10,""); t:SetPoint("CENTER"); t:SetText(text)
     b._label = t
-    table.insert(txts, b)
+    table_insert(txts, b)
     return b
 end
 
@@ -439,9 +456,9 @@ function MCS:InitUI()
         tab.txt:SetFont(STANDARD_TEXT_FONT,10,""); tab.txt:SetPoint("CENTER"); tab.txt:SetText(tn)
         tab:SetScript("OnClick",function() MCS:SelectTab(i) end)
         self.tabs[i] = tab
-        local sf = CreateFrame("ScrollFrame","MCSSF"..i,f,"UIPanelScrollFrameTemplate")
+        local sf = CreateFrame("ScrollFrame",nil,f,"UIPanelScrollFrameTemplate")
         sf:SetPoint("TOPLEFT",6,tabY-26); sf:SetPoint("BOTTOMRIGHT",-28,8)
-        local c = CreateFrame("Frame","MCSC"..i,sf); c:SetWidth(W-50); c:SetHeight(1)
+        local c = CreateFrame("Frame",nil,sf); c:SetWidth(W-50); c:SetHeight(1)
         sf:SetScrollChild(c); sf:Hide()
         self.tabFrames[i] = { scroll=sf, content=c }
     end
@@ -548,7 +565,7 @@ function MCS:BuildStatsTab()
     local labelFs = c:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     labelFs:SetFont(STANDARD_TEXT_FONT, 10, ""); labelFs:SetPoint("TOPLEFT", 8, -y)
     labelFs:SetTextColor(.6, .6, .6); labelFs:SetText("Spec:")
-    table.insert(txts, labelFs)
+    table_insert(txts, labelFs)
 
     local btnX = 42
     for _, specName in ipairs(specs) do
@@ -613,7 +630,7 @@ function MCS:BuildStatsTab()
             end
         end)
 
-        table.insert(txts, btn)
+        table_insert(txts, btn)
         btnX = btnX + btn:GetWidth() + 4
     end
 
@@ -625,7 +642,7 @@ function MCS:BuildStatsTab()
         hint:SetFont(STANDARD_TEXT_FONT, 9, ""); hint:SetPoint("TOPLEFT", 8, -y)
         hint:SetTextColor(.9, .7, .2)
         hint:SetText("Viewing " .. self.statsTabSpec .. " (not your active spec)")
-        table.insert(txts, hint)
+        table_insert(txts, hint)
         y = y + 14
     end
 
@@ -650,7 +667,7 @@ function MCS:BuildStatsTab()
         fs2:SetPoint("TOPLEFT", x, -yOff)
         fs2:SetTextColor(r or .5, g or .5, b or .5)
         fs2:SetText(text)
-        table.insert(txts, fs2)
+        table_insert(txts, fs2)
         return fs2
     end
 
@@ -658,9 +675,9 @@ function MCS:BuildStatsTab()
     -- Collect hero tree names in sorted order for consistent display
     local htNames = {}
     for htName in pairs(data.stats) do
-        table.insert(htNames, htName)
+        table_insert(htNames, htName)
     end
-    table.sort(htNames)
+    table_sort(htNames)
 
     for _, htName in ipairs(htNames) do
         local htStats = data.stats[htName]
@@ -680,7 +697,7 @@ function MCS:BuildStatsTab()
         -- Separator line
         local sep = c:CreateTexture(nil,"ARTWORK"); sep:SetColorTexture(.3,.3,.4,.4); sep:SetHeight(1)
         sep:SetPoint("TOPLEFT", PAD, -y); sep:SetPoint("RIGHT", -PAD, 0)
-        table.insert(txts, sep)
+        table_insert(txts, sep)
         y = y + 3
 
         for i, stat in ipairs(htStats) do
@@ -787,7 +804,7 @@ function MCS:BuildGearTab()
     local labelFs = c:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     labelFs:SetFont(STANDARD_TEXT_FONT, 10, ""); labelFs:SetPoint("TOPLEFT", 8, -y)
     labelFs:SetTextColor(.6, .6, .6); labelFs:SetText("Spec:")
-    table.insert(txts, labelFs)
+    table_insert(txts, labelFs)
 
     local btnX = 42
     for _, specName in ipairs(specs) do
@@ -856,7 +873,7 @@ function MCS:BuildGearTab()
             end
         end)
 
-        table.insert(txts, btn)
+        table_insert(txts, btn)
         btnX = btnX + btn:GetWidth() + 4
     end
 
@@ -868,7 +885,7 @@ function MCS:BuildGearTab()
         hint:SetFont(STANDARD_TEXT_FONT, 9, ""); hint:SetPoint("TOPLEFT", 8, -y)
         hint:SetTextColor(.9, .7, .2)
         hint:SetText("Viewing " .. self.gearTabSpec .. " (not your active spec)")
-        table.insert(txts, hint)
+        table_insert(txts, hint)
         y = y + 14
     end
 
@@ -1038,7 +1055,7 @@ function MCS:BuildWishlistTab()
             end
         end)
 
-        table.insert(txts, btn)
+        table_insert(txts, btn)
         specBtnX = specBtnX + btn:GetWidth() + 4
     end
     y = y + 24
@@ -1091,7 +1108,7 @@ function MCS:BuildWishlistTab()
             MCS.activeListName = ln; MCS:BuildWishlistTab()
         end)
         prevAnchor = b
-        table.insert(listBtns, b)
+        table_insert(listBtns, b)
     end
     y = y + 26
 
@@ -1106,7 +1123,7 @@ function MCS:BuildWishlistTab()
     newInput:SetFont(STANDARD_TEXT_FONT, 10, ""); newInput:SetTextColor(1,1,1)
     newInput:SetAutoFocus(false); newInput:SetMaxLetters(30)
     newInput:SetTextInsets(4,4,0,0)
-    table.insert(txts, newInput)
+    table_insert(txts, newInput)
 
     -- Delete list button (disabled for preset/BiS lists)
     local isPresetActive = listName and self:IsPresetList(specKey, listName)
@@ -1302,7 +1319,7 @@ function MCS:BuildGearingTab()
         fs:SetJustifyH(align or "CENTER")
         fs:SetTextColor(rgb[1], rgb[2], rgb[3])
         fs:SetText(text)
-        table.insert(txts, fs)
+        table_insert(txts, fs)
         return fs
     end
 
@@ -1311,7 +1328,7 @@ function MCS:BuildGearingTab()
         local ln = parent:CreateTexture(nil,"ARTWORK")
         ln:SetColorTexture(.3,.3,.4,.5); ln:SetHeight(1)
         ln:SetPoint("TOPLEFT", 4, -yOff); ln:SetPoint("RIGHT", -4, 0)
-        table.insert(txts, ln)
+        table_insert(txts, ln)
     end
 
     -- Helper: create a crest currency link button (icon + hover tooltip)
@@ -1366,7 +1383,7 @@ function MCS:BuildGearingTab()
                 end
             end
         end)
-        table.insert(txts, btn)
+        table_insert(txts, btn)
         return btn
     end
 
@@ -1390,7 +1407,7 @@ function MCS:BuildGearingTab()
             GameTooltip:AddLine(displayName, tc[1], tc[2], tc[3]); GameTooltip:Show()
         end)
         btn:SetScript("OnLeave", function() GameTooltip:Hide() end)
-        table.insert(txts, btn)
+        table_insert(txts, btn)
     end
 
     local RH = 13  -- row height
@@ -1665,7 +1682,7 @@ end
 -- Minimap
 ----------------------------------------------------------------------
 function MCS:CreateMinimapButton()
-    local btn = CreateFrame("Button","MCSMinimapBtn",Minimap)
+    local btn = CreateFrame("Button",nil,Minimap)
     btn:SetSize(32,32); btn:SetFrameStrata("MEDIUM"); btn:SetFrameLevel(8)
     btn:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
     local ov = btn:CreateTexture(nil,"OVERLAY"); ov:SetSize(54,54)
@@ -1692,22 +1709,22 @@ function MCS:CreateMinimapButton()
     -- Position the button from a stored angle (degrees)
     local function PositionButton(angle)
         local isSquare = IsMinimapSquare()
-        local rad = math.rad(angle)
+        local rad = math_rad(angle)
         local mW, mH = Minimap:GetWidth() / 2, Minimap:GetHeight() / 2
 
         local x, y
         if isSquare then
             -- Clamp to rectangle edge
-            local rawX = math.cos(rad)
-            local rawY = math.sin(rad)
-            local scale = math.max(math.abs(rawX), math.abs(rawY))
+            local rawX = math_cos(rad)
+            local rawY = math_sin(rad)
+            local scale = math_max(math_abs(rawX), math_abs(rawY))
             x = (rawX / scale) * mW
             y = (rawY / scale) * mH
         else
             -- Circle: use radius
             local R = mW + 2  -- small offset so icon sits on the edge
-            x = math.cos(rad) * R
-            y = math.sin(rad) * R
+            x = math_cos(rad) * R
+            y = math_sin(rad) * R
         end
 
         btn:ClearAllPoints()
@@ -1720,7 +1737,7 @@ function MCS:CreateMinimapButton()
         local cx, cy = GetCursorPosition()
         local sc = Minimap:GetEffectiveScale()
         cx, cy = cx / sc, cy / sc
-        return math.deg(math.atan2(cy - my, cx - mx))
+        return math_deg(math_atan2(cy - my, cx - mx))
     end
 
     -- Load saved angle or use default (220°)

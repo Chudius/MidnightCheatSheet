@@ -5,6 +5,14 @@
 ----------------------------------------------------------------------
 local _, MCS = ...
 
+local format, tonumber = format, tonumber
+local CreateFrame = CreateFrame
+local GameTooltip = GameTooltip
+local IsAltKeyDown = IsAltKeyDown
+local hooksecurefunc = hooksecurefunc
+local STANDARD_TEXT_FONT = STANDARD_TEXT_FONT
+local C_Timer = C_Timer
+
 MCS.journalTargetSpecKey = nil
 MCS.journalTargetList    = nil
 
@@ -112,7 +120,7 @@ end
 ----------------------------------------------------------------------
 local function CreateSpecSelector()
     if not EncounterJournal then return end
-    local f = CreateFrame("Frame", "MCSEJSelector", EncounterJournal, "BackdropTemplate")
+    local f = CreateFrame("Frame", nil, EncounterJournal, "BackdropTemplate")
     f:SetSize(260, 26); f:SetPoint("TOPRIGHT", -60, -30)
     f:SetFrameStrata("DIALOG")
     f:SetBackdrop({ bgFile="Interface\\Buttons\\WHITE8x8",

@@ -2,7 +2,21 @@
 -- MidnightCheatSheet – Core.lua
 ----------------------------------------------------------------------
 local ADDON_NAME, MCS = ...
-_G.MCS = MCS
+
+local pairs, ipairs, format, tostring, tonumber = pairs, ipairs, format, tostring, tonumber
+local select = select
+local table_insert, table_sort = table.insert, table.sort
+local CreateFrame = CreateFrame
+local GetSpecialization, GetSpecializationInfo = GetSpecialization, GetSpecializationInfo
+local GetNumSpecializationsForClassID = GetNumSpecializationsForClassID
+local GetSpecializationInfoForClassID = GetSpecializationInfoForClassID
+local UnitClass = UnitClass
+local RAID_CLASS_COLORS = RAID_CLASS_COLORS
+local C_Item = C_Item
+local Item = Item
+local ReloadUI = ReloadUI
+local DEFAULT_CHAT_FRAME = DEFAULT_CHAT_FRAME
+
 MCS.VERSION = "0.9.0"
 
 MCS.ALL_SPECS = {
@@ -54,10 +68,10 @@ function MCS:AllSpecKeys()
     local out = {}
     for cls, specs in pairs(self.ALL_SPECS) do
         for _, spec in ipairs(specs) do
-            table.insert(out, { key = self:MakeSpecKey(cls, spec), class = cls, spec = spec })
+            table_insert(out, { key = self:MakeSpecKey(cls, spec), class = cls, spec = spec })
         end
     end
-    table.sort(out, function(a, b) return a.key < b.key end)
+    table_sort(out, function(a, b) return a.key < b.key end)
     return out
 end
 function MCS:GetItemLink(id)

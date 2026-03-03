@@ -8,6 +8,9 @@
 ----------------------------------------------------------------------
 local _, MCS = ...
 
+local pairs, ipairs, format = pairs, ipairs, format
+local table_insert, table_sort, table_remove = table.insert, table.sort, table.remove
+
 MCS.DEFAULT_LISTS = {}
 
 local function EnsureSpec(specKey)
@@ -68,18 +71,18 @@ function MCS:GetListNames(specKey)
     -- User lists first
     EnsureSpec(specKey)
     for n in pairs(self.db.wishlists[specKey]) do
-        if not seen[n] then table.insert(names, n); seen[n] = true end
+        if not seen[n] then table_insert(names, n); seen[n] = true end
     end
 
     -- Then preset (addon) lists last
     if self.PRESET_LISTS and self.PRESET_LISTS[specKey] then
         local presetNames = {}
         for n in pairs(self.PRESET_LISTS[specKey]) do
-            if not seen[n] then table.insert(presetNames, n) end
+            if not seen[n] then table_insert(presetNames, n) end
         end
-        table.sort(presetNames)
+        table_sort(presetNames)
         for _, n in ipairs(presetNames) do
-            table.insert(names, n); seen[n] = true
+            table_insert(names, n); seen[n] = true
         end
     end
 
@@ -93,7 +96,7 @@ function MCS:GetUserListNames(specKey)
     EnsureSpec(specKey)
     local names, seen = {}, {}
     for n in pairs(self.db.wishlists[specKey]) do
-        if not seen[n] then table.insert(names, n); seen[n] = true end
+        if not seen[n] then table_insert(names, n); seen[n] = true end
     end
     return names
 end
@@ -127,7 +130,7 @@ function MCS:FindItemOnPresetLists(itemID)
         for listName, wl in pairs(lists) do
             for _, e in ipairs(wl) do
                 if e.itemID == itemID then
-                    table.insert(results, {
+                    table_insert(results, {
                         specKey   = specKey,
                         listName  = listName,
                         specLabel = self:FormatSpecKey(specKey),
@@ -153,7 +156,7 @@ function MCS:AddToWishlist(itemID, specKey, listName, source, slot)
     if self:IsPresetList(specKey, listName) then return false end
     if self:IsOnWishlist(itemID, specKey, listName) then return false end
     local wl = self:GetWishlist(specKey, listName)
-    table.insert(wl, { itemID = itemID, source = source or "", slot = slot or "" })
+    table_insert(wl, { itemID = itemID, source = source or "", slot = slot or "" })
     return true
 end
 
@@ -164,7 +167,7 @@ function MCS:RemoveFromWishlist(itemID, specKey, listName)
     if self:IsPresetList(specKey, listName) then return false end
     local wl = self:GetWishlist(specKey, listName)
     for i, e in ipairs(wl) do
-        if e.itemID == itemID then table.remove(wl, i); return true end
+        if e.itemID == itemID then table_remove(wl, i); return true end
     end
     return false
 end
@@ -248,7 +251,7 @@ function MCS:FindItemOnLists(itemID)
         for listName, wl in pairs(lists) do
             for _, e in ipairs(wl) do
                 if e.itemID == itemID then
-                    table.insert(results, {
+                    table_insert(results, {
                         specKey   = specKey,
                         listName  = listName,
                         specLabel = self:FormatSpecKey(specKey),
@@ -265,7 +268,7 @@ function MCS:FindItemOnLists(itemID)
             for listName, wl in pairs(lists) do
                 for _, e in ipairs(wl) do
                     if e.itemID == itemID then
-                        table.insert(results, {
+                        table_insert(results, {
                             specKey   = specKey,
                             listName  = listName,
                             specLabel = self:FormatSpecKey(specKey),
@@ -287,7 +290,7 @@ function MCS:GetWishlistTooltipText(itemID)
     local parts = {}
     for _, h in ipairs(hits) do
         local tag = h.preset and "|cff6688cc[BiS]|r " or ""
-        table.insert(parts, tag .. h.specLabel .. " / |cffFFD100" .. h.listName .. "|r")
+        table_insert(parts, tag .. h.specLabel .. " / |cffFFD100" .. h.listName .. "|r")
     end
     return parts
 end
