@@ -21,30 +21,20 @@ jobs:
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Get release notes
-        if: env.DISCORD_WEBHOOK_URL != ''
-        id: notes
-        run: |
-          NOTES=$(gh release view "${GITHUB_REF_NAME}" --json body -q .body 2>/dev/null || echo "")
-          echo "body<<EOF" >> "$GITHUB_OUTPUT"
-          echo "$NOTES" >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-
       - name: Notify Discord
         if: env.DISCORD_WEBHOOK_URL != ''
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           VERSION="${GITHUB_REF_NAME}"
-          NOTES=$(cat <<'EOF'
-          ${{ steps.notes.outputs.body }}
-          EOF
-          )
+          PREV_TAG=$(git tag --sort=-v:refname | grep '^v' | sed -n '2p')
+          if [ -n "$PREV_TAG" ]; then
+            NOTES=$(git log --pretty=format:"- %s" "${PREV_TAG}..${VERSION}" -- . ':!.github')
+          else
+            NOTES=$(git log --pretty=format:"- %s" -5 "${VERSION}")
+          fi
           PAYLOAD=$(jq -n \
-            --arg title "Midnight Cheat Sheet ${VERSION}" \
+            --arg title "Midnight Cheat Sheet is updated and live on CurseForge! (${VERSION})" \
             --arg desc "${NOTES:-No release notes.}" \
             '{embeds: [{title: $title, description: $desc, color: 3447003}], flags: 4}')
           curl -s -H "Content-Type: application/json" \
