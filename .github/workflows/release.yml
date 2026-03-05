@@ -22,7 +22,7 @@ jobs:
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get release notes
-        if: ${{ secrets.DISCORD_WEBHOOK_URL != '' }}
+        if: env.DISCORD_WEBHOOK_URL != ''
         id: notes
         run: |
           NOTES=$(gh release view "${GITHUB_REF_NAME}" --json body -q .body 2>/dev/null || echo "")
@@ -31,22 +31,23 @@ jobs:
           echo "EOF" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
       - name: Notify Discord
-        if: ${{ secrets.DISCORD_WEBHOOK_URL != '' }}
+        if: env.DISCORD_WEBHOOK_URL != ''
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           VERSION="${GITHUB_REF_NAME}"
           NOTES=$(cat <<'EOF'
           ${{ steps.notes.outputs.body }}
           EOF
           )
-          # Build message with release notes if available
           MSG="**Midnight Cheat Sheet is updated and live on CurseForge! (${VERSION})**"
           if [ -n "$NOTES" ]; then
             MSG="${MSG}\n\n${NOTES}"
           fi
-          # Discord webhook payload
           PAYLOAD=$(jq -n --arg msg "$MSG" '{content: $msg}')
           curl -s -H "Content-Type: application/json" \
             -d "$PAYLOAD" \
-            "${{ secrets.DISCORD_WEBHOOK_URL }}"
+            "$DISCORD_WEBHOOK_URL"
