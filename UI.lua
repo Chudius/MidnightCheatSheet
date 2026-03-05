@@ -1079,11 +1079,12 @@ function MCS:BuildWishlistTab()
         else
             label = format("|cff88aa88%s (%d)|r", ln, cnt)
         end
+        local bw = isPreset and 120 or 80
         local b
         if prevAnchor then
-            b = SmallBtn(c, 80, label, prevAnchor, 2, 0)
+            b = SmallBtn(c, bw, label, prevAnchor, 2, 0)
         else
-            b = SmallBtn(c, 80, label, nil, 4, -y)
+            b = SmallBtn(c, bw, label, nil, 4, -y)
         end
         if isActive then
             if isPreset then
