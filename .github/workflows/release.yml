@@ -16,6 +16,20 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Capture release notes
+        id: notes
+        run: |
+          VERSION="${GITHUB_REF_NAME}"
+          PREV_TAG=$(git tag --sort=-v:refname | grep '^v' | sed -n '2p')
+          if [ -n "$PREV_TAG" ]; then
+            NOTES=$(git log --pretty=format:"- %s" "${PREV_TAG}..${VERSION}" -- . ':!.github')
+          else
+            NOTES=$(git log --pretty=format:"- %s" -5 "${VERSION}")
+          fi
+          echo "RELEASE_NOTES<<EOF" >> "$GITHUB_OUTPUT"
+          echo "${NOTES:-No release notes.}" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
       - uses: BigWigsMods/packager@v2
         with:
           args: -g retail
@@ -29,12 +43,7 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           VERSION="${GITHUB_REF_NAME}"
-          PREV_TAG=$(git tag --sort=-v:refname | grep '^v' | sed -n '2p')
-          if [ -n "$PREV_TAG" ]; then
-            NOTES=$(git log --pretty=format:"- %s" "${PREV_TAG}..${VERSION}" -- . ':!.github')
-          else
-            NOTES=$(git log --pretty=format:"- %s" -5 "${VERSION}")
-          fi
+          NOTES="${{ steps.notes.outputs.RELEASE_NOTES }}"
           PAYLOAD=$(jq -n \
             --arg title "Midnight Cheat Sheet is updated and live on CurseForge! (${VERSION})" \
             --arg desc "${NOTES:-No release notes.}" \
