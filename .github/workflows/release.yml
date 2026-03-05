@@ -43,11 +43,10 @@ jobs:
           ${{ steps.notes.outputs.body }}
           EOF
           )
-          MSG="**Midnight Cheat Sheet is updated and live on CurseForge! (${VERSION})**"
-          if [ -n "$NOTES" ]; then
-            MSG="${MSG}\n\n${NOTES}"
-          fi
-          PAYLOAD=$(jq -n --arg msg "$MSG" '{content: $msg}')
+          PAYLOAD=$(jq -n \
+            --arg title "Midnight Cheat Sheet ${VERSION}" \
+            --arg desc "${NOTES:-No release notes.}" \
+            '{embeds: [{title: $title, description: $desc, color: 3447003}], flags: 4}')
           curl -s -H "Content-Type: application/json" \
             -d "$PAYLOAD" \
             "$DISCORD_WEBHOOK_URL"
