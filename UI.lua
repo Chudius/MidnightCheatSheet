@@ -1683,6 +1683,32 @@ end
 -- Minimap
 ----------------------------------------------------------------------
 function MCS:CreateMinimapButton()
+    -- Try LibDBIcon (compatible with EnhanceQoL button bin and similar addons)
+    local LDB = LibStub and LibStub("LibDataBroker-1.1", true)
+    local LDBIcon = LibStub and LibStub("LibDBIcon-1.0", true)
+
+    if LDB and LDBIcon then
+        local dataObj = LDB:NewDataObject("MidnightCheatSheet", {
+            type = "launcher",
+            icon = "Interface\\Icons\\INV_Scroll_11",
+            OnClick = function(_, button)
+                if button == "LeftButton" then MCS:Toggle() end
+            end,
+            OnTooltipShow = function(tip)
+                tip:AddLine("|cff00ccffMidnight CheatSheet|r")
+                tip:AddLine("|cffccccccClick|r toggle  |cffccccccDrag|r to move")
+                tip:AddLine("|cffcccccc/mcs|r commands")
+            end,
+        })
+        -- Use MCSdb.minimapIcon for LibDBIcon settings (position, hide state, etc.)
+        if not MCS.db then MCS.db = {} end
+        if not MCS.db.minimapIcon then MCS.db.minimapIcon = {} end
+        LDBIcon:Register("MidnightCheatSheet", dataObj, MCS.db.minimapIcon)
+        self.minimapBtn = LDBIcon:GetMinimapButton("MidnightCheatSheet")
+        return
+    end
+
+    -- Fallback: manual minimap button (no LibDBIcon available)
     local btn = CreateFrame("Button",nil,Minimap)
     btn:SetSize(32,32); btn:SetFrameStrata("MEDIUM"); btn:SetFrameLevel(8)
     btn:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
@@ -1692,14 +1718,11 @@ function MCS:CreateMinimapButton()
     ic:SetTexture("Interface\\Icons\\INV_Scroll_11"); ic:SetPoint("CENTER",0,1)
     btn:SetMovable(true); btn:RegisterForDrag("LeftButton"); btn:RegisterForClicks("AnyUp")
 
-    -- Detect if minimap is square (some addons like SexyMap / square minimap)
     local function IsMinimapSquare()
-        -- Check common addon shape override
         if type(GetMinimapShape) == "function" then
             local ok, shape = pcall(GetMinimapShape)
             if ok and shape and shape ~= "ROUND" then return true end
         end
-        -- Check mask texture for "square" keyword
         if Minimap.GetMaskTexture then
             local ok, mask = pcall(Minimap.GetMaskTexture, Minimap)
             if ok and mask and type(mask) == "string" and mask:lower():find("square") then return true end
@@ -1707,32 +1730,26 @@ function MCS:CreateMinimapButton()
         return false
     end
 
-    -- Position the button from a stored angle (degrees)
     local function PositionButton(angle)
         local isSquare = IsMinimapSquare()
         local rad = math_rad(angle)
         local mW, mH = Minimap:GetWidth() / 2, Minimap:GetHeight() / 2
-
         local x, y
         if isSquare then
-            -- Clamp to rectangle edge
             local rawX = math_cos(rad)
             local rawY = math_sin(rad)
             local scale = math_max(math_abs(rawX), math_abs(rawY))
             x = (rawX / scale) * mW
             y = (rawY / scale) * mH
         else
-            -- Circle: use radius
-            local R = mW + 2  -- small offset so icon sits on the edge
+            local R = mW + 2
             x = math_cos(rad) * R
             y = math_sin(rad) * R
         end
-
         btn:ClearAllPoints()
         btn:SetPoint("CENTER", Minimap, "CENTER", x, y)
     end
 
-    -- Compute angle from cursor position relative to minimap center
     local function AngleFromCursor()
         local mx, my = Minimap:GetCenter()
         local cx, cy = GetCursorPosition()
@@ -1741,7 +1758,6 @@ function MCS:CreateMinimapButton()
         return math_deg(math_atan2(cy - my, cx - mx))
     end
 
-    -- Load saved angle or use default (220°)
     local db = MCS.db or {}
     local savedAngle = db.minimapAngle or 220
     PositionButton(savedAngle)
@@ -1752,14 +1768,12 @@ function MCS:CreateMinimapButton()
         s:SetScript("OnUpdate", function()
             local angle = AngleFromCursor()
             PositionButton(angle)
-            -- Save angle to DB
             if MCS.db then MCS.db.minimapAngle = angle end
         end)
     end)
     btn:SetScript("OnDragStop", function(s)
         dragging = false
         s:SetScript("OnUpdate", nil)
-        -- Final save
         local angle = AngleFromCursor()
         if MCS.db then MCS.db.minimapAngle = angle end
     end)

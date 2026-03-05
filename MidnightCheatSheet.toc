@@ -2,10 +2,13 @@
 ## Title: Midnight CheatSheet
 ## Notes: Spec cheatsheet with stat priorities, enchants, gems, consumables, and multi-spec wishlists. Alt-click items in the Dungeon Journal to wishlist them.
 ## Author: Chûd-Ravencrest
-## Version: 0.9.0
+## Version: 0.9.9-beta1
 ## SavedVariables: MCSdb
 ## Category: Character
 ## X-Curse-Project-ID: 1476648
+## OptionalDeps: LibStub, CallbackHandler-1.0, LibDataBroker-1.1, LibDBIcon-1.0
+
+embeds.xml
 
 Core.lua
 ItemDB.lua
