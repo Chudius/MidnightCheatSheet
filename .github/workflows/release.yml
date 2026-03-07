@@ -11,30 +11,10 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Capture release notes
-        id: notes
-        run: |
-          VERSION="${GITHUB_REF_NAME}"
-          PREV_TAG=$(git tag --sort=-v:refname | grep '^v' | sed -n '2p')
-          if [ -n "$PREV_TAG" ]; then
-            NOTES=$(git log --pretty=format:"- %s" "${PREV_TAG}..${VERSION}")
-          else
-            NOTES=$(git log --pretty=format:"- %s" -5 "${VERSION}")
-          fi
-          # Filter out workflow-only commits
-          NOTES=$(echo "$NOTES" | grep -v "^- Fix Discord webhook")
-          {
-            echo "RELEASE_NOTES<<ENDOFNOTES"
-            echo "${NOTES:-No release notes.}"
-            echo "ENDOFNOTES"
-          } >> "$GITHUB_OUTPUT"
 
       - uses: BigWigsMods/packager@v2
         with:
@@ -44,14 +24,20 @@ jobs:
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Notify Discord
-        if: env.DISCORD_WEBHOOK_URL != ''
         env:
-          RELEASE_NOTES: ${{ steps.notes.outputs.RELEASE_NOTES }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        if: ${{ env.DISCORD_WEBHOOK_URL != '' }}
         run: |
           VERSION="${GITHUB_REF_NAME}"
+          PREV_TAG=$(git tag --sort=-v:refname | grep '^v' | sed -n '2p')
+          if [ -n "$PREV_TAG" ]; then
+            NOTES=$(git log --pretty=format:"- %s" "${PREV_TAG}..${VERSION}" | grep -v "^- Fix Discord webhook")
+          else
+            NOTES=$(git log --pretty=format:"- %s" -5 "${VERSION}")
+          fi
           PAYLOAD=$(jq -n \
             --arg title "Midnight Cheat Sheet is updated and live on CurseForge! (${VERSION})" \
-            --arg desc "${RELEASE_NOTES:-No release notes.}" \
+            --arg desc "${NOTES:-No release notes.}" \
             '{embeds: [{title: $title, description: $desc, color: 3447003}], flags: 4}')
           curl -s -H "Content-Type: application/json" \
             -d "$PAYLOAD" \
