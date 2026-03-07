@@ -41,12 +41,12 @@ jobs:
         if: env.DISCORD_WEBHOOK_URL != ''
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          RELEASE_NOTES: ${{ steps.notes.outputs.RELEASE_NOTES }}
         run: |
           VERSION="${GITHUB_REF_NAME}"
-          NOTES="${{ steps.notes.outputs.RELEASE_NOTES }}"
           PAYLOAD=$(jq -n \
             --arg title "Midnight Cheat Sheet is updated and live on CurseForge! (${VERSION})" \
-            --arg desc "${NOTES:-No release notes.}" \
+            --arg desc "${RELEASE_NOTES:-No release notes.}" \
             '{embeds: [{title: $title, description: $desc, color: 3447003}], flags: 4}')
           curl -s -H "Content-Type: application/json" \
             -d "$PAYLOAD" \
