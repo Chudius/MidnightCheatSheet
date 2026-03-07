@@ -283,14 +283,42 @@ function MCS:FindItemOnLists(itemID)
     return results
 end
 
+--- Check if a list should show in tooltips (default: true)
+function MCS:IsTooltipListEnabled(specKey, listName)
+    if not self.db or not self.db.tooltipLists then return true end
+    local key = specKey .. ":" .. listName
+    if self.db.tooltipLists[key] == false then return false end
+    return true
+end
+
+--- Toggle whether a list shows in tooltips
+function MCS:ToggleTooltipList(specKey, listName)
+    if not self.db then return end
+    if not self.db.tooltipLists then self.db.tooltipLists = {} end
+    local key = specKey .. ":" .. listName
+    if self.db.tooltipLists[key] == false then
+        self.db.tooltipLists[key] = nil  -- default = enabled, so remove the key
+    else
+        self.db.tooltipLists[key] = false
+    end
+end
+
 --- Build tooltip text showing which lists an item is on.
 function MCS:GetWishlistTooltipText(itemID)
     local hits = self:FindItemOnLists(itemID)
     if #hits == 0 then return nil end
+    local myClass = self:GetPlayerClass()
     local parts = {}
     for _, h in ipairs(hits) do
-        local tag = h.preset and "|cff6688cc[BiS]|r " or ""
-        table_insert(parts, tag .. h.specLabel .. " / |cffFFD100" .. h.listName .. "|r")
+        if self:IsTooltipListEnabled(h.specKey, h.listName) then
+            -- Filter out other classes if the global toggle is off
+            local hClass = h.specKey:match("^(%w+)_")
+            if hClass == myClass or self.db.tooltipOtherClasses then
+                local tag = h.preset and "|cff6688cc[BiS]|r " or ""
+                table_insert(parts, tag .. h.specLabel .. " / |cffFFD100" .. h.listName .. "|r")
+            end
+        end
     end
+    if #parts == 0 then return nil end
     return parts
 end

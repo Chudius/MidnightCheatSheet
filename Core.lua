@@ -53,9 +53,18 @@ end
 function MCS:SpecKey() return self:MakeSpecKey(self.currentClass, self.currentSpec) end
 
 --- Get the icon texture ID for a spec name on the player's class
-function MCS:GetSpecIcon(specName)
+MCS.CLASS_IDS = {
+    WARRIOR=1, PALADIN=2, HUNTER=3, ROGUE=4, PRIEST=5, DEATHKNIGHT=6,
+    SHAMAN=7, MAGE=8, WARLOCK=9, MONK=10, DRUID=11, DEMONHUNTER=12, EVOKER=13,
+}
+function MCS:GetSpecIcon(specName, cls)
     if not specName then return nil end
-    local classID = select(3, UnitClass("player"))
+    local classID
+    if cls then
+        classID = self.CLASS_IDS[cls]
+    else
+        classID = select(3, UnitClass("player"))
+    end
     if not classID then return nil end
     local numSpecs = GetNumSpecializationsForClassID and GetNumSpecializationsForClassID(classID) or 0
     for i = 1, numSpecs do
@@ -106,6 +115,10 @@ f:SetScript("OnEvent", function(_, ev, a1)
     if ev == "ADDON_LOADED" and a1 == ADDON_NAME then
         if not MCSdb then MCSdb = {} end
         if not MCSdb.wishlists then MCSdb.wishlists = {} end
+        if not MCSdb.tooltipLists then MCSdb.tooltipLists = {} end
+        if MCSdb.tooltipOtherClasses == nil then MCSdb.tooltipOtherClasses = true end
+        if not MCSdb.windowWidth then MCSdb.windowWidth = 480 end
+        if not MCSdb.windowHeight then MCSdb.windowHeight = 560 end
         MCS.db = MCSdb
         -- Migrate old flat wishlists to new {specKey={listName={...}}} format
         for specKey, data in pairs(MCS.db.wishlists) do

@@ -417,7 +417,10 @@ end
 function MCS:InitUI()
     if self.frame then return end
     local f = CreateFrame("Frame","MCSFrame",UIParent,"BackdropTemplate")
-    f:SetSize(W,H); f:SetPoint("CENTER"); f:SetMovable(true); f:EnableMouse(true)
+    local savedW = MCS.db and MCS.db.windowWidth or W
+    local savedH = MCS.db and MCS.db.windowHeight or H
+    f:SetSize(savedW, savedH); f:SetPoint("CENTER"); f:SetMovable(true); f:EnableMouse(true)
+    f:SetResizable(true); f:SetResizeBounds(380, 300, 800, 900)
     f:SetClampedToScreen(true); f:RegisterForDrag("LeftButton")
     f:SetScript("OnDragStart",f.StartMoving); f:SetScript("OnDragStop",f.StopMovingOrSizing)
     f:SetFrameStrata("HIGH")
@@ -435,9 +438,38 @@ function MCS:InitUI()
     local tiSub = f:CreateFontString(nil,"OVERLAY","GameFontNormal")
     tiSub:SetPoint("LEFT",ti,"RIGHT",2,0); tiSub:SetFont(STANDARD_TEXT_FONT,10,"")
     tiSub:SetTextColor(.55,.55,.55); tiSub:SetText("- by Ch\195\187d-Ravencrest")
+    local curLabel = f:CreateFontString(nil,"OVERLAY","GameFontNormal")
+    curLabel:SetFont(STANDARD_TEXT_FONT,9,""); curLabel:SetTextColor(.7,.7,.7)
+    curLabel:SetText("Current:")
     self.specLabel = f:CreateFontString(nil,"OVERLAY","GameFontNormal")
     self.specLabel:SetPoint("RIGHT",tb,"RIGHT",-36,0); self.specLabel:SetJustifyH("RIGHT")
     self.specLabel:SetFont(STANDARD_TEXT_FONT,10,"")
+    curLabel:SetPoint("RIGHT", self.specLabel, "LEFT", -3, 0)
+    -- Class selector button (left of spec label)
+    local specBtn = CreateFrame("Button", nil, f, "BackdropTemplate")
+    specBtn:SetHeight(18)
+    specBtn:SetBackdrop({bgFile="Interface\\Buttons\\WHITE8x8",
+        edgeFile="Interface\\Buttons\\WHITE8x8", edgeSize=1})
+    specBtn:SetBackdropColor(.12,.1,.2,.9); specBtn:SetBackdropBorderColor(.35,.35,.55,.8)
+    self.specBtnLabel = specBtn:CreateFontString(nil,"OVERLAY","GameFontNormal")
+    self.specBtnLabel:SetFont(STANDARD_TEXT_FONT,9,"")
+    self.specBtnLabel:SetPoint("LEFT",4,0); self.specBtnLabel:SetPoint("RIGHT",-4,0)
+    self.specBtnLabel:SetJustifyH("CENTER")
+    specBtn:SetScript("OnEnter", function(b)
+        b:SetBackdropColor(.2,.18,.3,1); b:SetBackdropBorderColor(.5,.5,.7,.9)
+    end)
+    specBtn:SetScript("OnLeave", function(b)
+        b:SetBackdropColor(.12,.1,.2,.9); b:SetBackdropBorderColor(.35,.35,.55,.8)
+    end)
+    specBtn:SetScript("OnClick", function(b)
+        MCS:ShowClassDropdown(b)
+    end)
+    self.specBtn = specBtn
+    local csLabel = f:CreateFontString(nil,"OVERLAY","GameFontNormal")
+    csLabel:SetFont(STANDARD_TEXT_FONT,9,""); csLabel:SetTextColor(.7,.7,.7)
+    csLabel:SetText("Class:")
+    csLabel:SetPoint("RIGHT", specBtn, "LEFT", -3, 0)
+    specBtn:SetPoint("RIGHT", curLabel, "LEFT", -10, 0)
     local cb = CreateFrame("Button",nil,f,"UIPanelCloseButton")
     cb:SetPoint("TOPRIGHT",-2,-2); cb:SetScript("OnClick",function() MCS:Hide() end)
 
@@ -463,8 +495,44 @@ function MCS:InitUI()
         self.tabFrames[i] = { scroll=sf, content=c }
     end
 
+    -- Resize grip (bottom-right corner, above scrollbar)
+    local grip = CreateFrame("Button", nil, f)
+    grip:SetFrameLevel(f:GetFrameLevel() + 20)
+    grip:SetSize(16, 16); grip:SetPoint("BOTTOMRIGHT", -4, 4)
+    grip:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Up")
+    grip:SetHighlightTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Highlight")
+    grip:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Down")
+    grip:SetScript("OnMouseDown", function() f:StartSizing("BOTTOMRIGHT") end)
+    grip:SetScript("OnMouseUp", function()
+        f:StopMovingOrSizing()
+        if MCS.db then
+            MCS.db.windowWidth = math.floor(f:GetWidth() + 0.5)
+            MCS.db.windowHeight = math.floor(f:GetHeight() + 0.5)
+        end
+        MCS:OnResize()
+    end)
+
+    f:SetScript("OnSizeChanged", function(fr, w, h)
+        -- Update content widths and tab widths on resize
+        local tw = (w - 8) / #TAB_NAMES
+        for i, tab in ipairs(MCS.tabs) do
+            tab:SetSize(tw, 22)
+            tab:SetPoint("TOPLEFT", 4 + (i-1)*tw, tabY)
+        end
+        for i = 1, #TAB_NAMES do
+            local tf = MCS.tabFrames[i]
+            if tf then tf.content:SetWidth(w - 50) end
+        end
+    end)
+
     self:CreateMinimapButton()
     f:Hide(); self:SelectTab(1)
+end
+
+function MCS:OnResize()
+    if not self.frame or not self.frame:IsShown() then return end
+    ReleaseAll(); ClearTxt()
+    self:SelectTab(self.activeTab or 1)
 end
 
 function MCS:SelectTab(idx)
@@ -492,8 +560,96 @@ function MCS:UpdateUI()
         local r,g,b = self:ClassColor(cls)
         self.specLabel:SetText(format("|cff%02x%02x%02x%s %s|r", r*255,g*255,b*255, spec, UnitClass("player") or ""))
     end
+    -- Update class selector button
+    local viewCls = MCS.viewingClass or self.currentClass
+    if viewCls then
+        local pretty = ({
+            DEATHKNIGHT="Death Knight", DEMONHUNTER="Demon Hunter",
+        })[viewCls] or (viewCls:sub(1,1) .. viewCls:sub(2):lower())
+        local r,g,b = self:ClassColor(viewCls)
+        self.specBtnLabel:SetText(format("|cff%02x%02x%02x%s|r", r*255,g*255,b*255, pretty))
+        self.specBtn:SetWidth(self.specBtnLabel:GetStringWidth() + 10)
+    end
     ReleaseAll(); ClearTxt()
     self:SelectTab(self.activeTab or 1)
+end
+
+----------------------------------------------------------------------
+-- Class selector dropdown (for Wishlist tab cross-class browsing)
+----------------------------------------------------------------------
+local classDropdown
+
+function MCS:ShowClassDropdown(anchor)
+    if classDropdown and classDropdown:IsShown() then classDropdown:Hide(); return end
+    if not classDropdown then
+        classDropdown = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
+        classDropdown:SetFrameStrata("TOOLTIP"); classDropdown:SetFrameLevel(120)
+        classDropdown:SetBackdrop({bgFile="Interface\\Buttons\\WHITE8x8",
+            edgeFile="Interface\\Tooltips\\UI-Tooltip-Border",edgeSize=12,
+            insets={left=3,right=3,top=3,bottom=3}})
+        classDropdown:SetBackdropColor(.05,.05,.1,.95)
+        classDropdown:SetBackdropBorderColor(.3,.3,.5,.8)
+        classDropdown:SetScript("OnShow", function(dd)
+            dd:SetScript("OnUpdate", function(d)
+                if not d:IsMouseOver() and not anchor:IsMouseOver() then
+                    d.elapsed = (d.elapsed or 0) + .03
+                    if d.elapsed > .5 then d:Hide() end
+                else d.elapsed = 0 end
+            end)
+        end)
+        classDropdown:SetScript("OnHide", function(dd)
+            dd:SetScript("OnUpdate", nil)
+        end)
+    end
+    -- Clear old buttons
+    for _, child in ipairs({classDropdown:GetChildren()}) do child:Hide(); child:SetParent(recycleFrame) end
+
+    local SORTED_CLASSES = {}
+    for cls in pairs(self.ALL_SPECS) do table_insert(SORTED_CLASSES, cls) end
+    table_sort(SORTED_CLASSES)
+
+    local bh, pad = 18, 3
+    local maxW = 100
+    local btns = {}
+    for i, cls in ipairs(SORTED_CLASSES) do
+        local b = CreateFrame("Button", nil, classDropdown, "BackdropTemplate")
+        b:SetHeight(bh)
+        b:SetBackdrop({bgFile="Interface\\Buttons\\WHITE8x8"})
+        b:SetBackdropColor(0,0,0,0)
+        local r, g, bb = self:ClassColor(cls)
+        local fs = b:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+        fs:SetFont(STANDARD_TEXT_FONT, 10, "")
+        fs:SetAllPoints(); fs:SetJustifyH("LEFT")
+        local displayName = cls:sub(1,1) .. cls:sub(2):lower():gsub("knight","knight"):gsub("hunter","hunter"):gsub("demon","demon")
+        -- Pretty class names
+        local pretty = ({
+            DEATHKNIGHT="Death Knight", DEMONHUNTER="Demon Hunter",
+        })[cls] or (cls:sub(1,1) .. cls:sub(2):lower())
+        fs:SetText(format("  |cff%02x%02x%02x%s|r", r*255, g*255, bb*255, pretty))
+        local tw = fs:GetStringWidth() + 12
+        if tw > maxW then maxW = tw end
+        b:SetScript("OnEnter", function(btn) btn:SetBackdropColor(.2,.2,.3,.8) end)
+        b:SetScript("OnLeave", function(btn) btn:SetBackdropColor(0,0,0,0) end)
+        b:SetScript("OnClick", function()
+            MCS.viewingClass = cls
+            MCS.viewingSpecKey = nil
+            MCS.activeListName = nil
+            MCS.statsTabSpec = nil
+            MCS.gearTabSpec = nil
+            classDropdown:Hide()
+            MCS:UpdateUI()
+        end)
+        btns[i] = b
+    end
+    local totalH = #btns * (bh + pad) + pad * 2
+    classDropdown:SetSize(maxW + 10, totalH)
+    classDropdown:SetPoint("TOPRIGHT", anchor, "BOTTOMRIGHT", 0, -2)
+    for i, b in ipairs(btns) do
+        b:SetPoint("TOPLEFT", pad, -(pad + (i-1) * (bh + pad)))
+        b:SetPoint("RIGHT", -pad, 0)
+        b:Show()
+    end
+    classDropdown:Show()
 end
 
 ----------------------------------------------------------------------
@@ -549,16 +705,16 @@ function MCS:BuildStatsTab()
     local y = PAD
 
     -- Determine which specs this class has
-    local cls = self.currentClass
+    local cls = MCS.viewingClass or self.currentClass
     local specs = cls and self.ALL_SPECS[cls]
     if not specs or #specs == 0 then
         y = Txt(c, y, "No class detected.", 1, .3, .3)
         c:SetHeight(y + PAD); return
     end
 
-    -- Default to current spec if no override is set
+    -- Default to current spec if no override is set, or reset if class changed
     if not self.statsTabSpec or not self:MakeSpecKey(cls, self.statsTabSpec) then
-        self.statsTabSpec = self.currentSpec
+        self.statsTabSpec = (cls == self.currentClass) and self.currentSpec or specs[1]
     end
 
     -- Spec selector row
@@ -574,7 +730,7 @@ function MCS:BuildStatsTab()
         local hasData = self.SpecDB[specKey] and true or false
 
         local btn = CreateFrame("Button", nil, c, "BackdropTemplate")
-        local iconID = self:GetSpecIcon(specName)
+        local iconID = self:GetSpecIcon(specName, cls)
         local iconW = iconID and 18 or 0
         btn:SetSize(specName:len() * 6.5 + 16 + iconW, 20)
         btn:SetPoint("TOPLEFT", btnX, -y + 2)
@@ -636,12 +792,14 @@ function MCS:BuildStatsTab()
 
     y = y + 24
 
-    -- Show indicator if viewing a non-active spec
-    if self.statsTabSpec ~= self.currentSpec then
+    -- Show indicator if viewing a non-active spec or different class
+    if cls ~= self.currentClass or self.statsTabSpec ~= self.currentSpec then
         local hint = c:CreateFontString(nil, "OVERLAY", "GameFontNormal")
         hint:SetFont(STANDARD_TEXT_FONT, 9, ""); hint:SetPoint("TOPLEFT", 8, -y)
         hint:SetTextColor(.9, .7, .2)
-        hint:SetText("Viewing " .. self.statsTabSpec .. " (not your active spec)")
+        local pretty = ({DEATHKNIGHT="Death Knight",DEMONHUNTER="Demon Hunter"})[cls]
+            or (cls:sub(1,1) .. cls:sub(2):lower())
+        hint:SetText("Viewing " .. self.statsTabSpec .. " " .. pretty)
         table_insert(txts, hint)
         y = y + 14
     end
@@ -788,16 +946,16 @@ function MCS:BuildGearTab()
     local y = PAD
 
     -- Determine which specs this class has
-    local cls = self.currentClass
+    local cls = MCS.viewingClass or self.currentClass
     local specs = cls and self.ALL_SPECS[cls]
     if not specs or #specs == 0 then
         y = Txt(c, y, "No class detected.", 1, .3, .3)
         c:SetHeight(y + PAD); return
     end
 
-    -- Default to current spec if no override is set
+    -- Default to current spec if no override is set, or reset if class changed
     if not self.gearTabSpec or not self:MakeSpecKey(cls, self.gearTabSpec) then
-        self.gearTabSpec = self.currentSpec
+        self.gearTabSpec = (cls == self.currentClass) and self.currentSpec or specs[1]
     end
 
     -- Spec selector row
@@ -813,7 +971,7 @@ function MCS:BuildGearTab()
         local hasData = self.SpecDB[specKey] and true or false
 
         local btn = CreateFrame("Button", nil, c, "BackdropTemplate")
-        local iconID = self:GetSpecIcon(specName)
+        local iconID = self:GetSpecIcon(specName, cls)
         local iconW = iconID and 18 or 0
         btn:SetSize(specName:len() * 6.5 + 16 + iconW, 20)
         btn:SetPoint("TOPLEFT", btnX, -y + 2)
@@ -879,12 +1037,14 @@ function MCS:BuildGearTab()
 
     y = y + 24
 
-    -- Show indicator if viewing a non-active spec
-    if self.gearTabSpec ~= self.currentSpec then
+    -- Show indicator if viewing a non-active spec or different class
+    if cls ~= self.currentClass or self.gearTabSpec ~= self.currentSpec then
         local hint = c:CreateFontString(nil, "OVERLAY", "GameFontNormal")
         hint:SetFont(STANDARD_TEXT_FONT, 9, ""); hint:SetPoint("TOPLEFT", 8, -y)
         hint:SetTextColor(.9, .7, .2)
-        hint:SetText("Viewing " .. self.gearTabSpec .. " (not your active spec)")
+        local pretty = ({DEATHKNIGHT="Death Knight",DEMONHUNTER="Demon Hunter"})[cls]
+            or (cls:sub(1,1) .. cls:sub(2):lower())
+        hint:SetText("Viewing " .. self.gearTabSpec .. " " .. pretty)
         table_insert(txts, hint)
         y = y + 14
     end
@@ -973,7 +1133,16 @@ function MCS:BuildWishlistTab()
     local c = self.tabFrames[3].content; ClearC(c)
     local y = PAD
 
-    MCS.viewingSpecKey = MCS.viewingSpecKey or MCS:SpecKey()
+    local viewCls = MCS.viewingClass or self.currentClass
+    if not MCS.viewingSpecKey then
+        -- Default to first spec of the viewing class
+        local specs = self.ALL_SPECS[viewCls] or {}
+        if specs[1] then
+            MCS.viewingSpecKey = self:MakeSpecKey(viewCls, specs[1])
+        else
+            MCS.viewingSpecKey = self:SpecKey()
+        end
+    end
     -- Default to first available list for this spec
     if not MCS.activeListName then
         local allNames = MCS:GetListNames(MCS.viewingSpecKey)
@@ -982,9 +1151,31 @@ function MCS:BuildWishlistTab()
     local specKey  = MCS.viewingSpecKey
     local listName = MCS.activeListName
 
+    -- Tooltip settings row (top of tab)
+    local otherOn = self.db.tooltipOtherClasses
+    local otherCb = CreateFrame("CheckButton", nil, c, "UICheckButtonTemplate")
+    otherCb:SetSize(22, 22); otherCb:SetPoint("TOPLEFT", PAD, -y)
+    otherCb:SetChecked(otherOn)
+    otherCb:SetScript("OnClick", function(cb)
+        MCS.db.tooltipOtherClasses = cb:GetChecked() and true or false
+    end)
+    local otherLbl = c:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    otherLbl:SetFont(STANDARD_TEXT_FONT, 10, "")
+    otherLbl:SetPoint("LEFT", otherCb, "RIGHT", 0, 0)
+    otherLbl:SetText("Show other classes on tooltip")
+    otherLbl:SetTextColor(.7, .7, .7)
+    table_insert(txts, otherCb); table_insert(txts, otherLbl)
+    y = y + 22
+
     -- ROW 1: Spec selector — clickable buttons for each spec
-    y = Hdr(c, y, "Spec")
-    local cls = self.currentClass
+    local cls = MCS.viewingClass or self.currentClass
+    local isOtherClass = (cls ~= self.currentClass)
+    local classLabel = isOtherClass
+        and format(" |cff888888(viewing %s)|r", ({
+            DEATHKNIGHT="Death Knight", DEMONHUNTER="Demon Hunter",
+        })[cls] or (cls:sub(1,1) .. cls:sub(2):lower()))
+        or ""
+    y = Hdr(c, y, "Spec" .. classLabel)
     local mySpecs = self.ALL_SPECS[cls] or {}
 
     local specBtnX = 8
@@ -992,7 +1183,7 @@ function MCS:BuildWishlistTab()
         local k = self:MakeSpecKey(cls, spec)
         local cnt = self:TotalWishlistCount(k)
         local isActive = (k == specKey)
-        local iconID = self:GetSpecIcon(spec)
+        local iconID = self:GetSpecIcon(spec, cls)
 
         local btn = CreateFrame("Button", nil, c, "BackdropTemplate")
         local label = format("%s (%d)", spec, cnt)
@@ -1174,6 +1365,23 @@ function MCS:BuildWishlistTab()
     local isViewingPreset = self:IsPresetList(specKey, listName)
     local hdrTag = isViewingPreset and " |cff6688cc[BiS - read-only]|r" or ""
     y = Hdr(c, y, self:FormatSpecKey(specKey) .. " / |cffFFD100" .. listName .. "|r" .. hdrTag)
+
+    -- Tooltip visibility checkboxes
+    local tipOn = self:IsTooltipListEnabled(specKey, listName)
+    local tipCb = CreateFrame("CheckButton", nil, c, "UICheckButtonTemplate")
+    tipCb:SetSize(22, 22); tipCb:SetPoint("TOPLEFT", PAD, -y)
+    tipCb:SetChecked(tipOn)
+    tipCb:SetScript("OnClick", function(cb)
+        MCS:ToggleTooltipList(specKey, listName)
+    end)
+    local tipLbl = c:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    tipLbl:SetFont(STANDARD_TEXT_FONT, 10, "")
+    tipLbl:SetPoint("LEFT", tipCb, "RIGHT", 0, 0)
+    tipLbl:SetText("Show on tooltip")
+    tipLbl:SetTextColor(.7, .7, .7)
+    table_insert(txts, tipCb); table_insert(txts, tipLbl)
+
+    y = y + 22
 
     local wl = self:GetWishlist(specKey, listName)
     if #wl == 0 then
