@@ -11,6 +11,8 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -22,13 +24,17 @@ jobs:
           VERSION="${GITHUB_REF_NAME}"
           PREV_TAG=$(git tag --sort=-v:refname | grep '^v' | sed -n '2p')
           if [ -n "$PREV_TAG" ]; then
-            NOTES=$(git log --pretty=format:"- %s" "${PREV_TAG}..${VERSION}" -- . ':!.github')
+            NOTES=$(git log --pretty=format:"- %s" "${PREV_TAG}..${VERSION}")
           else
             NOTES=$(git log --pretty=format:"- %s" -5 "${VERSION}")
           fi
-          echo "RELEASE_NOTES<<EOF" >> "$GITHUB_OUTPUT"
-          echo "${NOTES:-No release notes.}" >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
+          # Filter out workflow-only commits
+          NOTES=$(echo "$NOTES" | grep -v "^- Fix Discord webhook")
+          {
+            echo "RELEASE_NOTES<<ENDOFNOTES"
+            echo "${NOTES:-No release notes.}"
+            echo "ENDOFNOTES"
+          } >> "$GITHUB_OUTPUT"
 
       - uses: BigWigsMods/packager@v2
         with:
@@ -40,7 +46,6 @@ jobs:
       - name: Notify Discord
         if: env.DISCORD_WEBHOOK_URL != ''
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           RELEASE_NOTES: ${{ steps.notes.outputs.RELEASE_NOTES }}
         run: |
           VERSION="${GITHUB_REF_NAME}"
