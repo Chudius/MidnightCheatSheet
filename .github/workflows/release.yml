@@ -24,21 +24,29 @@ jobs:
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Notify Discord
+        if: ${{ secrets.DISCORD_WEBHOOK_URL != '' }}
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        if: ${{ env.DISCORD_WEBHOOK_URL != '' }}
         run: |
+          set +e
+          cd "$GITHUB_WORKSPACE"
           VERSION="${GITHUB_REF_NAME}"
+          echo "Version: $VERSION"
+          echo "Tags:"
+          git tag --sort=-v:refname | head -5
           PREV_TAG=$(git tag --sort=-v:refname | grep '^v' | sed -n '2p')
+          echo "Previous tag: $PREV_TAG"
           if [ -n "$PREV_TAG" ]; then
-            NOTES=$(git log --pretty=format:"- %s" "${PREV_TAG}..${VERSION}" | grep -v "^- Fix Discord webhook")
+            NOTES=$(git log --pretty=format:"- %s" "${PREV_TAG}..${VERSION}" | grep -v "Fix Discord webhook" || true)
           else
             NOTES=$(git log --pretty=format:"- %s" -5 "${VERSION}")
           fi
+          echo "Notes: $NOTES"
           PAYLOAD=$(jq -n \
             --arg title "Midnight Cheat Sheet is updated and live on CurseForge! (${VERSION})" \
             --arg desc "${NOTES:-No release notes.}" \
             '{embeds: [{title: $title, description: $desc, color: 3447003}], flags: 4}')
+          echo "Payload: $PAYLOAD"
           curl -s -H "Content-Type: application/json" \
             -d "$PAYLOAD" \
             "$DISCORD_WEBHOOK_URL"
