@@ -171,7 +171,7 @@ D["DEMONHUNTER_HAVOC"] = S(
 
 D["DEMONHUNTER_VENGEANCE"] = S(
     { ["Aldrachi Reaver"] = {"Haste","Crit","Vers","Mastery"},
-      ["Fel-Scarred"] = {"Haste","Crit","Vers","Mastery"} },
+      ["Annihilator"] = {"Haste","Crit","Vers","Mastery"} },
     { wep={"AcuityRen"}, chest="MarkWorld", helm="BlessSpeed",
       shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
     {"EyesEagle","EyesEagle"},
@@ -397,8 +397,8 @@ D["PRIEST_DISCIPLINE"] = S(
       Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
 
 D["PRIEST_HOLY"] = S(
-    { ["Archon"] = {"Crit","Mastery","Vers","Haste"},
-      ["Oracle"] = {"Crit","Mastery","Vers","Haste"} },
+    { ["Archon"] = {"Crit","Vers","Mastery","Haste"},
+      ["Oracle"] = {"Crit","Vers","Mastery","Haste"} },
     { wep={"JanalaiPrec"}, chest="MarkWorld", helm="HexLeech",
       shoulder="SilverMend", boots="LynxDex", legs="SunfireThread" },
     {"NatureFury","NatureFury"},
@@ -410,7 +410,7 @@ D["PRIEST_SHADOW"] = S(
     { ["Archon"] = {"Haste","Mastery","Crit","Vers"},
       ["Voidweaver"] = {"Haste","Mastery","Crit","Vers"} },
     { wep={"JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="FlightEagle", boots="LynxDex", legs="SunfireThread" },
+      shoulder="AkilSwift", boots="LynxDex", legs="SunfireThread" },
     {"SilvermoonAla","SilvermoonAla"},
     { epic="Indecipherable", rare={"MastPeridot","DeadlyAmethyst","QuickGarnet"} },
     { Flask="FlaskMag", Food="FoodRoyal", Potion="PotLight",
@@ -470,7 +470,7 @@ D["SHAMAN_ENHANCEMENT"] = S(
 
 D["SHAMAN_RESTORATION"] = S(
     { ["Farseer"] = {"Crit","Haste","Vers","Mastery"},
-      ["Totemic"] = {"Crit","Haste","Vers","Mastery"} },
+      ["Totemic"] = {"Crit","Vers","Haste","Mastery"} },
     { wep={"AcuityRen"}, chest="MarkMagister", helm="HexLeech",
       shoulder="SilverMend", boots="ShalRoots", legs="ArcThread" },
     {"NatureFury","NatureFury"},
@@ -621,7 +621,7 @@ MCS.PRESET_LISTS = {
             { itemID = 251168, source = "Maisara Caverns" },  -- 2H Weapon: Liferipper's Cutlass
         },
     },
-    ["DEATHKNIGHT_UNHOLY"] = {  -- updated: 2026/02/25
+    ["DEATHKNIGHT_UNHOLY"] = {  -- updated: 2026/03/07
         ["Overall BiS"] = {
             { itemID = 249277, source = "Lightblinded Vanguard" },  -- Weapon: Bellamy's Final Judgement
             { itemID = 249970, source = "Tier Set" },  -- Head: Relentless Rider's Crown
@@ -629,7 +629,7 @@ MCS.PRESET_LISTS = {
             { itemID = 50234, source = "Pit of Saron" },  -- Shoulders: Shoulderplates of Frozen Blood
             { itemID = 239656, source = "Crafting" },  -- Cloak: Adherent's Silken Shroud
             { itemID = 249973, source = "Tier Set" },  -- Chest: Relentless Rider's Cuirass
-            { itemID = 244750, source = "Crafting" },  -- Wrist: Aetherlume Guards
+            { itemID = 237834, source = "Crafting" },  -- Wrist: Spellbreaker's Bracers
             { itemID = 249971, source = "Tier Set" },  -- Gloves: Relentless Rider's Bonegrasps
             { itemID = 249967, source = "Catalyst" },  -- Belt: Relentless Rider's Chain
             { itemID = 249969, source = "Tier Set" },  -- Legs: Relentless Rider's Legguards
@@ -1045,23 +1045,23 @@ MCS.PRESET_LISTS = {
             { itemID = 251174, source = "Maisara Caverns" },  -- Weapon: Deciever's Rotbow
         },
     },
-    ["HUNTER_MARKSMANSHIP"] = {  -- updated: 2026/02/25
+    ["HUNTER_MARKSMANSHIP"] = {  -- updated: 2026/03/07
         ["Overall BiS"] = {
-            { itemID = 249279, source = "Imperator Averzian" },  -- Weapon: Sunstrike Rifle
+            { itemID = 249288, source = "Imperator Averzian" },  -- Weapon: Ranger-Captain's Lethal Recurve
             { itemID = 249988, source = "Tier Set" },  -- Head: Primal Sentry's Maw
-            { itemID = 240950, source = "Crafting" },  -- Neck: Masterwork Sin'dorei Amulet
-            { itemID = 249318, source = "Vaelgor & Ezzorak" },  -- Shoulders: Nullwalker's Dread Epaulettes
-            { itemID = 249370, source = "Vaelgor & Ezzorak" },  -- Cloak: Draconic Nullcape
+            { itemID = 250247, source = "Midnight Falls" },  -- Neck: Amulet of the Abyssal Hymn
+            { itemID = 151323, source = "Seat of the Triumvirate" },  -- Shoulders: Pauldrons of the Void Hunter
+            { itemID = 249335, source = "Imperator Averzian" },  -- Cloak: Imperator's Banner
             { itemID = 249991, source = "Tier Set" },  -- Chest: Primal Sentry's Scaleplate
-            { itemID = 244584, source = "Crafting" },  -- Wrist: Farstrider's Plated Bracers
+            { itemID = 249304, source = "Fallen-King Salhadaar" },  -- Wrist: Fallen King's Cuffs
             { itemID = 249989, source = "Tier Set" },  -- Gloves: Primal Sentry's Talonguards
-            { itemID = 249371, source = "Chimaerus" },  -- Belt: Scornbane Waistguard
+            { itemID = 244611, source = "Crafting" },  -- Belt: World Tender's Barkclasp
             { itemID = 249987, source = "Tier Set" },  -- Legs: Primal Sentry's Legguards
-            { itemID = 249320, source = "Imperator Averzian" },  -- Boots: Sabatons of Obscurement
+            { itemID = 244610, source = "Crafting" },  -- Boots: World Tender's Rootslippers
             { itemID = 249919, source = "Belo'ren" },  -- Ring: Sin'dorei Band of Hope
             { itemID = 249336, source = "Vorasius" },  -- Ring: Signet of the Starved Beast
             { itemID = 193701, source = "Algeth'ar Academy" },  -- Trinket: Algeth'ar Puzzle Box
-            { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
+            { itemID = 260235, source = "Belo'ren" },  -- Trinket: Umbral Plume
         },
         ["Pre-Raid BiS"] = {
             { itemID = 251119, source = "Magister's Terrace" },  -- Helm: Vortex Visage
@@ -1224,9 +1224,9 @@ MCS.PRESET_LISTS = {
             { itemID = 250256, source = "Windrunner Spire" },  -- Trinket #2: Heart of Wind (240)
         },
     },
-    ["MONK_BREWMASTER"] = {  -- updated: 2026/02/25
+    ["MONK_BREWMASTER"] = {  -- updated: 2026/03/07
         ["Overall BiS"] = {
-            { itemID = 193723, source = "Algeth'ar Academy" },  -- Weapon: Obsidian Goaltending Spire
+            { itemID = 249302, source = "Fallen-King Salhadaar" },  -- Weapon: Inescapable Reach
             { itemID = 250015, source = "Tier Set" },  -- Head: Fearsome Visage of Ra-den's Chosen
             { itemID = 240950, source = "Crafting" },  -- Neck: Masterwork Sin'dorei Amulet
             { itemID = 250013, source = "Tier Set" },  -- Shoulders: Aurastones of Ra-den's Chosen
@@ -1238,7 +1238,7 @@ MCS.PRESET_LISTS = {
             { itemID = 151314, source = "Seat of the Triumvirate" },  -- Legs: Shifting Stalker Hide Pants
             { itemID = 151317, source = "Seat of the Triumvirate" },  -- Boots: Footpads of Seeping Dread
             { itemID = 249336, source = "Vorasius" },  -- Ring: Signet of the Starved Beast
-            { itemID = 151308, source = "Seat of the Triumvirate" },  -- Ring: Eredath Seal of Nobility
+            { itemID = 251513, source = "Crafting" },  -- Ring: Loa Worshiper's Band
             { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
             { itemID = 249806, source = "Belo'ren" },  -- Trinket: Radiant Plume
             { itemID = 249339, source = "Vaelgor & Ezzorak" },  -- Trinket: Gloom-Spattered Dreadscale
@@ -1336,7 +1336,7 @@ MCS.PRESET_LISTS = {
             { itemID = 250225, source = "Voidscar Arena" },  -- Trinket 2: Void Execution Mandate
         },
     },
-    ["PALADIN_HOLY"] = {  -- updated: 2026/02/25
+    ["PALADIN_HOLY"] = {  -- updated: 2026/03/07
         ["Overall BiS"] = {
             { itemID = 193710, source = "Algeth'ar Academy" },  -- Weapon: Spellboon Saber
             { itemID = 258049, source = "Skyreach" },  -- Shield: Viryx's Indomitable Bulwark
@@ -1352,7 +1352,7 @@ MCS.PRESET_LISTS = {
             { itemID = 249332, source = "Vorasius" },  -- Boots: Parasite Stompers
             { itemID = 249920, source = "Midnight Falls" },  -- Ring: Eye of Midnight
             { itemID = 249919, source = "Belo'ren" },  -- Ring: Sin'dorei Band of Hope
-            { itemID = 250246, source = "Magister's Terrace" },  -- Trinket: Refueling Orb
+            { itemID = 249346, source = "Vaelgor & Ezzorak" },  -- Trinket: Vaelgor's Final Stare
             { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
         },
         ["Pre-Raid BiS"] = {
@@ -1411,20 +1411,20 @@ MCS.PRESET_LISTS = {
             { itemID = 250256, source = "Windrunner Spire" },  -- Trinket #2: Heart of Wind
         },
     },
-    ["PALADIN_RETRIBUTION"] = {  -- updated: 2026/03/01
+    ["PALADIN_RETRIBUTION"] = {  -- updated: 2026/03/07
         ["Overall BiS"] = {
             { itemID = 249277, source = "Lightblinded Vanguard" },  -- Weapon: Bellamy's Final Judgement
             { itemID = 249961, source = "Tier Set" },  -- Head: Luminant Verdict's Unwavering Gaze
             { itemID = 250247, source = "Midnight Falls" },  -- Neck: Amulet of the Abyssal Hymn
             { itemID = 249959, source = "Tier Set" },  -- Shoulders: Luminant Verdict's Providence Watch
-            { itemID = 258575, source = "Skyreach" },  -- Cloak: Rigid Scale Greatcloak
+            { itemID = 239656, source = "Crafting" },  -- Cloak: Adherent's Silken Shroud
             { itemID = 249964, source = "Tier Set" },  -- Chest: Luminant Verdict's Divine Warplate
             { itemID = 237834, source = "Crafting" },  -- Wrist: Spellbreaker's Bracers
             { itemID = 151332, source = "Seat of the Triumvirate" },  -- Gloves: Voidclaw Gauntlets
             { itemID = 249380, source = "Crown of the Cosmos" },  -- Belt: Hate-Tied Waistchain
             { itemID = 249960, source = "Tier Set" },  -- Legs: Luminant Verdict's Greaves
             { itemID = 249381, source = "Chimaerus" },  -- Boots: Greaves of the Unformed
-            { itemID = 251513, source = "Crafting" },  -- Ring: Loa Worshiper's Band
+            { itemID = 249919, source = "Belo'ren" },  -- Ring: Sin'dorei Band of Hope
             { itemID = 249920, source = "Midnight Falls" },  -- Ring: Eye of Midnight
             { itemID = 260235, source = "Belo'ren" },  -- Trinket: Umbral Plume
             { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
