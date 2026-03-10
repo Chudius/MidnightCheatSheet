@@ -525,6 +525,43 @@ function MCS:InitUI()
         end
     end)
 
+    -- Scale buttons (bottom-right, left of resize grip)
+    local function MakeScaleBtn(label, xOff, delta)
+        local sb = CreateFrame("Button", nil, f, "BackdropTemplate")
+        sb:SetSize(18, 18); sb:SetPoint("BOTTOMRIGHT", xOff, 4)
+        sb:SetFrameLevel(f:GetFrameLevel() + 20)
+        sb:SetBackdrop({bgFile="Interface\\Buttons\\WHITE8x8",
+            edgeFile="Interface\\Buttons\\WHITE8x8", edgeSize=1})
+        sb:SetBackdropColor(.15,.12,.25,.9); sb:SetBackdropBorderColor(.4,.4,.6,.8)
+        local sbt = sb:CreateFontString(nil,"OVERLAY","GameFontNormal")
+        sbt:SetFont(STANDARD_TEXT_FONT,11,""); sbt:SetPoint("CENTER",0,1); sbt:SetText(label)
+        sb:SetScript("OnEnter", function(b)
+            b:SetBackdropColor(.25,.2,.35,1); b:SetBackdropBorderColor(.6,.6,.8,.9)
+        end)
+        sb:SetScript("OnLeave", function(b)
+            b:SetBackdropColor(.15,.12,.25,.9); b:SetBackdropBorderColor(.4,.4,.6,.8)
+        end)
+        sb:SetScript("OnClick", function()
+            local oldS = MCS.db.uiScale or 1
+            local s = oldS + delta
+            s = math.max(0.7, math.min(1.5, math.floor(s * 20 + 0.5) / 20))
+            if s == oldS then return end
+            -- Pin bottom-right corner in place so the button stays under cursor
+            local right = f:GetRight() * oldS
+            local bottom = f:GetBottom() * oldS
+            MCS.db.uiScale = s
+            f:SetScale(s)
+            f:ClearAllPoints()
+            f:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMLEFT", right / s, bottom / s)
+        end)
+        return sb
+    end
+    MakeScaleBtn("+", -22, 0.05)
+    MakeScaleBtn("\226\136\146", -40, -0.05)  -- minus sign (−)
+
+    -- Apply saved scale
+    if MCS.db and MCS.db.uiScale then f:SetScale(MCS.db.uiScale) end
+
     self:CreateMinimapButton()
     f:Hide(); self:SelectTab(1)
 end

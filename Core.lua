@@ -119,6 +119,7 @@ f:SetScript("OnEvent", function(_, ev, a1)
         if MCSdb.tooltipOtherClasses == nil then MCSdb.tooltipOtherClasses = true end
         if not MCSdb.windowWidth then MCSdb.windowWidth = 480 end
         if not MCSdb.windowHeight then MCSdb.windowHeight = 560 end
+        if not MCSdb.uiScale then MCSdb.uiScale = 1.0 end
         MCS.db = MCSdb
         -- Migrate old flat wishlists to new {specKey={listName={...}}} format
         for specKey, data in pairs(MCS.db.wishlists) do
