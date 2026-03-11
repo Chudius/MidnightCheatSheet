@@ -567,16 +567,16 @@ MCS.PRESET_LISTS = {
             { itemID = 249344, source = "Imperator Averzian" },  -- Trinket: Light Company Guidon
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251134, source = "Murder Row" },  -- Weapon: Xathuux's Cleave
+            { itemID = 251168, source = "Maisara Caverns" },  -- Weapon: Liferipper's Cutlass
             { itemID = 251229, source = "Voidscar Arena" },  -- Helm: Visor of the Predator
-            { itemID = 251173, source = "Den of Nalorakk" },  -- Neck: Yoke of the Charging Bear
-            { itemID = 251157, source = "Nexus-Point Xenas" },  -- Shoulder: Searing Spaulders
-            { itemID = 251190, source = "The Blinding Vale" },  -- Cloak: Bloodthorn Burnous
-            { itemID = 251193, source = "The Blinding Vale" },  -- Chest: Taproot Ribs
+            { itemID = 251234, source = "Voidscar Arena" },  -- Neck: Graft of the Domanaar
+            { itemID = 251164, source = "Maisara Caverns" },  -- Shoulder: Amalgamation's Harness
+            { itemID = 260312, source = "Magister's Terrace" },  -- Cloak: Defiant Defender's Drape
+            { itemID = 251151, source = "Den of Nalorakk" },  -- Chest: Sentinel Challenger's Prize
             { itemID = 251133, source = "Murder Row" },  -- Bracers: Overseer's Vambraces
-            { itemID = 251214, source = "Den of Nalorakk" },  -- Gloves: Bonds of the Hash'ura
-            { itemID = 251086, source = "Windrunner Spire" },  -- Belt: Riphook Defender
-            { itemID = 251182, source = "The Blinding Vale" },  -- Legs: Bedrock Breeches
+            { itemID = 251081, source = "Windrunner Spire" },  -- Gloves: Embergrove Grasps
+            { itemID = 251144, source = "Den of Nalorakk" },  -- Belt: Autumn's Boon Belt
+            { itemID = 251118, source = "Magister's Terrace" },  -- Legs: Legplates of Lingering Dusk
             { itemID = 251107, source = "Magister's Terrace" },  -- Boots: Oathsworn Stompers
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
             { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
@@ -849,21 +849,22 @@ MCS.PRESET_LISTS = {
             { itemID = 193701, source = "Algeth'ar Academy" },  -- Trinket: Algeth'ar Puzzle Box
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 258529, source = "Algeth'ar Academy" },  -- Weapon: Arcaneclaw Spear
-            { itemID = 151336, source = "Seat of the Triumvirate" },  -- Helm: Voidlashed Hood
-            { itemID = 151309, source = "Seat of the Triumvirate" },  -- Neck: Necklace of the Twisting Void
-            { itemID = 251092, source = "Windrunner Spire" },  -- Shoulder: Fallen Grunt's Mantle
-            { itemID = 193712, source = "Algeth'ar Academy" },  -- Cloak: Potion-Stained Cloak
-            { itemID = 251216, source = "Nexus-Point Xenas" },  -- Chest: Maledict Vest
-            { itemID = 251103, source = "Magister's Terrace" },  -- Bracers: Custodial Cuffs
-            { itemID = 251204, source = "Nexus-Point Xenas" },  -- Gloves: Corewright's Zappers
-            { itemID = 251166, source = "Maisara Caverns" },  -- Belt: Falconer's Cinch
-            { itemID = 251087, source = "Windrunner Spire" },  -- Legs: Legwraps of Lingering Legacies
-            { itemID = 251210, source = "Nexus-Point Xenas" },  -- Boots: Eclipse Espadrilles
+            { itemID = 251098, source = "Windrunner Spire" },  -- Helm: Fletcher's Faded Faceplate
+            { itemID = 251173, source = "Den of Nalorakk" },  -- Neck: Yoke of the Charging Bear
+            { itemID = 251138, source = "Murder Row" },  -- Shoulder: Cinderfury Shoulderguards
+            { itemID = 260312, source = "Magister's Terrace" },  -- Cloak: Defiant Defender's Drape
+            { itemID = 251193, source = "The Blinding Vale" },  -- Chest: Taproot Ribs
+            { itemID = 251133, source = "Murder Row" },  -- Bracers: Overseer's Vambraces
+            { itemID = 251214, source = "Den of Nalorakk" },  -- Gloves: Bonds of the Hash'ura
+            { itemID = 251086, source = "Windrunner Spire" },  -- Belt: Riphook Defender
+            { itemID = 251182, source = "The Blinding Vale" },  -- Legs: Bedrock Breeches
+            { itemID = 251107, source = "Magister's Terrace" },  -- Boots: Oathsworn Stompers
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
             { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
-            { itemID = 250256, source = "Windrunner Spire" },  -- Trinket #1: Heart of Wind
-            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #2: Vessel of Tortured Souls
+            { itemID = 250259, source = "The Blinding Vale" },  -- Trinket #1: Sapling of the Dawnroot
+            { itemID = 250238, source = "The Blinding Vale" },  -- Trinket #2: Seed of the Devouring Wild
+            { itemID = 251168, source = "Maisara Caverns" },  -- Weapon: Liferipper's Cutlass
+            { itemID = 251196, source = "The Blinding Vale" },  -- Off-Hand: Teldrassil's Sacrifice
         },
     },
     ["DRUID_RESTORATION"] = {  -- updated: 2026/02/25
@@ -1144,7 +1145,7 @@ MCS.PRESET_LISTS = {
             { itemID = 241139, source = "Crafted — Jewelcrafting" },  -- Neck: Thalassian Phoenix Torque with  Prismatic Focusing Iris
             { itemID = 251227, source = "Voidscar Arena" },  -- Shoulder: Poisoner's Pauldrons
             { itemID = 239656, source = "Crafted — Tailoring" },  -- Cloak: Adherent's Silken Shroud with  Stabilizing Gemstone Bandolier
-            { itemID = 251147, source = "Den of Nalorakk" },  -- Chest: Hoarded Harvest Wrap
+            { itemID = 251139, source = "Murder Row" },  -- Chest: Summoner's Searing Shirt
             { itemID = 239648, source = "Crafted — Tailoring" },  -- Wrist: Martyr's Bindings with  Devouring Banding (Versatility/Mastery)
             { itemID = 251129, source = "Murder Row" },  -- Hands: Counterfeit Clutches
             { itemID = 251185, source = "The Blinding Vale" },  -- Waist: Lightblossom Cinch
@@ -1317,6 +1318,8 @@ MCS.PRESET_LISTS = {
             { itemID = 193701, source = "Algeth'ar Academy" },  -- Trinket: Algeth'ar Puzzle Box
         },
         ["Pre-Raid BiS"] = {
+            { itemID = 251186, source = "The Blinding Vale" },  -- Weapon: Thorntalon Edge
+            { itemID = 251175, source = "Maisara Caverns" },  -- Weapon: Soulblight Cleaver
             { itemID = 251109, source = "Magister's Terrace" },  -- Head: Spellsnap Shadowmask
             { itemID = 251173, source = "Den of Nalorakk" },  -- Neck: Yoke of the Charging Bear
             { itemID = 251092, source = "Windrunner Spire" },  -- Shoulder: Fallen Grunt's Mantle
@@ -1325,15 +1328,12 @@ MCS.PRESET_LISTS = {
             { itemID = 251183, source = "The Blinding Vale" },  -- Wrist: Rootwarden Wraps
             { itemID = 251124, source = "Murder Row" },  -- Hands: Gauntlets of Fevered Defense
             { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
-            { itemID = 251087, source = "Windrunner Spire" },  -- Legs: Legwraps of Lingering Legacies
-            { itemID = 251153, source = "Den of Nalorakk" },  -- Feet: Arctic Explorer's Legwraps
-            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring: Omission of Light
-            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring: Occlusion of Void
-            { itemID = 251077, source = "Windrunner Spire" },  -- 2H Weapon: Roostwarden's Bough
-            { itemID = 251122, source = "Magister's Terrace" },  -- 1H Weapon: Shadowslash Slicer
-            { itemID = 251122, source = "Magister's Terrace" },  -- 1H Weapon: Shadowslash Slicer
-            { itemID = 250256, source = "Windrunner Spire" },  -- Trinket 1: Heart of Wind
-            { itemID = 250225, source = "Voidscar Arena" },  -- Trinket 2: Void Execution Mandate
+            { itemID = 251153, source = "Den of Nalorakk" },  -- Legs: Arctic Explorer's Legwraps
+            { itemID = 251087, source = "Windrunner Spire" },  -- Boots: Legwraps of Lingering Legacies
+            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
+            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
+            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
+            { itemID = 250225, source = "Voidscar Arena" },  -- Trinket #2: Void Execution Mandate
         },
     },
     ["PALADIN_HOLY"] = {  -- updated: 2026/03/07
@@ -1393,22 +1393,22 @@ MCS.PRESET_LISTS = {
             { itemID = 249342, source = "Vorasius" },  -- Trinket: Heart of Ancient Hunger
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251218, source = "Voidscar Arena" },  -- Weapon: Taz'Rah's Cosmic Edge
-            { itemID = 251150, source = "Den of Nalorakk" },  -- Shield: Tempest's Shelter
-            { itemID = 251098, source = "Windrunner Spire" },  -- Helm: Fletcher's Faded Faceplate
-            { itemID = 251142, source = "Murder Row" },  -- Neck: Pendant of Malefic Fury
-            { itemID = 251138, source = "Murder Row" },  -- Shoulder: Cinderfury Shoulderguards
-            { itemID = 251190, source = "The Blinding Vale" },  -- Cloak: Bloodthorn Burnous
-            { itemID = 251193, source = "The Blinding Vale" },  -- Chest: Taproot Ribs
-            { itemID = 263193, source = "Maisara Caverns" },  -- Bracers: Trollhunter's Bands
-            { itemID = 251214, source = "Den of Nalorakk" },  -- Gloves: Bonds of the Hash'ura
-            { itemID = 251086, source = "Windrunner Spire" },  -- Belt: Riphook Defender
-            { itemID = 251208, source = "Nexus-Point Xenas" },  -- Legs: Lightscarred Cuisses
-            { itemID = 251169, source = "Maisara Caverns" },  -- Boots: Footwraps of Ill-Fate
-            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
-            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
-            { itemID = 250259, source = "The Blinding Vale" },  -- Trinket #1: Sapling of the Dawnroot
-            { itemID = 250256, source = "Windrunner Spire" },  -- Trinket #2: Heart of Wind
+            { itemID = 251176, source = "Maisara Caverns" },  -- Helm: new item
+            { itemID = 251186, source = "The Blinding Vale" },  -- Neck: Thorntalon Edge
+            { itemID = 251109, source = "Magister's Terrace" },  -- Shoulder: Spellsnap Shadowmask
+            { itemID = 251173, source = "Den of Nalorakk" },  -- Cloak: Yoke of the Charging Bear
+            { itemID = 251146, source = "Den of Nalorakk" },  -- Chest: Scavenger's Spaulders
+            { itemID = 260312, source = "Magister's Terrace" },  -- Bracers: Defiant Defender's Drape
+            { itemID = 251226, source = "Voidscar Arena" },  -- Gloves: Hide of Pestilence
+            { itemID = 251103, source = "Magister's Terrace" },  -- Belt: Custodial Cuffs
+            { itemID = 251124, source = "Murder Row" },  -- Legs: Gauntlets of Fevered Defense
+            { itemID = 251166, source = "Maisara Caverns" },  -- Boots: Falconer's Cinch
+            { itemID = 251087, source = "Windrunner Spire" },  -- Ring #1: Legwraps of Lingering Legacies
+            { itemID = 251210, source = "Nexus-Point Xenas" },  -- Ring #2: Eclipse Espadrilles
+            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Trinket #1: Occlusion of Void
+            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Trinket #2: Omission of Light
+            { itemID = 250256, source = "Windrunner Spire" },  -- Weapon: Heart of Wind
+            { itemID = 250244, source = "Den of Nalorakk" },  -- Shield: Permafrost Essence
         },
     },
     ["PALADIN_RETRIBUTION"] = {  -- updated: 2026/03/07
@@ -1430,21 +1430,21 @@ MCS.PRESET_LISTS = {
             { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251117, source = "Magister's Terrace" },  -- Weapon: Whirling Voidcleaver
-            { itemID = 151333, source = "Seat of the Triumvirate" },  -- Helm: Crown of the Dark Envoy
-            { itemID = 50228, source = "Pit of Saron" },  -- Neck: Barbed Ymirheim Choker
-            { itemID = 251164, source = "Maisara Caverns" },  -- Shoulder: Amalgamation's Harness
-            { itemID = 258575, source = "Skyreach" },  -- Cloak: Rigid Scale Greatcloak
-            { itemID = 151329, source = "Seat of the Triumvirate" },  -- Chest: Breastplate of the Dark Touch
-            { itemID = 263193, source = "Maisara Caverns" },  -- Bracers: Trollhunter's Bands
-            { itemID = 258583, source = "Skyreach" },  -- Gloves: Incarnadine Gauntlets
-            { itemID = 151327, source = "Seat of the Triumvirate" },  -- Belt: Girdle of the Shadowguard
+            { itemID = 251175, source = "Maisara Caverns" },  -- Weapon: Soulblight Cleaver
+            { itemID = 251186, source = "The Blinding Vale" },  -- Helm: new item
+            { itemID = 251109, source = "Magister's Terrace" },  -- Neck: new item
+            { itemID = 251142, source = "Murder Row" },  -- Shoulder: Pendant of Malefic Fury
+            { itemID = 251171, source = "Maisara Caverns" },  -- Cloak: Enthralled Bonespines
+            { itemID = 251190, source = "The Blinding Vale" },  -- Chest: Bloodthorn Burnous
+            { itemID = 251099, source = "Windrunner Spire" },  -- Bracers: Vest of the Howling Gale
+            { itemID = 251183, source = "The Blinding Vale" },  -- Gloves: Rootwarden Wraps
+            { itemID = 251113, source = "Magister's Terrace" },  -- Belt: Gloves of Viscous Goo
             { itemID = 251118, source = "Magister's Terrace" },  -- Legs: Legplates of Lingering Dusk
-            { itemID = 251107, source = "Magister's Terrace" },  -- Boots: Oathsworn Stompers
-            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #1: Omission of Light
+            { itemID = 251082, source = "Windrunner Spire" },  -- Boots: Snapvine Cinch
+            { itemID = 49812, source = "Pit of Saron" },  -- Ring #1: Purloined Wedding Ring
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #2: Occlusion of Void
-            { itemID = 193701, source = "Algeth'ar Academy" },  -- Trinket #1: Algeth'ar Puzzle Box
-            { itemID = 252420, source = "Skyreach" },  -- Trinket #2: Solarflare Prism
+            { itemID = 251136, source = "Murder Row" },  -- Trinket #1: Signet of Snarling Servitude
+            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Trinket #2: Occlusion of Void
         },
     },
     ["PRIEST_DISCIPLINE"] = {  -- updated: 2026/02/25
@@ -1539,7 +1539,7 @@ MCS.PRESET_LISTS = {
             { itemID = 249346, source = "Vaelgor & Ezzorak" },  -- Trinket: Vaelgor's Final Stare
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251188, source = "The Blinding Vale\nThe Blinding Vale\nNexus-Point Xenas" },  -- Weapons: Doompetal (1H)\n Luminescent Sprout (OH)\n Corespark Multitool (2H)
+            { itemID = 251188, source = "The Blinding Vale" },  -- Weapon: Doompetal
             { itemID = 251232, source = "Voidscar Arena" },  -- Head: Overseer's Diadem
             { itemID = 251142, source = "Murder Row" },  -- Neck: Pendant of Malefic Fury
             { itemID = 251213, source = "Nexus-Point Xenas" },  -- Shoulder: Nysarra's Mantle
@@ -1550,8 +1550,8 @@ MCS.PRESET_LISTS = {
             { itemID = 251185, source = "The Blinding Vale" },  -- Waist: Lightblossom Cinch
             { itemID = 251160, source = "Den of Nalorakk" },  -- Legs: Forest Dream Leg-guards
             { itemID = 251137, source = "Murder Row" },  -- Feet: Tempestuous Sandals
-            { itemID = 251093, source = "Nexus-Point Xenas\n        Nexus-Point Xenas\n        Magister's Terrace\n        The Blinding Vale" },  -- Rings: Omission of Light\n         Occlusion of Void\n         Bifurcation Band\n         Sickening Signet of Atroxus
-            { itemID = 250258, source = "Maisara Caverns\nThe Blinding Vale\nWindrunner Spire\nMurder Row" },  -- Top Trinkets: Vessel of Tortured Souls\n Lightspire Core\n Heart of Wind\n Freightrunner's Flask
+            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring: Omission of Light
+            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring: Occlusion of Void
         },
     },
     ["ROGUE_ASSASSINATION"] = {  -- updated: 2026/03/02
@@ -1574,22 +1574,22 @@ MCS.PRESET_LISTS = {
             { itemID = 193701, source = "Algeth'ar Academy" },  -- Trinket: Algeth'ar Puzzle Box
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251128, source = "Murder Row" },  -- Mainhand Weapon: Your highest ilvl dagger.\nBest choice:  Bladesorrow
-            { itemID = 251128, source = "Murder Row" },  -- Offhand Weapon: Bladesorrow
-            { itemID = 251140, source = "Murder Row" },  -- Helm: Vilefiend's Guise
+            { itemID = 251149, source = "Den of Nalorakk" },  -- Mainhand Weapon: Victor's Flashfrozen Blade
+            { itemID = 251149, source = "Den of Nalorakk" },  -- Offhand Weapon: Victor's Flashfrozen Blade
+            { itemID = 251186, source = "The Blinding Vale" },  -- Helm: new item
             { itemID = 251173, source = "Den of Nalorakk" },  -- Neck: Yoke of the Charging Bear
-            { itemID = 251223, source = "Voidscar Arena" },  -- Shoulder: Somber Spaulders
-            { itemID = 260312, source = "Magister's Terrace" },  -- Cloak: Defiant Defender's Drape
-            { itemID = 251226, source = "Voidscar Arena" },  -- Chest: Hide of Pestilence
+            { itemID = 251092, source = "Windrunner Spire" },  -- Shoulder: Fallen Grunt's Mantle
+            { itemID = 251132, source = "Murder Row" },  -- Cloak: Speakeasy Shroud
+            { itemID = 251159, source = "Den of Nalorakk" },  -- Chest: War Trial Vestments
             { itemID = 251183, source = "The Blinding Vale" },  -- Bracers: Rootwarden Wraps
             { itemID = 251124, source = "Murder Row" },  -- Gloves: Gauntlets of Fevered Defense
-            { itemID = 251166, source = "Maisara Caverns" },  -- Belt: Falconer's Cinch
-            { itemID = 251087, source = "Windrunner Spire" },  -- Legs: Legwraps of Lingering Legacies
-            { itemID = 251153, source = "Den of Nalorakk" },  -- Boots: Arctic Explorer's Legwraps
+            { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
+            { itemID = 251153, source = "Den of Nalorakk" },  -- Legs: Arctic Explorer's Legwraps
+            { itemID = 251087, source = "Windrunner Spire" },  -- Boots: Legwraps of Lingering Legacies
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
             { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
-            { itemID = 250144, source = "Windrunner Spire" },  -- Trinket #1: Emberwing Feather
-            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #2: Vessel of Tortured Souls
+            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
+            { itemID = 250225, source = "Voidscar Arena" },  -- Trinket #2: Void Execution Mandate
         },
     },
     ["ROGUE_OUTLAW"] = {  -- updated: 2026/02/25
@@ -1612,22 +1612,22 @@ MCS.PRESET_LISTS = {
             { itemID = 260235, source = "Belo'ren" },  -- Trinket: Umbral Plume
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251175, source = "Maisara Caverns" },  -- Mainhand Weapon: Your highest ilvl slow main-hand.\nBest choice:  Soulblight Cleaver
-            { itemID = 251128, source = "Murder Row" },  -- Offhand Weapon: Bladesorrow
-            { itemID = 251140, source = "Murder Row" },  -- Helm: Vilefiend's Guise
+            { itemID = 251149, source = "Den of Nalorakk" },  -- Mainhand Weapon: Victor's Flashfrozen Blade
+            { itemID = 251077, source = "Windrunner Spire" },  -- Offhand Weapon: Roostwarden's Bough
+            { itemID = 251186, source = "The Blinding Vale" },  -- Helm: new item
             { itemID = 251173, source = "Den of Nalorakk" },  -- Neck: Yoke of the Charging Bear
-            { itemID = 251223, source = "Voidscar Arena" },  -- Shoulder: Somber Spaulders
-            { itemID = 260312, source = "Magister's Terrace" },  -- Cloak: Defiant Defender's Drape
-            { itemID = 251226, source = "Voidscar Arena" },  -- Chest: Hide of Pestilence
+            { itemID = 251092, source = "Windrunner Spire" },  -- Shoulder: Fallen Grunt's Mantle
+            { itemID = 251132, source = "Murder Row" },  -- Cloak: Speakeasy Shroud
+            { itemID = 251159, source = "Den of Nalorakk" },  -- Chest: War Trial Vestments
             { itemID = 251183, source = "The Blinding Vale" },  -- Bracers: Rootwarden Wraps
             { itemID = 251124, source = "Murder Row" },  -- Gloves: Gauntlets of Fevered Defense
-            { itemID = 251166, source = "Maisara Caverns" },  -- Belt: Falconer's Cinch
-            { itemID = 251087, source = "Windrunner Spire" },  -- Legs: Legwraps of Lingering Legacies
-            { itemID = 251153, source = "Den of Nalorakk" },  -- Boots: Arctic Explorer's Legwraps
+            { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
+            { itemID = 251153, source = "Den of Nalorakk" },  -- Legs: Arctic Explorer's Legwraps
+            { itemID = 251087, source = "Windrunner Spire" },  -- Boots: Legwraps of Lingering Legacies
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
             { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
-            { itemID = 250227, source = "Windrunner Spire" },  -- Trinket #1: Kroluk's Warbanner
-            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #2: Vessel of Tortured Souls
+            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
+            { itemID = 250225, source = "Voidscar Arena" },  -- Trinket #2: Void Execution Mandate
         },
     },
     ["ROGUE_SUBTLETY"] = {  -- updated: 2026/02/25
@@ -1650,22 +1650,22 @@ MCS.PRESET_LISTS = {
             { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251128, source = "Murder Row" },  -- Mainhand Weapon: Bladesorrow
-            { itemID = 251128, source = "Murder Row" },  -- Offhand Weapon: Note: You should always use a dagger in your offhand, the best being:  Bladesorrow
-            { itemID = 251109, source = "Magister's Terrace" },  -- Helm: Spellsnap Shadowmask
-            { itemID = 251234, source = "Voidscar Arena" },  -- Neck: Graft of the Domanaar
+            { itemID = 251149, source = "Den of Nalorakk" },  -- Mainhand Weapon: Victor's Flashfrozen Blade
+            { itemID = 251149, source = "Den of Nalorakk" },  -- Offhand Weapon: Victor's Flashfrozen Blade
+            { itemID = 251186, source = "The Blinding Vale" },  -- Helm: new item
+            { itemID = 251142, source = "Murder Row" },  -- Neck: Pendant of Malefic Fury
             { itemID = 251171, source = "Maisara Caverns" },  -- Shoulder: Enthralled Bonespines
-            { itemID = 251190, source = "The Blinding Vale" },  -- Cloak: Bloodthorn Burnous
-            { itemID = 251099, source = "Windrunner Spire" },  -- Chest: Vest of the Howling Gale
-            { itemID = 244595, source = "Leatherworking" },  -- Bracers: Smuggler's Reinforced Binding with Crit/Mastery and  Arcanoweave Lining
+            { itemID = 251132, source = "Murder Row" },  -- Cloak: Speakeasy Shroud
+            { itemID = 251159, source = "Den of Nalorakk" },  -- Chest: War Trial Vestments
+            { itemID = 251183, source = "The Blinding Vale" },  -- Bracers: Rootwarden Wraps
             { itemID = 251124, source = "Murder Row" },  -- Gloves: Gauntlets of Fevered Defense
             { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
-            { itemID = 251130, source = "Murder Row" },  -- Legs: Breeches of Deft Deals
-            { itemID = 244585, source = "Leatherworking" },  -- Boots: Smuggler's Leather Footpads with Crit/Mastery and  Arcanoweave Lining
-            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
-            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
-            { itemID = 250215, source = "Murder Row" },  -- Trinket #1: Freightrunner's Flask
-            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #2: Vessel of Tortured Souls
+            { itemID = 251153, source = "Den of Nalorakk" },  -- Legs: Arctic Explorer's Legwraps
+            { itemID = 251087, source = "Windrunner Spire" },  -- Boots: Legwraps of Lingering Legacies
+            { itemID = 251136, source = "Murder Row" },  -- Ring #1: Signet of Snarling Servitude
+            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #2: Occlusion of Void
+            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
+            { itemID = 250225, source = "Voidscar Arena" },  -- Trinket #2: Void Execution Mandate
         },
     },
     ["SHAMAN_ELEMENTAL"] = {  -- updated: 2026/03/01
@@ -1688,25 +1688,21 @@ MCS.PRESET_LISTS = {
             { itemID = 250144, source = "Windrunner Spire" },  -- Trinket: Emberwing Feather
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251083, source = "Windrunner Spire" },  -- Weapon: Excavating Cudgel
-            { itemID = 251105, source = "Magister's Terrace" },  -- Off-hand: Ward of the Spellbreaker
-            { itemID = 251119, source = "Magister's Terrace" },  -- Helm: Vortex Visage
-            { itemID = 251142, source = "Murder Row" },  -- Neck: Pendant of Malefic Fury
-            { itemID = 251097, source = "Windrunner Spire" },  -- Shoulder: Spaulders of Arrow's Flight
-            { itemID = 239674, source = "Crafted — Leatherworking" },  -- Cloak: Courtly Cloak with  Arcanoweave Lining or  Sunfire Silk Lining,\nMastery and Critical Strike
-            { itemID = 251179, source = "Maisara Caverns" },  -- Chest: Decaying Cuirass
-            { itemID = 244589, source = "Crafted — Leatherworking" },  -- Bracers: Scout's Scaled Bracers with  Arcanoweave Lining or  Sunfire Silk Lining,\nMastery and Critical Strike
-            { itemID = 251089, source = "Windrunner Spire" },  -- Gloves: Grips of Forgotten Honor
-            { itemID = 251155, source = "Den of Nalorakk" },  -- Belt: Tribal Defender's Cord
-            { itemID = 251228, source = "Voidscar Arena" },  -- Belt alternative: Behemoth Waistband
-            { itemID = 251215, source = "Nexus-Point Xenas" },  -- Legs: Greaves of the Divine Guile
-            { itemID = 251084, source = "Windrunner Spire" },  -- Boots: Whipcoil Sabatons
+            { itemID = 251188, source = "The Blinding Vale" },  -- Weapon: Doompetal
+            { itemID = 251232, source = "Voidscar Arena" },  -- Helm: Overseer's Diadem
+            { itemID = 251173, source = "Den of Nalorakk" },  -- Neck: Yoke of the Charging Bear
+            { itemID = 251213, source = "Nexus-Point Xenas" },  -- Shoulder: Nysarra's Mantle
+            { itemID = 251190, source = "The Blinding Vale" },  -- Cloak: Bloodthorn Burnous
+            { itemID = 251139, source = "Murder Row" },  -- Chest: Summoner's Searing Shirt
+            { itemID = 251127, source = "Murder Row" },  -- Bracers: Nibbling Armbands
+            { itemID = 251129, source = "Murder Row" },  -- Gloves: Counterfeit Clutches
+            { itemID = 251185, source = "The Blinding Vale" },  -- Belt: Lightblossom Cinch
+            { itemID = 251160, source = "Den of Nalorakk" },  -- Legs: Forest Dream Leg-guards
+            { itemID = 251137, source = "Murder Row" },  -- Boots: Tempestuous Sandals
             { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #1: Omission of Light
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #2: Occlusion of Void
-            { itemID = 251115, source = "Magister's Terrace" },  -- Ring #2 alternative (if you do not have the set): Bifurcation Band
-            { itemID = 250256, source = "Windrunner Spire" },  -- Trinket #1: Heart of Wind
-            { itemID = 250144, source = "Windrunner Spire" },  -- Trinket #2: Emberwing Feather
-            { itemID = 250215, source = "Murder Row" },  -- Trinket #2 alternative: Freightrunner's Flask
+            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
+            { itemID = 250214, source = "The Blinding Vale" },  -- Trinket #2: Lightspire Core
         },
     },
     ["SHAMAN_ENHANCEMENT"] = {  -- updated: 2026/02/25
@@ -1727,23 +1723,22 @@ MCS.PRESET_LISTS = {
             { itemID = 251093, source = "Nexus Point Xenas" },  -- Ring: Omission of Light
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251224, source = "Voidscar Arena" },  -- Weapons: Hulking Handaxe
-            { itemID = 251175, source = "Maisara Caverns" },  -- Alternative: Soulblight Cleaver
-            { itemID = 251119, source = "Magister's Terrace" },  -- Helm: Vortex Visage
+            { itemID = 251175, source = "Maisara Caverns" },  -- Weapon MH: Soulblight Cleaver
+            { itemID = 251175, source = "Maisara Caverns" },  -- Weapon OH: Soulblight Cleaver
+            { itemID = 251109, source = "Magister's Terrace" },  -- Helm: Spellsnap Shadowmask
             { itemID = 251142, source = "Murder Row" },  -- Neck: Pendant of Malefic Fury
-            { itemID = 251097, source = "Windrunner Spire" },  -- Shoulder: Spaulders of Arrow's Flight
+            { itemID = 251171, source = "Maisara Caverns" },  -- Shoulder: Enthralled Bonespines
             { itemID = 251190, source = "The Blinding Vale" },  -- Cloak: Bloodthorn Burnous
-            { itemID = 251179, source = "Maisara Caverns" },  -- Chest: Decaying Cuirass
-            { itemID = 251079, source = "Windrunner Spire" },  -- Bracers: Amberfrond Bracers
-            { itemID = 251089, source = "Windrunner Spire" },  -- Gloves: Grips of Forgotten Honor
-            { itemID = 251228, source = "Voidscar Arena" },  -- Belt: Behemoth Waistband
-            { itemID = 251215, source = "Nexus-Point Xenas" },  -- Legs: Greaves of the Divine Guile
-            { itemID = 251084, source = "Windrunner Spire" },  -- Boots: Whipcoil Sabatons
-            { itemID = 251115, source = "Magister's Terrace" },  -- Ring #1: Bifurcation Band
-            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
+            { itemID = 251099, source = "Windrunner Spire" },  -- Chest: Vest of the Howling Gale
+            { itemID = 251183, source = "The Blinding Vale" },  -- Bracers: Rootwarden Wraps
+            { itemID = 251113, source = "Magister's Terrace" },  -- Gloves: Gloves of Viscous Goo
+            { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
+            { itemID = 251087, source = "Windrunner Spire" },  -- Legs: Legwraps of Lingering Legacies
+            { itemID = 251153, source = "Den of Nalorakk" },  -- Boots: Arctic Explorer's Legwraps
+            { itemID = 251136, source = "Murder Row" },  -- Ring #1: Signet of Snarling Servitude
+            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #2: Occlusion of Void
             { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
             { itemID = 250225, source = "Voidscar Arena" },  -- Trinket #2: Void Execution Mandate
-            { itemID = 250144, source = "Windrunner Spire\n\tWindrunner Spire\n\tThe Blinding Vale\n\tWindrunner Spire" },  -- Trinket Alt.: Emberwing Feather\n     Heart of Wind\n\t Lightspire Core\n\t Kroluk's Warbanner
         },
     },
     ["SHAMAN_RESTORATION"] = {  -- updated: 2026/02/25
@@ -1956,17 +1951,17 @@ MCS.PRESET_LISTS = {
             { itemID = 251117, source = "Magister's Terrace" },  -- Mainhand Weapon: Whirling Voidcleaver
             { itemID = 251117, source = "Magister's Terrace" },  -- Offhand Weapon: Whirling Voidcleaver
             { itemID = 251098, source = "Windrunner Spire" },  -- Helm: Fletcher's Faded Faceplate
-            { itemID = 151309, source = "Seat of the Triumvirate" },  -- Neck: Necklace of the Twisting Void
-            { itemID = 251164, source = "Maisara Caverns" },  -- Shoulder: Amalgamation's Harness
+            { itemID = 251234, source = "Voidscar Arena" },  -- Neck: Graft of the Domanaar
+            { itemID = 251157, source = "Nexus-Point Xenas" },  -- Shoulder: Searing Spaulders
             { itemID = 260312, source = "Magister's Terrace" },  -- Cloak: Defiant Defender's Drape
-            { itemID = 151329, source = "Seat of the Triumvirate" },  -- Chest: Breastplate of the Dark Touch
-            { itemID = 263193, source = "Maisara Caverns" },  -- Bracers: Trollhunter's Bands
+            { itemID = 50272, source = "Pit of Saron" },  -- Chest: Frost Wyrm Ribcage
+            { itemID = 151328, source = "Seat of the Triumvirate" },  -- Bracers: Vambraces of Lost Hope
             { itemID = 151332, source = "Seat of the Triumvirate" },  -- Gloves: Voidclaw Gauntlets
-            { itemID = 151327, source = "Seat of the Triumvirate" },  -- Belt: Girdle of the Shadowguard
+            { itemID = 49808, source = "Pit of Saron" },  -- Belt: Bent Gold Belt
             { itemID = 251118, source = "Magister's Terrace" },  -- Legs: Legplates of Lingering Dusk
             { itemID = 251107, source = "Magister's Terrace" },  -- Boots: Oathsworn Stompers
-            { itemID = 251115, source = "Magister's Terrace" },  -- Ring #1: Bifurcation Band
-            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
+            { itemID = 49812, source = "Pit of Saron" },  -- Ring #1: Purloined Wedding Ring
+            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #2: Occlusion of Void
             { itemID = 193701, source = "Algeth'ar Academy" },  -- Trinket #1: Algeth'ar Puzzle Box
             { itemID = 252420, source = "Skyreach" },  -- Trinket #2: Solarflare Prism
         },
@@ -1998,15 +1993,15 @@ MCS.PRESET_LISTS = {
             { itemID = 251193, source = "The Blinding Vale" },  -- Chest: Taproot Ribs
             { itemID = 251133, source = "Murder Row" },  -- Bracers: Overseer's Vambraces
             { itemID = 251081, source = "Windrunner Spire" },  -- Gloves: Embergrove Grasps
-            { itemID = 251086, source = "Windrunner Spire" },  -- Belt: Riphook Defender
-            { itemID = 251208, source = "Nexus-Point Xenas" },  -- Legs: Lightscarred Cuisses
+            { itemID = 251144, source = "Den of Nalorakk" },  -- Belt: Autumn's Boon Belt
+            { itemID = 251118, source = "Magister's Terrace" },  -- Legs: Legplates of Lingering Dusk
             { itemID = 251169, source = "Maisara Caverns" },  -- Boots: Footwraps of Ill-Fate
             { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #1: Omission of Light
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #2: Occlusion of Void
-            { itemID = 250258, source = "Maisara Caverns. It is only good if you can pickup the souls, otherwise do not use it." },  -- Trinket #1: Vessel of Tortured Souls
-            { itemID = 250256, source = "Windrunner Spire / Den of Nalorakk" },  -- Trinket #2: Heart of Wind / Idol of the War Loa
-            { itemID = 251195, source = "The Blinding Vale" },  -- Weapon: Thorned Reply
-            { itemID = 251105, source = "Magister's Terrace" },  -- Shield: Ward of the Spellbreaker
+            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
+            { itemID = 250256, source = "Windrunner Spire" },  -- Trinket #2: Heart of Wind
+            { itemID = 251168, source = "Maisara Caverns" },  -- Weapon: Liferipper's Cutlass
+            { itemID = 251196, source = "The Blinding Vale" },  -- Shield: Teldrassil's Sacrifice
         },
     },
 }
