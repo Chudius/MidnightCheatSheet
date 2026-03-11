@@ -1021,9 +1021,7 @@ MCS.PRESET_LISTS = {
             { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251225, source = "Voidscar Arena
-                The Blinding Vale
-                Nexus-Point Xenas" },  -- Weapons: Fang of Contagion
+            { itemID = 251225, source = "Voidscar Arena" },  -- Weapons: Fang of Contagion
             { itemID = 251199, source = "The Blinding Vale" },  -- Head: Worldroot Canopy
             { itemID = 241139, source = "Crafted — Jewelcrafting" },  -- Neck: Thalassian Phoenix Torque
             { itemID = 251227, source = "Voidscar Arena" },  -- Shoulder: Poisoner's Pauldrons
@@ -1034,14 +1032,8 @@ MCS.PRESET_LISTS = {
             { itemID = 251185, source = "The Blinding Vale" },  -- Waist: Lightblossom Cinch
             { itemID = 251090, source = "Windrunner Spire" },  -- Legs: Commander's Faded Breeches
             { itemID = 251137, source = "Murder Row" },  -- Feet: Tempestuous Sandals
-            { itemID = 251093, source = "Nexus-Point Xenas
-                Nexus-Point Xenas
-                Murder Row" },  -- Rings: Omission of Light
-            { itemID = 245829, source = "Crafted - Does not require sparks at 220 item level
-                Maisara Caverns
-                The Blinding Vale
-                Windrunner Spire
-                Windrunner Spire" },  -- Strong Trinkets: Darkmoon Deck: Hunt
+            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Rings: Omission of Light
+            { itemID = 245829, source = "Crafted" },  -- Strong Trinkets: Darkmoon Deck: Hunt
         },
     },
     ["MAGE_FIRE"] = {  -- updated: 2026/02/25
@@ -1430,9 +1422,7 @@ MCS.PRESET_LISTS = {
             { itemID = 249922, source = "Chimaerus (Raid)" },  -- Offhand: Tome of Alnscorned Regret
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251188, source = "The Blinding Vale
-The Blinding Vale
-Nexus-Point Xenas" },  -- Weapons: Doompetal
+            { itemID = 251188, source = "The Blinding Vale" },  -- Weapons: Doompetal
             { itemID = 251232, source = "Voidscar Arena" },  -- Head: Overseer's Diadem
             { itemID = 251142, source = "Murder Row" },  -- Neck: Pendant of Malefic Fury
             { itemID = 251213, source = "Nexus-Point Xenas" },  -- Shoulder: Nysarra's Mantle
@@ -1443,14 +1433,8 @@ Nexus-Point Xenas" },  -- Weapons: Doompetal
             { itemID = 251185, source = "The Blinding Vale" },  -- Waist: Lightblossom Cinch
             { itemID = 251160, source = "Den of Nalorakk" },  -- Legs: Forest Dream Leg-guards
             { itemID = 251137, source = "Murder Row" },  -- Feet: Tempestuous Sandals
-            { itemID = 251093, source = "Nexus-Point Xenas
-        Nexus-Point Xenas
-        Magister's Terrace
-        The Blinding Vale" },  -- Rings: Omission of Light
-            { itemID = 250258, source = "Maisara Caverns
-Maisara Caverns
-The Blinding Vale
-The Singularity Renown Level 7" },  -- Top Trinkets: Vessel of Tortured Souls
+            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Rings: Omission of Light
+            { itemID = 250258, source = "Maisara Caverns" },  -- Top Trinkets: Vessel of Tortured Souls
         },
     },
     ["ROGUE_ASSASSINATION"] = {  -- updated: 2026/03/02
@@ -1640,10 +1624,7 @@ The Singularity Renown Level 7" },  -- Top Trinkets: Vessel of Tortured Souls
             { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
             { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
             { itemID = 250225, source = "Voidscar Arena" },  -- Trinket #2: Void Execution Mandate
-            { itemID = 250144, source = "Windrunner Spire
-	Windrunner Spire
-	The Blinding Vale
-	Windrunner Spire" },  -- Trinket Alt.: Emberwing Feather
+            { itemID = 250144, source = "Windrunner Spire" },  -- Trinket Alt.: Emberwing Feather
         },
     },
     ["SHAMAN_RESTORATION"] = {  -- updated: 2026/03/06
