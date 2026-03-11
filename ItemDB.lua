@@ -131,54 +131,39 @@ end
 D["DEATHKNIGHT_BLOOD"] = S(
     { ["Deathbringer"] = {"Crit","Mastery","Vers","Haste"},
       ["San'layn"] = {"Haste","Mastery","Crit","Vers"} },
-    { wep={"BerserkRage"}, chest="MarkWorld", helm="BlessSpeed",
-      shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
-    {"NatureFury","NatureFury"},
-    { epic="Indecipherable", rare={"QuickGarnet"} },
-    { Flask="FlaskBK", Food="FoodBloom", Potion="PotReck",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"BerserkRage"}, chest="MarkWorld", helm="BlessSpeed", shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
+    {"NatureFury"},
+    { epic="Indecipherable", rare={"QuickGarnet","MastGarnet"} },
+    { Flask="FlaskBK", Food="FoodBloom", Potion="PotReck", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["DEATHKNIGHT_FROST"] = S(
     { ["Deathbringer"] = {"Crit","Mastery","Haste","Vers"},
       ["Rider of the Apocalypse"] = {"Crit","Mastery","Haste","Vers"} },
-    { wep={"BerserkRage","ArcMastery"}, chest="MarkNalo", helm="BlessSpeed",
-      shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
-    {"NatureFury","NatureFury"},
-    { epic="Indecipherable", rare={"DeadlyAmethyst","MastGarnet","DeadlyPeridot","DeadlyLapis"} },
-    { Flask="FlaskSun", Food="FoodRoyal", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"BerserkRage","ArcMastery"}, chest="MarkWorld", helm="BlessSpeed", shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
+    {"EyesEagle"},
+    { epic="Indecipherable", rare={"MastGarnet","DeadlyAmethyst","DeadlyPeridot","DeadlyLapis"} },
+    { Flask="FlaskSun", Food="FoodRoyal", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["DEATHKNIGHT_UNHOLY"] = S(
     { ["Rider of the Apocalypse"] = {"Mastery","Crit","Haste","Vers"},
       ["San'layn"] = {"Mastery","Crit","Haste","Vers"} },
-    { wep={"BerserkRage"}, chest="MarkWorld", helm="BlessSpeed",
-      shoulder="FlightEagle", boots="FarHunt", legs="ForestKit" },
-    {"ZuljinMast","ZuljinMast"},
+    { wep={"BerserkRage"}, chest="MarkWorld", helm="BlessSpeed", shoulder="FlightEagle", boots="FarHunt", legs="ForestKit" },
+    {"ZuljinMast"},
     { epic="Indecipherable", rare={"MastGarnet","DeadlyAmethyst"} },
-    { Flask="FlaskSun", Food="FoodBloom", Potion="PotReck",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskSun", Food="FoodParade", Potion="PotReck", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 -- DEMON HUNTER
 D["DEMONHUNTER_HAVOC"] = S(
     { ["Aldrachi Reaver"] = {"Crit","Mastery","Haste","Vers"},
       ["Fel-Scarred"] = {"Crit","Mastery","Haste","Vers"} },
-    { wep={"JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
-    {"NatureFury","NatureFury"},
+    { wep={"JanalaiPrec","ArcMastery"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
+    {"NatureFury"},
     { epic="Indecipherable", rare={"MastGarnet"} },
-    { Flask="FlaskSun", Food="FoodRoyal", Potion="PotReck",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskSun", Food="FoodRoyal", Potion="PotReck", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["DEMONHUNTER_VENGEANCE"] = S(
     { ["Aldrachi Reaver"] = {"Haste","Crit","Vers","Mastery"},
       ["Annihilator"] = {"Haste","Crit","Vers","Mastery"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="BlessSpeed",
-      shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
-    {"EyesEagle","EyesEagle"},
+    { wep={"AcuityRen","BerserkRage","JanalaiPrec","ArcMastery"}, chest="MarkWorld", helm="BlessSpeed", shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
+    {"EyesEagle","SilvermoonAla"},
     { epic="Indecipherable", rare={"DeadlyPeridot"} },
-    { Flask="FlaskBK", Food="FoodHaranCel", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskBK", Food="FoodBloom", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["DEMONHUNTER_DEVOURER"] = S(
     { ["Void Reaper"] = {"Mastery","Haste","Crit","Vers"},
       ["Abyssal Hunger"] = {"Mastery","Haste","Vers","Crit"} },
@@ -191,355 +176,253 @@ D["DEMONHUNTER_DEVOURER"] = S(
 
 -- DRUID
 D["DRUID_BALANCE"] = S(
-    { ["Keeper of the Grove"] = {"Mastery","Haste","Vers","Crit"},
+    { ["Keeper of the Grove"] = {"Mastery","Haste","Crit","Vers"},
       ["Elune's Chosen"] = {"Mastery","Haste","Vers","Crit"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="SunfireThread" },
-    {"ZuljinMast","ZuljinMast"},
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="SunfireThread" },
+    {"ZuljinMast"},
     { epic="Indecipherable", rare={"QuickAmethyst","MastGarnet","MastPeridot","MastLapis"} },
-    { Flask="FlaskMag", Food="FoodFrenzy", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskMag", Food="FoodBloom", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["DRUID_FERAL"] = S(
     { ["Druid of the Claw"] = {"Mastery","Haste","Crit","Vers"},
       ["Wildstalker"] = {"Mastery","Crit","Haste","Vers"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
-    {"ZuljinMast","ZuljinMast"},
-    { epic="Powerful", rare={"QuickAmethyst","MastPeridot","MastGarnet","MastLapis"} },
-    { Flask="FlaskSun", Food="FoodCalamari", Potion="PotRampant",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
+    {"ZuljinMast"},
+    { epic="Powerful", rare={"QuickAmethyst","MastGarnet","MastLapis"} },
+    { Flask="FlaskSun", Food="FoodBloom", Potion="PotRampant", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["DRUID_GUARDIAN"] = S(
     { ["Druid of the Claw"] = {"Haste","Vers","Crit","Mastery"},
       ["Elune's Chosen"] = {"Haste","Vers","Crit","Mastery"} },
-    { wep={"BerserkRage"}, chest="MarkWorld", helm="BlessSpeed",
-      shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
-    {"SilvermoonAla","SilvermoonAla"},
+    { wep={"BerserkRage"}, chest="MarkWorld", helm="BlessSpeed", shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
+    {"SilvermoonAla"},
     { epic="Indecipherable", rare={"VersPeridot"} },
-    { Flask="FlaskBK", Food="FoodParade", Potion="PotRampant",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskBK", Food="FoodParade", Potion="PotRampant", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["DRUID_RESTORATION"] = S(
     { ["Keeper of the Grove"] = {"Haste","Mastery","Vers","Crit"},
       ["Wildstalker"] = {"Haste","Mastery","Vers","Crit"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="HexLeech",
-      shoulder="SilverMend", boots="ShalRoots", legs="ArcThread" },
-    {"SilvermoonAla","SilvermoonAla"},
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="HexLeech", shoulder="SilverMend", boots="ShalRoots", legs="ArcThread" },
+    {"SilvermoonAla"},
     { epic="Indecipherable", rare={"QuickAmethyst","MastPeridot"} },
-    { Flask="FlaskBK", Food="FoodRoyal", Potion="PotReck",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
-
+    { Flask="FlaskBK", Food="FoodRoyal", Potion="PotReck", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
 -- EVOKER
 D["EVOKER_DEVASTATION"] = S(
     { ["Flameshaper"] = {"Crit","Haste","Mastery","Vers"},
       ["Scalecommander"] = {"Crit","Haste","Mastery","Vers"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="SunfireThread" },
-    {"NatureFury","NatureFury"},
-    { epic="Indecipherable", rare={"QuickGarnet","MastGarnet"} },
-    { Flask="FlaskSun", Food="FoodHaranCel", Potion="PotReck",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="SunfireThread" },
+    {"NatureFury"},
+    { epic="Indecipherable", rare={"QuickGarnet","MastGarnet","DeadlyPeridot","DeadlyAmethyst","DeadlyLapis"} },
+    { Flask="FlaskSun", Food="FoodQuel", Potion="PotReck", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["EVOKER_PRESERVATION"] = S(
-    { ["Flameshaper"] = {"Mastery","Haste","Vers","Crit"},
-      ["Chronowarden"] = {"Mastery","Haste","Vers","Crit"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="HexLeech",
-      shoulder="SilverMend", boots="ShalRoots", legs="ArcThread" },
-    {"ZuljinMast","ZuljinMast"},
+    { ["Flameshaper"] = {"Mastery","Haste","Crit","Vers"},
+      ["Chronowarden"] = {"Mastery","Haste","Crit","Vers"} },
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="HexLeech", shoulder="SilverMend", boots="ShalRoots", legs="ArcThread" },
+    {"ZuljinMast"},
     { epic="Indecipherable", rare={"QuickAmethyst"} },
-    { Flask="FlaskMag", Food="FoodRoyal", Potion="PotReck",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
-
+    { Flask="FlaskMag", Food="FoodRoyal", Potion="PotReck", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
 D["EVOKER_AUGMENTATION"] = S(
     { ["Chronowarden"] = {"Crit","Haste","Mastery","Vers"},
       ["Scalecommander"] = {"Crit","Haste","Mastery","Vers"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="SunfireThread" },
-    {"NatureFury","NatureFury"},
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="SunfireThread" },
+    {"NatureFury"},
     { epic="Indecipherable", rare={"QuickGarnet"} },
-    { Flask="FlaskSun", Food="FoodRoast", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskSun", Food="FoodHeartyParade", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 -- HUNTER
 D["HUNTER_BEAST_MASTERY"] = S(
     { ["Pack Leader"] = {"Mastery","Haste","Crit","Vers"},
       ["Dark Ranger"] = {"Mastery","Haste","Crit","Vers"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
-    {"ZuljinMast","ZuljinMast"},
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
+    {"ZuljinMast"},
     { epic="Indecipherable", rare={"QuickAmethyst","DeadlyAmethyst","MastPeridot"} },
-    { Flask="FlaskMag", Food="FoodQuel", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskMag", Food="FoodQuel", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["HUNTER_MARKSMANSHIP"] = S(
     { ["Dark Ranger"] = {"Crit","Mastery","Haste","Vers"},
       ["Sentinel"] = {"Crit","Mastery","Haste","Vers"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
-    {"NatureFury","NatureFury"},
-    { epic="Powerful", rare={"DeadlyPeridot","DeadlyAmethyst","MastGarnet","DeadlyLapis"} },
-    { Flask="FlaskSun", Food="FoodHaranCel", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
+    {"NatureFury"},
+    { epic="Powerful", rare={"DeadlyPeridot","DeadlyAmethyst","DeadlyLapis","MastGarnet"} },
+    { Flask="FlaskSun", Food="FoodHaranCel", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["HUNTER_SURVIVAL"] = S(
     { ["Pack Leader"] = {"Mastery","Crit","Haste","Vers"},
       ["Sentinel"] = {"Mastery","Crit","Haste","Vers"} },
-    { wep={"ArcMastery","AcuityRen"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
-    {"ZuljinMast","ZuljinMast"},
-    { epic="Indecipherable", rare={"DeadlyAmethyst","MastGarnet"} },
-    { Flask="FlaskMagFlee", Food="FoodParade", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"ArcMastery","AcuityRen"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
+    {"ZuljinMast"},
+    { epic="Indecipherable", rare={"MastGarnet","DeadlyAmethyst"} },
+    { Flask="FlaskMagFlee", Food="FoodParade", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 -- MAGE
 D["MAGE_ARCANE"] = S(
     { ["Spellslinger"] = {"Mastery","Haste","Crit","Vers"},
       ["Sunfury"] = {"Mastery","Haste","Crit","Vers"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="SilverMend", boots="ShalRoots", legs="ArcThread" },
-    {"ZuljinMast","ZuljinMast"},
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid", shoulder="SilverMend", boots="ShalRoots", legs="ArcThread" },
+    {"ZuljinMast"},
     { epic="Powerful", rare={"QuickAmethyst","MastPeridot","MastGarnet","MastLapis"} },
-    { Flask="FlaskResist", Food="FoodParade", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskResist", Food="FoodParade", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["MAGE_FIRE"] = S(
     { ["Frostfire"] = {"Haste","Mastery","Vers","Crit"},
       ["Sunfury"] = {"Haste","Mastery","Vers","Crit"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="SunfireThread" },
-    {"EyesEagle","EyesEagle"},
-    { epic="Powerful", rare={"MastPeridot","QuickAmethyst","QuickGarnet","QuickLapis"} },
-    { Flask="FlaskMag", Food="FoodHaranCel", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="SunfireThread" },
+    {"EyesEagle"},
+    { epic="Powerful", rare={"MastPeridot","QuickAmethyst","QuickLapis","QuickGarnet"} },
+    { Flask="FlaskMag", Food="FoodQuel", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["MAGE_FROST"] = S(
     { ["Frostfire"] = {"Mastery","Crit","Haste","Vers"},
       ["Spellslinger"] = {"Mastery","Crit","Haste","Vers"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="SunfireThread" },
-    {"ZuljinMast","ZuljinMast"},
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="SunfireThread" },
+    {"ZuljinMast"},
     { epic="Powerful", rare={"DeadlyAmethyst","MastGarnet","MastPeridot","MastLapis"} },
-    { Flask="FlaskMag", Food="FoodHaranCel", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskMag", Food="FoodChamp", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 -- MONK
 D["MONK_BREWMASTER"] = S(
-    { ["Shado-Pan"] = {"Crit","Mastery","Vers","Haste"},
-      ["Master of Harmony"] = {"Crit","Mastery","Vers","Haste"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="HexLeech",
-      shoulder="SilverMend", boots="ShalRoots", legs="BloodKit" },
-    {"NatureFury","NatureFury"},
-    { epic="Indecipherable", rare={"VersGarnet","DeadlyLapis"} },
-    { Flask="FlaskSun", Food="FoodParade", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { ["Defensive"] = {"Vers","Crit","Mastery","Haste"},
+      ["Offensive"] = {"Crit","Mastery","Vers","Haste"} },
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="HexLeech", shoulder="SilverMend", boots="ShalRoots", legs="BloodKit" },
+    {"NatureFury"},
+    { epic="Indecipherable", rare={"VersGarnet","DeadlyLapis","DeadlyAmethyst","VersPeridot"} },
+    { Flask="FlaskSun", Food="FoodParade", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["MONK_MISTWEAVER"] = S(
-    { ["Conduit of the Celestials"] = {"Haste","Crit","Vers","Mastery"},
-      ["Master of Harmony"] = {"Haste","Crit","Vers","Mastery"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="HexLeech",
-      shoulder="SilverMend", boots="ShalRoots", legs="SunfireThread" },
-    {"SilvermoonAla","SilvermoonAla"},
+    { ["Raid"] = {"Haste","Crit","Vers","Mastery"},
+      ["Mythic+"] = {"Haste","Vers","Crit","Mastery"} },
+    { wep={"AcuityRen","BerserkRage"}, chest="MarkWorld", helm="HexLeech", shoulder="SilverMend", boots="ShalRoots", legs="SunfireThread" },
+    {"SilvermoonAla"},
     { epic="Indecipherable", rare={"DeadlyPeridot"} },
-    { Flask="FlaskBK", Food="FoodHeartyFlora", Potion="PotReck",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
-
+    { Flask="FlaskBK", Food="FoodHaranCel", Potion="PotReck", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
 D["MONK_WINDWALKER"] = S(
     { ["Shado-Pan"] = {"Haste","Crit","Mastery","Vers"},
       ["Conduit of the Celestials"] = {"Haste","Mastery","Crit","Vers"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
-    {"SilvermoonAla","SilvermoonAla"},
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
+    {"SilvermoonAla"},
     { epic="Indecipherable", rare={"DeadlyPeridot","QuickAmethyst","QuickGarnet"} },
-    { Flask="FlaskBK", Food="FoodImpRoast", Potion="PotReck",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskBK", Food="FoodParade", Potion="PotReck", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 -- PALADIN
 D["PALADIN_HOLY"] = S(
     { ["Herald of the Sun"] = {"Mastery","Haste","Crit","Vers"},
       ["Lightsmith"] = {"Mastery","Haste","Crit","Vers"} },
-    { wep={"AcuityRen"}, chest="MarkMagister", helm="HexLeech",
-      shoulder="SilverMend", boots="ShalRoots", legs="ArcThread" },
-    {"ZuljinMast","ZuljinMast"},
+    { wep={"AcuityRen"}, chest="MarkMagister", helm="HexLeech", shoulder="SilverMend", boots="ShalRoots", legs="ArcThread" },
+    {"ZuljinMast"},
     { epic="TelluricCrit", rare={"QuickAmethyst","MastGarnet","MastPeridot","MastLapis"} },
-    { Flask="FlaskMag", Food="FoodHeartyParade", Potion="PotReck",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
-
+    { Flask="FlaskMag", Food="FoodRoast", Potion="PotReck", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
 D["PALADIN_PROTECTION"] = S(
-    { ["Lightsmith"] = {"Haste","Vers","Mastery","Crit"},
-      ["Templar"] = {"Haste","Vers","Mastery","Crit"} },
-    { wep={"BerserkRage"}, chest="MarkWorld", helm="BlessSpeed",
-      shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
-    {"SilvermoonAla","SilvermoonAla"},
+    { ["Survivability"] = {"Haste","Vers","Mastery","Crit"},
+      ["DPS"] = {"Haste","Vers","Crit","Mastery"} },
+    { wep={"BerserkRage"}, chest="MarkWorld", helm="BlessSpeed", shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
+    {"SilvermoonAla"},
     { epic="Indecipherable", rare={"VersPeridot"} },
-    { Flask="FlaskBK", Food="FoodParade", Potion="PotRampant",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskBK", Food="FoodParade", Potion="PotRampant", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["PALADIN_RETRIBUTION"] = S(
     { ["Herald of the Sun"] = {"Mastery","Haste","Crit","Vers"},
       ["Templar"] = {"Mastery","Haste","Crit","Vers"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="BlessSpeed",
-      shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
-    {"EyesEagle","EyesEagle"},
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="BlessSpeed", shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
+    {"EyesEagle"},
     { epic="Indecipherable", rare={"QuickAmethyst","MastPeridot"} },
-    { Flask="FlaskMag", Food="FoodRoyal", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskMag", Food="FoodRoyal", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 -- PRIEST
 D["PRIEST_DISCIPLINE"] = S(
     { ["Oracle"] = {"Haste","Crit","Mastery","Vers"},
       ["Voidweaver"] = {"Haste","Crit","Mastery","Vers"} },
-    { wep={"BerserkRage"}, chest="MarkWorld", helm="HexLeech",
-      shoulder="SilverMend", boots="LynxDex", legs="SunfireThread" },
-    {"SilvermoonAla","SilvermoonAla"},
-    { epic="Indecipherable", rare={"QuickAmethyst"} },
-    { Flask="FlaskBK", Food="FoodParade", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
-
+    { wep={"BerserkRage"}, chest="MarkWorld", helm="HexLeech", shoulder="SilverMend", boots="ShalRoots", legs="SunfireThread" },
+    {"SilvermoonAla"},
+    { epic="Indecipherable", rare={"DeadlyPeridot"} },
+    { Flask="FlaskBK", Food="FoodRoyal", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
 D["PRIEST_HOLY"] = S(
     { ["Archon"] = {"Crit","Vers","Mastery","Haste"},
       ["Oracle"] = {"Crit","Vers","Mastery","Haste"} },
-    { wep={"JanalaiPrec"}, chest="MarkWorld", helm="HexLeech",
-      shoulder="SilverMend", boots="LynxDex", legs="SunfireThread" },
-    {"NatureFury","NatureFury"},
-    { epic="Powerful", rare={"QuickAmethyst"} },
-    { Flask="FlaskSun", Food="FoodRoyal", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
-
+    { wep={"AcuityRen"}, chest="MarkWorld", helm="HexLeech", shoulder="SilverMend", boots="ShalRoots", legs="SunfireThread" },
+    {"NatureFury"},
+    { epic="Indecipherable", rare={"VersGarnet"} },
+    { Flask="FlaskSun", Food="FoodRoyal", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix", Mana="HealMana" })
 D["PRIEST_SHADOW"] = S(
     { ["Archon"] = {"Haste","Mastery","Crit","Vers"},
       ["Voidweaver"] = {"Haste","Mastery","Crit","Vers"} },
-    { wep={"JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AkilSwift", boots="LynxDex", legs="SunfireThread" },
-    {"SilvermoonAla","SilvermoonAla"},
-    { epic="Indecipherable", rare={"MastPeridot","DeadlyAmethyst","QuickGarnet"} },
-    { Flask="FlaskMag", Food="FoodRoyal", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AkilSwift", boots="LynxDex", legs="SunfireThread" },
+    {"SilvermoonAla"},
+    { epic="Indecipherable", rare={"QuickGarnet","DeadlyAmethyst","MastPeridot"} },
+    { Flask="FlaskMag", Food="FoodBloom", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 -- ROGUE
 D["ROGUE_ASSASSINATION"] = S(
     { ["Deathstalker"] = {"Crit","Haste","Mastery","Vers"},
       ["Fatebound"] = {"Crit","Haste","Mastery","Vers"} },
-    { wep={"BerserkRage","BerserkRage"}, chest="MarkWorld", helm="HexLeech",
-      shoulder="SilverMend", boots="ShalRoots", legs="ForestKit" },
-    {"SilvermoonAla","SilvermoonAla"},
+    { wep={"BerserkRage"}, chest="MarkWorld", helm="HexLeech", shoulder="SilverMend", boots="ShalRoots", legs="ForestKit" },
+    {"SilvermoonAla"},
     { epic="Indecipherable", rare={"QuickGarnet"} },
-    { Flask="FlaskSun", Food="FoodParade", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskSun", Food="FoodParade", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["ROGUE_OUTLAW"] = S(
     { ["Fatebound"] = {"Haste","Crit","Vers","Mastery"},
       ["Trickster"] = {"Haste","Crit","Vers","Mastery"} },
-    { wep={"JanalaiPrec","JanalaiPrec"}, chest="MarkWorld", helm="HexLeech",
-      shoulder="SilverMend", boots="ShalRoots", legs="ForestKit" },
-    {"NatureFury","NatureFury"},
-    { epic="Powerful", rare={"DeadlyPeridot"} },
-    { Flask="FlaskSun", Food="FoodHaranCel", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"JanalaiPrec","BerserkRage"}, chest="MarkWorld", helm="HexLeech", shoulder="SilverMend", boots="ShalRoots", legs="ForestKit" },
+    {"NatureFury","SilvermoonAla"},
+    { epic="Powerful", rare={"DeadlyPeridot","DeadlyAmethyst","QuickGarnet","QuickLapis"} },
+    { Flask="FlaskSun", Food="FoodChamp", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["ROGUE_SUBTLETY"] = S(
     { ["Deathstalker"] = {"Mastery","Haste","Crit","Vers"},
       ["Trickster"] = {"Mastery","Haste","Crit","Vers"} },
-    { wep={"AcuityRen","ArcMastery"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
-    {"EyesEagle","EyesEagle"},
+    { wep={"AcuityRen","ArcMastery","BerserkRage","JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
+    {"EyesEagle"},
     { epic="Indecipherable", rare={"QuickAmethyst","DeadlyPeridot","MastGarnet"} },
-    { Flask="FlaskSun", Food="FoodCalamari", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskMag", Food="FoodBloom", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 -- SHAMAN
 D["SHAMAN_ELEMENTAL"] = S(
     { ["Stormbringer"] = {"Mastery","Haste","Crit","Vers"},
       ["Farseer"] = {"Mastery","Haste","Crit","Vers"} },
-    { wep={"JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="SunfireThread" },
-    {"ZuljinMast","ZuljinMast"},
+    { wep={"ArcMastery","JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="SunfireThread" },
+    {"ZuljinMast"},
     { epic="Powerful", rare={"MastGarnet","MastPeridot","DeadlyAmethyst","MastLapis"} },
-    { Flask="FlaskMag", Food="FoodHaranCel", Potion="PotReck",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskMag", Food="FoodHaranCel", Potion="PotReck", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["SHAMAN_ENHANCEMENT"] = S(
     { ["Stormbringer"] = {"Haste","Mastery","Crit","Vers"},
       ["Totemic"] = {"Mastery","Haste","Crit","Vers"} },
-    { wep={"ArcMastery","BerserkRage"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
-    {"ZuljinMast","ZuljinMast"},
-    { epic="Indecipherable", rare={"QuickAmethyst","MastPeridot"} },
-    { Flask="FlaskMag", Food="FoodParade", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune" })
-
+    { wep={"ArcMastery","BerserkRage","AcuityRen"}, chest="MarkWorld", helm="RuneAvoid", shoulder="AmirGrace", boots="LynxDex", legs="ForestKit" },
+    {"ZuljinMast"},
+    { epic="Indecipherable", rare={"QuickAmethyst","MastPeridot","MastGarnet"} },
+    { Flask="FlaskMag", Food="FoodParade", Potion="PotLight", Healing="HealHP", Rune="AugRune" })
 D["SHAMAN_RESTORATION"] = S(
-    { ["Farseer"] = {"Crit","Haste","Vers","Mastery"},
+    { ["Farseer"] = {"Crit","Haste","Mastery","Vers"},
       ["Totemic"] = {"Crit","Vers","Haste","Mastery"} },
-    { wep={"AcuityRen"}, chest="MarkMagister", helm="HexLeech",
-      shoulder="SilverMend", boots="ShalRoots", legs="ArcThread" },
-    {"NatureFury","NatureFury"},
-    { epic="TelluricCrit", rare={"VersGarnet","DeadlyPeridot","DeadlyLapis","DeadlyAmethyst"} },
-    { Flask="FlaskSun", Food="FoodParade", Potion="PotReck",
-      Healing="HealHP", Rune="AugRune", Mana="HealMana" })
-
+    { wep={"AcuityRen"}, chest="MarkMagister", helm="HexLeech", shoulder="SilverMend", boots="ShalRoots", legs="ArcThread" },
+    {"NatureFury"},
+    { epic="Indecipherable", rare={"VersGarnet","DeadlyPeridot","DeadlyLapis","DeadlyAmethyst"} },
+    { Flask="FlaskSun", Food="FoodParade", Potion="PotReck", Healing="HealHP", Rune="AugRune", Mana="HealMana" })
 -- WARLOCK
 D["WARLOCK_AFFLICTION"] = S(
     { ["Hellcaller"] = {"Mastery","Crit","Haste","Vers"},
       ["Soul Harvester"] = {"Mastery","Crit","Haste","Vers"} },
-    { wep={"JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="FlightEagle", boots="LynxDex", legs="SunfireThread" },
-    {"SilvermoonAla","SilvermoonAla"},
-    { epic="Indecipherable", rare={"MastPeridot","DeadlyAmethyst","QuickGarnet"} },
-    { Flask="FlaskMag", Food="FoodRoyal", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid", shoulder="FlightEagle", boots="LynxDex", legs="SunfireThread" },
+    {"SilvermoonAla"},
+    { epic="Indecipherable", rare={"QuickGarnet","DeadlyAmethyst","MastPeridot"} },
+    { Flask="FlaskMag", Food="FoodQuel", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["WARLOCK_DEMONOLOGY"] = S(
     { ["Diabolist"] = {"Haste","Crit","Mastery","Vers"},
       ["Soul Harvester"] = {"Haste","Crit","Mastery","Vers"} },
-    { wep={"JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="FlightEagle", boots="LynxDex", legs="SunfireThread" },
-    {"SilvermoonAla","SilvermoonAla"},
-    { epic="Indecipherable", rare={"MastPeridot","DeadlyAmethyst","QuickGarnet"} },
-    { Flask="FlaskSun", Food="FoodRoyal", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid", shoulder="FlightEagle", boots="LynxDex", legs="SunfireThread" },
+    {"SilvermoonAla"},
+    { epic="Indecipherable", rare={"QuickGarnet","DeadlyAmethyst","MastPeridot"} },
+    { Flask="FlaskSun", Food="FoodRoyal", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["WARLOCK_DESTRUCTION"] = S(
     { ["Diabolist"] = {"Haste","Mastery","Crit","Vers"},
       ["Hellcaller"] = {"Haste","Mastery","Crit","Vers"} },
-    { wep={"JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid",
-      shoulder="FlightEagle", boots="LynxDex", legs="SunfireThread" },
-    {"SilvermoonAla","SilvermoonAla"},
-    { epic="Indecipherable", rare={"MastPeridot","DeadlyAmethyst","QuickGarnet"} },
-    { Flask="FlaskMag", Food="FoodRoyal", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"JanalaiPrec"}, chest="MarkWorld", helm="RuneAvoid", shoulder="FlightEagle", boots="LynxDex", legs="SunfireThread" },
+    {"SilvermoonAla"},
+    { epic="Indecipherable", rare={"QuickGarnet","DeadlyAmethyst","MastPeridot"} },
+    { Flask="FlaskMag", Food="FoodBloom", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 -- WARRIOR
 D["WARRIOR_ARMS"] = S(
     { ["Colossus"] = {"Crit","Haste","Mastery","Vers"},
       ["Slayer"] = {"Crit","Haste","Mastery","Vers"} },
-    { wep={"AcuityRen"}, chest="MarkWorld", helm="HexLeech",
-      shoulder="AmirGrace", boots="LynxDex", legs="BloodKit" },
-    {"NatureFury","NatureFury"},
-    { epic="Indecipherable", rare={"QuickGarnet"} },
-    { Flask="FlaskSun", Food="FoodBloom", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"AcuityRen","BerserkRage"}, chest="MarkWorld", helm="HexLeech", shoulder="AmirGrace", boots="LynxDex", legs="BloodKit" },
+    {"NatureFury","SilvermoonAla"},
+    { epic="Indecipherable", rare={"QuickGarnet","DeadlyPeridot"} },
+    { Flask="FlaskSun", Food="FoodBloom", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["WARRIOR_FURY"] = S(
     { ["Mountain Thane"] = {"Haste","Mastery","Crit","Vers"},
       ["Slayer"] = {"Haste","Mastery","Crit","Vers"} },
-    { wep={"ArcMastery","ArcMastery"}, chest="MarkWorld", helm="HexLeech",
-      shoulder="AmirGrace", boots="LynxDex", legs="BloodKit" },
-    {"ZuljinMast","ZuljinMast"},
-    { epic="Indecipherable", rare={"QuickAmethyst"} },
-    { Flask="FlaskMag", Food="FoodBloom", Potion="PotLight",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { wep={"ArcMastery","BerserkRage"}, chest="MarkWorld", helm="HexLeech", shoulder="AmirGrace", boots="LynxDex", legs="BloodKit" },
+    {"ZuljinMast","SilvermoonAla"},
+    { epic="Indecipherable", rare={"QuickAmethyst","MastPeridot"} },
+    { Flask="FlaskMag", Food="FoodBloom", Potion="PotLight", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 D["WARRIOR_PROTECTION"] = S(
     { ["Colossus"] = {"Haste","Crit","Vers","Mastery"},
       ["Mountain Thane"] = {"Haste","Crit","Vers","Mastery"} },
-    { wep={"BerserkRage"}, chest="MarkWorld", helm="BlessSpeed",
-      shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
-    {"SilvermoonAla","SilvermoonAla"},
+    { wep={"BerserkRage"}, chest="MarkWorld", helm="BlessSpeed", shoulder="AkilSwift", boots="FarHunt", legs="ForestKit" },
+    {"SilvermoonAla"},
     { epic="Indecipherable", rare={"VersPeridot"} },
-    { Flask="FlaskBK", Food="FoodParade", Potion="PotRampant",
-      Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
-
+    { Flask="FlaskBK", Food="FoodParade", Potion="PotRampant", Healing="HealHP", Rune="AugRune", Oil="OilPhoenix" })
 ----------------------------------------------------------------------
 -- PRESET WISHLISTS (addon-provided, read-only)
 -- Auto-generated by tools/scrape_bis.py — do not edit manually.
@@ -548,16 +431,16 @@ D["WARRIOR_PROTECTION"] = S(
 -- Users cannot edit these. They can copy items to their own (user) lists.
 ----------------------------------------------------------------------
 MCS.PRESET_LISTS = {
-    ["DEATHKNIGHT_BLOOD"] = {  -- updated: 2026/02/25
+    ["DEATHKNIGHT_BLOOD"] = {  -- updated: 2026/03/10
         ["Overall BiS"] = {
             { itemID = 49802, source = "Pit of Saron" },  -- Weapon: Garfrost's Two-Ton Hammer
-            { itemID = 151333, source = "Seat of the Triumvirate" },  -- Head: Crown of the Dark Envoy
+            { itemID = 249970, source = "Tier Set" },  -- Head: Relentless Rider's Crown
             { itemID = 249368, source = "Crown of the Cosmos" },  -- Neck: Eternal Voidsong Chain
             { itemID = 249968, source = "Tier Set" },  -- Shoulders: Relentless Rider's Dreadthorns
             { itemID = 260312, source = "Magister's Terrace" },  -- Cloak: Defiant Defender's Drape
-            { itemID = 249973, source = "Tier Set" },  -- Chest: Relentless Rider's Cuirass
+            { itemID = 249973, source = "" },  -- Chest: Relentless Rider's Cuirass
             { itemID = 237834, source = "Crafting" },  -- Wrist: Spellbreaker's Bracers
-            { itemID = 249971, source = "Tier Set" },  -- Gloves: Relentless Rider's Bonegrasps
+            { itemID = 151332, source = "Seat of the Triumvirate" },  -- Gloves: Voidclaw Gauntlets
             { itemID = 49808, source = "Pit of Saron" },  -- Belt: Bent Gold Belt
             { itemID = 249969, source = "Tier Set" },  -- Legs: Relentless Rider's Legguards
             { itemID = 249381, source = "Chimaerus" },  -- Boots: Greaves of the Unformed
@@ -657,19 +540,19 @@ MCS.PRESET_LISTS = {
             { itemID = 251168, source = "Maisara Caverns" },  -- 2H Weapon: Liferipper's Cutlass
         },
     },
-    ["DEMONHUNTER_HAVOC"] = {  -- updated: 2026/02/25
+    ["DEMONHUNTER_HAVOC"] = {  -- updated: 2026/03/07
         ["Overall BiS"] = {
             { itemID = 260408, source = "Midnight Falls" },  -- Weapon: Lightless Lament
             { itemID = 249280, source = "Vaelgor & Ezzorak" },  -- Offhand: Emblazoned Sunglaive
-            { itemID = 250033, source = "Tier Set" },  -- Head: Devouring Reaver's Intake
+            { itemID = 251109, source = "Magister's Terrace" },  -- Head: Spellsnap Shadowmask
             { itemID = 250247, source = "Midnight Falls" },  -- Neck: Amulet of the Abyssal Hymn
             { itemID = 250031, source = "Tier Set" },  -- Shoulders: Devouring Reaver's Exhaustplates
-            { itemID = 239656, source = "Crafting" },  -- Cloak: Adherent's Silken Shroud
+            { itemID = 239656, source = "Crafting/Misc" },  -- Cloak: Adherent's Silken Shroud
             { itemID = 250036, source = "Tier Set" },  -- Chest: Devouring Reaver's Engine
-            { itemID = 244576, source = "Crafting" },  -- Wrist: Silvermoon Agent's Deflectors
+            { itemID = 244576, source = "Crafting/Misc" },  -- Wrist: Silvermoon Agent's Deflectors
             { itemID = 250034, source = "Tier Set" },  -- Gloves: Devouring Reaver's Essence Grips
             { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
-            { itemID = 251087, source = "Windrunner Spire" },  -- Legs: Legwraps of Lingering Legacies
+            { itemID = 250032, source = "Tier Set" },  -- Legs: Devouring Reaver's Pistons
             { itemID = 258577, source = "Skyreach" },  -- Boots: Boots of Burning Focus
             { itemID = 249919, source = "Belo'ren" },  -- Ring: Sin'dorei Band of Hope
             { itemID = 251217, source = "Nexus Point Xenas" },  -- Ring: Occlusion of Void
@@ -717,7 +600,6 @@ MCS.PRESET_LISTS = {
         },
         ["Pre-Raid BiS"] = {
             { itemID = 251231, source = "Voidscar Arena" },  -- Weapon Main-Hand: Singularity Slicer
-            { itemID = 251231, source = "Voidscar Arena" },  -- Weapon Off-Hand: Singularity Slicer
             { itemID = 251177, source = "Maisara Caverns" },  -- Helm: Fetid Vilecrown
             { itemID = 251173, source = "Den of Nalorakk" },  -- Neck: Yoke of the Charging Bear
             { itemID = 251146, source = "Den of Nalorakk" },  -- Shoulder: Scavenger's Spaulders
@@ -849,42 +731,41 @@ MCS.PRESET_LISTS = {
             { itemID = 193701, source = "Algeth'ar Academy" },  -- Trinket: Algeth'ar Puzzle Box
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251098, source = "Windrunner Spire" },  -- Helm: Fletcher's Faded Faceplate
-            { itemID = 251173, source = "Den of Nalorakk" },  -- Neck: Yoke of the Charging Bear
-            { itemID = 251138, source = "Murder Row" },  -- Shoulder: Cinderfury Shoulderguards
-            { itemID = 260312, source = "Magister's Terrace" },  -- Cloak: Defiant Defender's Drape
-            { itemID = 251193, source = "The Blinding Vale" },  -- Chest: Taproot Ribs
-            { itemID = 251133, source = "Murder Row" },  -- Bracers: Overseer's Vambraces
-            { itemID = 251214, source = "Den of Nalorakk" },  -- Gloves: Bonds of the Hash'ura
-            { itemID = 251086, source = "Windrunner Spire" },  -- Belt: Riphook Defender
-            { itemID = 251182, source = "The Blinding Vale" },  -- Legs: Bedrock Breeches
-            { itemID = 251107, source = "Magister's Terrace" },  -- Boots: Oathsworn Stompers
+            { itemID = 258529, source = "Algeth'ar Academy" },  -- Weapon: Arcaneclaw Spear
+            { itemID = 151336, source = "Seat of the Triumvirate" },  -- Helm: Voidlashed Hood
+            { itemID = 151309, source = "Seat of the Triumvirate" },  -- Neck: Necklace of the Twisting Void
+            { itemID = 251092, source = "Windrunner Spire" },  -- Shoulder: Fallen Grunt's Mantle
+            { itemID = 193712, source = "Algeth'ar Academy" },  -- Cloak: Potion-Stained Cloak
+            { itemID = 251216, source = "Nexus-Point Xenas" },  -- Chest: Maledict Vest
+            { itemID = 251103, source = "Magister's Terrace" },  -- Bracers: Custodial Cuffs
+            { itemID = 251204, source = "Nexus-Point Xenas" },  -- Gloves: Corewright's Zappers
+            { itemID = 251166, source = "Maisara Caverns" },  -- Belt: Falconer's Cinch
+            { itemID = 251087, source = "Windrunner Spire" },  -- Legs: Legwraps of Lingering Legacies
+            { itemID = 251210, source = "Nexus-Point Xenas" },  -- Boots: Eclipse Espadrilles
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
             { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
-            { itemID = 250259, source = "The Blinding Vale" },  -- Trinket #1: Sapling of the Dawnroot
-            { itemID = 250238, source = "The Blinding Vale" },  -- Trinket #2: Seed of the Devouring Wild
-            { itemID = 251168, source = "Maisara Caverns" },  -- Weapon: Liferipper's Cutlass
-            { itemID = 251196, source = "The Blinding Vale" },  -- Off-Hand: Teldrassil's Sacrifice
+            { itemID = 250256, source = "Windrunner Spire" },  -- Trinket #1: Heart of Wind
+            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #2: Vessel of Tortured Souls
         },
     },
-    ["DRUID_RESTORATION"] = {  -- updated: 2026/02/25
+    ["DRUID_RESTORATION"] = {  -- updated: 2026/03/08
         ["Overall BiS"] = {
-            { itemID = 249283, source = "Belo'ren" },  -- Weapon: Belo'melorn, the Shattered Talon
-            { itemID = 249922, source = "Chimaerus" },  -- Offhand: Tome of Alnscorned Regret
-            { itemID = 250024, source = "Tier Set" },  -- Helm: Branches of the Luminous Bloom
-            { itemID = 250247, source = "Midnight Falls" },  -- Neck: Amulet of the Abyssal Hymn
-            { itemID = 250022, source = "Tier Set" },  -- Shoulders: Seedpods of the Luminous Bloom
-            { itemID = 249370, source = "Vaelgor & Ezzorak" },  -- Cape: Draconic Nullcape
+            { itemID = 250024, source = "Raid | Catalyst | Vault" },  -- Helm: Branches of the Luminous Bloom
+            { itemID = 250247, source = "Midnight Falls (Raid)" },  -- Neck: Amulet of the Abyssal Hymn
+            { itemID = 250022, source = "Raid | Catalyst | Vault" },  -- Shoulders: Seedpods of the Luminous Bloom
+            { itemID = 249370, source = "Vaelgor & Ezzorak (Raid)" },  -- Cape: Draconic Nullcape
             { itemID = 251216, source = "Nexus Point Xenas" },  -- Chest: Maledict Vest
             { itemID = 193714, source = "Algeth'ar Academy" },  -- Bracers: Frenzyroot Cuffs
-            { itemID = 250025, source = "Tier Set" },  -- Gloves: Arbortenders of the Luminous Bloom
-            { itemID = 249314, source = "Fallen-King Salhadaar" },  -- Belt: Twisted Twilight Sash
-            { itemID = 250023, source = "Tier Set" },  -- Legs: Phloemwraps of the Luminous Bloom
+            { itemID = 250025, source = "Raid | Catalyst | Vault" },  -- Gloves: Arbortenders of the Luminous Bloom
+            { itemID = 249314, source = "Fallen-King Salhadaar (Raid)" },  -- Belt: Twisted Twilight Sash
+            { itemID = 250023, source = "Raid | Catalyst | Vault" },  -- Legs: Phloemwraps of the Luminous Bloom
             { itemID = 251210, source = "Nexus Point Xenas" },  -- Boots: Eclipse Espadrilles
-            { itemID = 249920, source = "Midnight Falls" },  -- Ring: Eye of Midnight
+            { itemID = 249920, source = "Midnight Falls (Raid)" },  -- Ring: Eye of Midnight
             { itemID = 251115, source = "Magister's Terrace" },  -- Ring: Bifurcation Band
-            { itemID = 249809, source = "Crown of the Cosmos" },  -- Trinket: Locus-Walker's Ribbon
-            { itemID = 249346, source = "Vaelgor & Ezzorak" },  -- Trinket: Vaelgor's Final Stare
+            { itemID = 249809, source = "Crown of the Cosmos (Raid)" },  -- Trinkets: Locus-Walker's Ribbon
+            { itemID = 249346, source = "Vaelgor & Ezzorak (Raid)" },  -- Trinkets: Vaelgor's Final Stare
+            { itemID = 249283, source = "Belo'ren (Raid)" },  -- 1h Weapon: Belo'melorn, the Shattered Talon
+            { itemID = 249922, source = "Chimaerus (Raid)" },  -- Offhand: Tome of Alnscorned Regret
         },
         ["Pre-Raid BiS"] = {
             { itemID = 251201, source = "Nexus-Point Xenas" },  -- 2 Handed Weapon: Corespark Multitool (or highest level)
@@ -976,21 +857,21 @@ MCS.PRESET_LISTS = {
     },
     ["EVOKER_PRESERVATION"] = {  -- updated: 2026/02/25
         ["Overall BiS"] = {
-            { itemID = 258514, source = "Seat of the Triumvirate" },  -- Weapon: Umbral Spire of Zuraal
-            { itemID = 249914, source = "Midnight Falls" },  -- Helm: Oblivion Guise
-            { itemID = 250247, source = "Midnight Falls" },  -- Neck: Amulet of the Abyssal Hymn
-            { itemID = 249995, source = "Tier Set" },  -- Shoulders: Beacons of the Black Talon
+            { itemID = 249914, source = "Midnight Falls (Raid)" },  -- Helm: Oblivion Guise
+            { itemID = 250247, source = "Midnight Falls (Raid)" },  -- Neck: Amulet of the Abyssal Hymn
+            { itemID = 249995, source = "Raid | Catalyst | Vault" },  -- Shoulders: Beacons of the Black Talon
             { itemID = 251206, source = "Nexus Point Xenas" },  -- Cape: Fluxweave Cloak
-            { itemID = 250000, source = "Tier Set" },  -- Chest: Frenzyward of the Black Talon
+            { itemID = 250000, source = "Raid | Catalyst | Vault" },  -- Chest: Frenzyward of the Black Talon
             { itemID = 251079, source = "Windrunner Spire" },  -- Bracers: Amberfrond Bracers
-            { itemID = 249998, source = "Tier Set" },  -- Gloves: Enforcer's Grips of the Black Talon
+            { itemID = 249998, source = "Raid | Catalyst | Vault" },  -- Gloves: Enforcer's Grips of the Black Talon
             { itemID = 193722, source = "Algeth'ar Academy" },  -- Belt: Azure Belt of Competition
-            { itemID = 249996, source = "Tier Set" },  -- Legs: Greaves of the Black Talon
+            { itemID = 249996, source = "Raid | Catalyst | Vault" },  -- Legs: Greaves of the Black Talon
             { itemID = 251084, source = "Windrunner Spire" },  -- Boots: Whipcoil Sabatons
-            { itemID = 249369, source = "Lightblinded Vanguard" },  -- Ring: Bond of Light
-            { itemID = 249920, source = "Midnight Falls" },  -- Ring: Eye of Midnight
-            { itemID = 249346, source = "Vaelgor & Ezzorak" },  -- Trinket: Vaelgor's Final Stare
-            { itemID = 249809, source = "Crown of the Cosmos" },  -- Trinket: Locus-Walker's Ribbon
+            { itemID = 249369, source = "Lightblinded Vanguard (Raid)" },  -- Ring: Bond of Light
+            { itemID = 249920, source = "Midnight Falls (Raid)" },  -- Ring: Eye of Midnight
+            { itemID = 249346, source = "Vaelgor & Ezzorak (Raid)" },  -- Trinkets: Vaelgor's Final Stare
+            { itemID = 249809, source = "Crown of the Cosmos (Raid)" },  -- Trinkets: Locus-Walker's Ribbon
+            { itemID = 258514, source = "Seat of the Triumvirate" },  -- 2h Weapon: Umbral Spire of Zuraal
         },
         ["Pre-Raid BiS"] = {
             { itemID = 251201, source = "Nexus-Point Xenas" },  -- Weapon: Corespark Multitool
@@ -1010,7 +891,7 @@ MCS.PRESET_LISTS = {
             { itemID = 250214, source = "The Blinding Vale" },  -- Trinket #2: Lightspire Core
         },
     },
-    ["HUNTER_BEAST_MASTERY"] = {  -- updated: 2026/03/01
+    ["HUNTER_BEAST_MASTERY"] = {  -- updated: 2026/03/07
         ["Overall BiS"] = {
             { itemID = 251174, source = "Maisara Caverns" },  -- Weapon: Deceiver's Rotbow
             { itemID = 249988, source = "Tier Set" },  -- Head: Primal Sentry's Maw
@@ -1021,7 +902,6 @@ MCS.PRESET_LISTS = {
             { itemID = 251209, source = "Nexus Point Xenas" },  -- Wrist: Corewarden Cuffs
             { itemID = 249989, source = "Tier Set" },  -- Gloves: Primal Sentry's Talonguards
             { itemID = 244611, source = "Leatherworking" },  -- Belt: World Tender's Barkclasp
-            { itemID = 249989, source = "Tier Set" },  -- Legs: Primal Sentry's Talonguards
             { itemID = 244610, source = "Leatherworking" },  -- Boots: World Tender's Rootslippers
             { itemID = 249920, source = "Midnight Falls" },  -- Ring: Eye of Midnight
             { itemID = 249369, source = "Lightblinded Vanguard" },  -- Ring: Bond of Light
@@ -1082,9 +962,11 @@ MCS.PRESET_LISTS = {
             { itemID = 251095, source = "Windrunner Spire" },  -- Weapon: Hurricane's Heart
         },
     },
-    ["HUNTER_SURVIVAL"] = {  -- updated: 2026/03/01
+    ["HUNTER_SURVIVAL"] = {  -- updated: 2026/03/09
         ["Overall BiS"] = {
-            { itemID = 251077, source = "Windrunner Spire" },  -- Weapon: Roostwarden's Bough
+            { itemID = 251077, source = "Windrunner Spire" },  -- 2H Weapon: Roostwarden's Bough
+            { itemID = 249284, source = "Belo'ren" },  -- Main Hand: Belo'ren's Swift Talon
+            { itemID = 237837, source = "Crafting" },  -- Off Hand: Farstrider's Mercy
             { itemID = 249988, source = "Tier Set" },  -- Head: Primal Sentry's Maw
             { itemID = 250247, source = "Seat of the Triumvirate" },  -- Neck: Amulet of the Abyssal Hymn
             { itemID = 249986, source = "Tier Set" },  -- Shoulders: Primal Sentry's Trophies
@@ -1117,42 +999,49 @@ MCS.PRESET_LISTS = {
             { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #2: Vessel of Tortured Souls
             { itemID = 251077, source = "Windrunner Spire" },  -- Weapon ( Sentinel): Roostwarden's Bough
             { itemID = 251180, source = "The Blinding Vale" },  -- Main Hand ( Pack Leader): Thornblade
-            { itemID = 251180, source = "The Blinding Vale" },  -- Off-Hand ( Pack Leader): Thornblade
         },
     },
-    ["MAGE_ARCANE"] = {  -- updated: 2026/02/27
+    ["MAGE_ARCANE"] = {  -- updated: 2026/03/07
         ["Overall BiS"] = {
             { itemID = 258218, source = "Skyreach" },  -- Weapon: Skybreaker's Blade
             { itemID = 251094, source = "Windrunner Spire" },  -- Offhand: Sigil of the Restless Heart
             { itemID = 250060, source = "Tier Set" },  -- Head: Voidbreaker's Veil
             { itemID = 250247, source = "Midnight Falls" },  -- Neck: Amulet of the Abyssal Hymn
             { itemID = 250058, source = "Tier Set" },  -- Shoulders: Voidbreaker's Leyline Nexi
-            { itemID = 239656, source = "Crafting" },  -- Cloak: Adherent's Silken Shroud
+            { itemID = 239661, source = "Crafting" },  -- Cloak: Arcanoweave Cloak
             { itemID = 250063, source = "Tier Set" },  -- Chest: Voidbreaker's Robe
-            { itemID = 258580, source = "Skyreach" },  -- Wrist: Bracers of Blazing Light
+            { itemID = 239660, source = "Crafting" },  -- Wrist: Arcanoweave Bracers
             { itemID = 250061, source = "Tier Set" },  -- Gloves: Voidbreaker's Gloves
             { itemID = 249376, source = "Belo'ren" },  -- Belt: Whisper-Inscribed Sash
             { itemID = 251090, source = "Windrunner Spire" },  -- Legs: Commander's Faded Breeches
             { itemID = 249373, source = "Chimaerus" },  -- Boots: Dream-Scorched Striders
-            { itemID = 240949, source = "Crafting" },  -- Ring: Masterwork Sin'dorei Band
+            { itemID = 249919, source = "Belo'ren" },  -- Ring: Sin'dorei Band of Hope
             { itemID = 249920, source = "Midnight Falls" },  -- Ring: Eye of Midnight
             { itemID = 249346, source = "Vaelgor & Ezzorak" },  -- Trinket: Vaelgor's Final Stare
             { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251225, source = "Voidscar Arena\n                The Blinding Vale\n                Nexus-Point Xenas" },  -- Weapons: Fang of Contagion (Main-Hand)\n                 Luminescent Sprout (Off-hand)\n                 Corespark Multitool (Staff)
+            { itemID = 251225, source = "Voidscar Arena
+                The Blinding Vale
+                Nexus-Point Xenas" },  -- Weapons: Fang of Contagion
             { itemID = 251199, source = "The Blinding Vale" },  -- Head: Worldroot Canopy
-            { itemID = 241139, source = "Crafted — Jewelcrafting" },  -- Neck: Thalassian Phoenix Torque with  Prismatic Focusing Iris
+            { itemID = 241139, source = "Crafted — Jewelcrafting" },  -- Neck: Thalassian Phoenix Torque
             { itemID = 251227, source = "Voidscar Arena" },  -- Shoulder: Poisoner's Pauldrons
-            { itemID = 239656, source = "Crafted — Tailoring" },  -- Cloak: Adherent's Silken Shroud with  Stabilizing Gemstone Bandolier
-            { itemID = 251139, source = "Murder Row" },  -- Chest: Summoner's Searing Shirt
-            { itemID = 239648, source = "Crafted — Tailoring" },  -- Wrist: Martyr's Bindings with  Devouring Banding (Versatility/Mastery)
+            { itemID = 239656, source = "Crafted — Tailoring" },  -- Cloak: Adherent's Silken Shroud
+            { itemID = 251147, source = "Den of Nalorakk" },  -- Chest: Hoarded Harvest Wrap
+            { itemID = 239648, source = "Crafted — Tailoring" },  -- Wrist: Martyr's Bindings
             { itemID = 251129, source = "Murder Row" },  -- Hands: Counterfeit Clutches
             { itemID = 251185, source = "The Blinding Vale" },  -- Waist: Lightblossom Cinch
             { itemID = 251090, source = "Windrunner Spire" },  -- Legs: Commander's Faded Breeches
             { itemID = 251137, source = "Murder Row" },  -- Feet: Tempestuous Sandals
-            { itemID = 251093, source = "Nexus-Point Xenas\n                Nexus-Point Xenas\n                Murder Row" },  -- Rings: Omission of Light\n                 Occlusion of Void\n                 Signet of Snarling Servitude
-            { itemID = 245829, source = "Crafted - Does not require sparks at 220 item level\n                Maisara Caverns\n                The Blinding Vale\n                Windrunner Spire\n                Windrunner Spire" },  -- Strong Trinkets: Darkmoon Deck: Hunt\n                 Vessel of Tortured Souls\n                 Lightspire Core (if moving into light)\n                 Emberwing Feather\n                 Heart of Wind
+            { itemID = 251093, source = "Nexus-Point Xenas
+                Nexus-Point Xenas
+                Murder Row" },  -- Rings: Omission of Light
+            { itemID = 245829, source = "Crafted - Does not require sparks at 220 item level
+                Maisara Caverns
+                The Blinding Vale
+                Windrunner Spire
+                Windrunner Spire" },  -- Strong Trinkets: Darkmoon Deck: Hunt
         },
     },
     ["MAGE_FIRE"] = {  -- updated: 2026/02/25
@@ -1225,24 +1114,26 @@ MCS.PRESET_LISTS = {
             { itemID = 250256, source = "Windrunner Spire" },  -- Trinket #2: Heart of Wind (240)
         },
     },
-    ["MONK_BREWMASTER"] = {  -- updated: 2026/03/07
+    ["MONK_BREWMASTER"] = {  -- updated: 2026/03/02
         ["Overall BiS"] = {
-            { itemID = 249302, source = "Fallen-King Salhadaar" },  -- Weapon: Inescapable Reach
-            { itemID = 250015, source = "Tier Set" },  -- Head: Fearsome Visage of Ra-den's Chosen
-            { itemID = 240950, source = "Crafting" },  -- Neck: Masterwork Sin'dorei Amulet
-            { itemID = 250013, source = "Tier Set" },  -- Shoulders: Aurastones of Ra-den's Chosen
+            { itemID = 249302, source = "Vorasius" },  -- Weapon (2h): Inescapable Reach
+            { itemID = 251207, source = "Nexus Point Xenas    Maisara Caverns" },  -- Weapons (1h): Dreadflail Bludgeon     Soulblight Cleaver
+            { itemID = 250015, source = "Catalyst|Raid|Vault" },  -- Head: Fearsome Visage of Ra-den's Chosen
+            { itemID = 240950, source = "Jewelcrafting" },  -- Neck: Masterwork Sin'dorei Amulet(With  Thalassian Missive of the Quickblade  and  Stabilizing Gemstone Bandolier )
+            { itemID = 250013, source = "Catalyst|Raid|Vault" },  -- Shoulders: Aurastones of Ra-den's Chosen
             { itemID = 249335, source = "Imperator Averzian" },  -- Cloak: Imperator's Banner
-            { itemID = 250018, source = "Tier Set" },  -- Chest: Battle Garb of Ra-den's Chosen
-            { itemID = 244576, source = "Crafting" },  -- Wrist: Silvermoon Agent's Deflectors
-            { itemID = 250016, source = "Tier Set" },  -- Gloves: Thunderfists of Ra-den's Chosen
+            { itemID = 250018, source = "Catalyst|Raid|Vault" },  -- Chest: Battle Garb of Ra-den's Chosen
+            { itemID = 250011, source = "Catalyst" },  -- Wrist: Strikeguards of Ra-den's Chosen
+            { itemID = 250016, source = "Catalyst|Raid|Vault" },  -- Gloves: Thunderfists of Ra-den's Chosen
             { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
             { itemID = 151314, source = "Seat of the Triumvirate" },  -- Legs: Shifting Stalker Hide Pants
             { itemID = 151317, source = "Seat of the Triumvirate" },  -- Boots: Footpads of Seeping Dread
-            { itemID = 249336, source = "Vorasius" },  -- Ring: Signet of the Starved Beast
-            { itemID = 251513, source = "Crafting" },  -- Ring: Loa Worshiper's Band
-            { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
-            { itemID = 249806, source = "Belo'ren" },  -- Trinket: Radiant Plume
-            { itemID = 249339, source = "Vaelgor & Ezzorak" },  -- Trinket: Gloom-Spattered Dreadscale
+            { itemID = 249336, source = "Vorasius" },  -- Ring 1: Signet of the Starved Beast
+            { itemID = 251513, source = "Jewelcrafting" },  -- Ring 2: Loa Worshiper's Band
+            { itemID = 249343, source = "Chimaerus" },  -- Trinket (Damage): Gaze of the Alnseer
+            { itemID = 249806, source = "Belo'ren" },  -- Trinket (Damage): Radiant Plume
+            { itemID = 249339, source = "Vaelgor & Ezzorak" },  -- Trinket (Defense): Gloom-Spattered Dreadscale
+            { itemID = 151312, source = "Seat of the Triumvirate" },  -- Trinket (Defense): Ampoule of Pure Void
         },
         ["Pre-Raid BiS"] = {
             { itemID = 251177, source = "Maisara Caverns" },  -- Head: Fetid Vilecrown
@@ -1262,9 +1153,9 @@ MCS.PRESET_LISTS = {
             { itemID = 250258, source = "Maisara Caverns\n The Blinding Vale\n Den of Nalorakk\n Murder Row" },  -- Trinkets: Vessel of Tortured Souls (Damage)\n  Lightspire Core (Damage)\n Permafrost Essence (Defense)\n  Manaheart's Binding Flame (Defense)
         },
     },
-    ["MONK_MISTWEAVER"] = {  -- updated: 2026/02/25
+    ["MONK_MISTWEAVER"] = {  -- updated: 2026/03/09
         ["Overall BiS"] = {
-            { itemID = 258047, source = "Skyreach" },  -- Weapon: Spire of the Furious Construct
+            { itemID = 258050, source = "Skyreach" },  -- Weapon: Arcanic of the High Sage
             { itemID = 249276, source = "Vorasius" },  -- Offhand: Grimoire of the Eternal Light
             { itemID = 249913, source = "Midnight Falls" },  -- Head: Mask of Darkest Intent
             { itemID = 249337, source = "Fallen-King Salhadaar" },  -- Neck: Ribbon of Coiled Malice
@@ -1275,11 +1166,11 @@ MCS.PRESET_LISTS = {
             { itemID = 250016, source = "Tier Set" },  -- Gloves: Thunderfists of Ra-den's Chosen
             { itemID = 49806, source = "Pit of Saron" },  -- Belt: Flayer's Black Belt
             { itemID = 250014, source = "Tier Set" },  -- Legs: Swiftsweepers of Ra-den's Chosen
-            { itemID = 251210, source = "Nexus Point Xenas" },  -- Boots: Eclipse Espadrilles
+            { itemID = 251210, source = "Nexus-Point Xenas" },  -- Boots: Eclipse Espadrilles
             { itemID = 249920, source = "Midnight Falls" },  -- Ring: Eye of Midnight
             { itemID = 151311, source = "Seat of the Triumvirate" },  -- Ring: Band of the Triumvirate
-            { itemID = 249341, source = "Fallen-King Salhadaar" },  -- Trinket: Volatile Void Suffuser
-            { itemID = 250256, source = "Windrunner Spire" },  -- Trinket: Heart of Wind
+            { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
+            { itemID = 250144, source = "Windrunner Spire" },  -- Trinket: Emberwing Feather
         },
         ["Pre-Raid BiS"] = {
             { itemID = 251123, source = "Murder Row" },  -- Weapon: Nibbles' Training Rod
@@ -1299,27 +1190,25 @@ MCS.PRESET_LISTS = {
             { itemID = 250256, source = "Windrunner Spire" },  -- Trinket #2: Heart of Wind
         },
     },
-    ["MONK_WINDWALKER"] = {  -- updated: 2026/02/25
+    ["MONK_WINDWALKER"] = {  -- updated: 2026/03/07
         ["Overall BiS"] = {
-            { itemID = 237845, source = "Crafting" },  -- Weapon: Bloomforged Claw
-            { itemID = 250015, source = "Tier Set" },  -- Head: Fearsome Visage of Ra-den's Chosen
+            { itemID = 250015, source = "Tier Set - Catalyst |  Raid |  Vault" },  -- Head: Fearsome Visage of Ra-den's Chosen
             { itemID = 250247, source = "Seat of the Triumvirate" },  -- Neck: Amulet of the Abyssal Hymn
-            { itemID = 250013, source = "Tier Set" },  -- Shoulder: Aurastones of Ra-den's Chosen
-            { itemID = 250010, source = "Catalyst" },  -- Cloak: Windwrap of Ra-den's Chosen
-            { itemID = 250018, source = "Tier Set" },  -- Chest: Battle Garb of Ra-den's Chosen
-            { itemID = 249327, source = "Vorasius" },  -- Wrist: Void-Skinned Bracers
-            { itemID = 249321, source = "Vaelgor & Ezzorak" },  -- Hands: Vaelgor's Fearsome Grasp
+            { itemID = 250013, source = "Tier Set - Catalyst |  Raid |  Vault" },  -- Shoulder: Aurastones of Ra-den's Chosen
+            { itemID = 250010, source = "The Catalyst" },  -- Cloak: Windwrap of Ra-den's Chosen
+            { itemID = 250018, source = "Tier Set - Catalyst |  Raid |  Vault" },  -- Chest: Battle Garb of Ra-den's Chosen
+            { itemID = 249327, source = "Vorasius - The Voidspire" },  -- Wrist: Void-Skinned Bracers
+            { itemID = 249321, source = "Vaelgor & Ezzorak - The Voidspire" },  -- Hands: Vaelgor's Fearsome Grasp
             { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
-            { itemID = 250014, source = "Tier Set" },  -- Legs: Swiftsweepers of Ra-den's Chosen
-            { itemID = 250017, source = "Catalyst" },  -- Feet: Storm Crashers of Ra-den's Chosen
-            { itemID = 249919, source = "Belo'ren" },  -- Ring: Sin'dorei Band of Hope
+            { itemID = 250014, source = "Tier Set - Catalyst |  Raid |  Vault" },  -- Legs: Swiftsweepers of Ra-den's Chosen
+            { itemID = 250017, source = "The Catalyst" },  -- Feet: Storm Crashers of Ra-den's Chosen
+            { itemID = 249919, source = "Belo'ren - Isle of Quel'Danas" },  -- Ring: Sin'dorei Band of Hope
             { itemID = 249920, source = "Seat of the Triumvirate" },  -- Ring: Eye of Midnight
-            { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
-            { itemID = 193701, source = "Algeth'ar Academy" },  -- Trinket: Algeth'ar Puzzle Box
+            { itemID = 237845, source = "Crafting -  Blacksmithing" },  -- 1H Weapon: Bloomforged Claw
+            { itemID = 249343, source = "Chimaerus - The Dreamrift" },  -- Trinket 1: Gaze of the Alnseer
+            { itemID = 193701, source = "Algeth'ar Academy" },  -- Trinket 2: Algeth'ar Puzzle Box
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251186, source = "The Blinding Vale" },  -- Weapon: Thorntalon Edge
-            { itemID = 251175, source = "Maisara Caverns" },  -- Weapon: Soulblight Cleaver
             { itemID = 251109, source = "Magister's Terrace" },  -- Head: Spellsnap Shadowmask
             { itemID = 251173, source = "Den of Nalorakk" },  -- Neck: Yoke of the Charging Bear
             { itemID = 251092, source = "Windrunner Spire" },  -- Shoulder: Fallen Grunt's Mantle
@@ -1328,12 +1217,14 @@ MCS.PRESET_LISTS = {
             { itemID = 251183, source = "The Blinding Vale" },  -- Wrist: Rootwarden Wraps
             { itemID = 251124, source = "Murder Row" },  -- Hands: Gauntlets of Fevered Defense
             { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
-            { itemID = 251153, source = "Den of Nalorakk" },  -- Legs: Arctic Explorer's Legwraps
-            { itemID = 251087, source = "Windrunner Spire" },  -- Boots: Legwraps of Lingering Legacies
-            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
-            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
-            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
-            { itemID = 250225, source = "Voidscar Arena" },  -- Trinket #2: Void Execution Mandate
+            { itemID = 251087, source = "Windrunner Spire" },  -- Legs: Legwraps of Lingering Legacies
+            { itemID = 251153, source = "Den of Nalorakk" },  -- Feet: Arctic Explorer's Legwraps
+            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring: Omission of Light
+            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring: Occlusion of Void
+            { itemID = 251077, source = "Windrunner Spire" },  -- 2H Weapon: Roostwarden's Bough
+            { itemID = 251122, source = "Magister's Terrace" },  -- 1H Weapon: Shadowslash Slicer
+            { itemID = 250256, source = "Windrunner Spire" },  -- Trinket 1: Heart of Wind
+            { itemID = 250225, source = "Voidscar Arena" },  -- Trinket 2: Void Execution Mandate
         },
     },
     ["PALADIN_HOLY"] = {  -- updated: 2026/03/07
@@ -1393,22 +1284,22 @@ MCS.PRESET_LISTS = {
             { itemID = 249342, source = "Vorasius" },  -- Trinket: Heart of Ancient Hunger
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251176, source = "Maisara Caverns" },  -- Helm: new item
-            { itemID = 251186, source = "The Blinding Vale" },  -- Neck: Thorntalon Edge
-            { itemID = 251109, source = "Magister's Terrace" },  -- Shoulder: Spellsnap Shadowmask
-            { itemID = 251173, source = "Den of Nalorakk" },  -- Cloak: Yoke of the Charging Bear
-            { itemID = 251146, source = "Den of Nalorakk" },  -- Chest: Scavenger's Spaulders
-            { itemID = 260312, source = "Magister's Terrace" },  -- Bracers: Defiant Defender's Drape
-            { itemID = 251226, source = "Voidscar Arena" },  -- Gloves: Hide of Pestilence
-            { itemID = 251103, source = "Magister's Terrace" },  -- Belt: Custodial Cuffs
-            { itemID = 251124, source = "Murder Row" },  -- Legs: Gauntlets of Fevered Defense
-            { itemID = 251166, source = "Maisara Caverns" },  -- Boots: Falconer's Cinch
-            { itemID = 251087, source = "Windrunner Spire" },  -- Ring #1: Legwraps of Lingering Legacies
-            { itemID = 251210, source = "Nexus-Point Xenas" },  -- Ring #2: Eclipse Espadrilles
-            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Trinket #1: Occlusion of Void
-            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Trinket #2: Omission of Light
-            { itemID = 250256, source = "Windrunner Spire" },  -- Weapon: Heart of Wind
-            { itemID = 250244, source = "Den of Nalorakk" },  -- Shield: Permafrost Essence
+            { itemID = 251218, source = "Voidscar Arena" },  -- Weapon: Taz'Rah's Cosmic Edge
+            { itemID = 251150, source = "Den of Nalorakk" },  -- Shield: Tempest's Shelter
+            { itemID = 251098, source = "Windrunner Spire" },  -- Helm: Fletcher's Faded Faceplate
+            { itemID = 251142, source = "Murder Row" },  -- Neck: Pendant of Malefic Fury
+            { itemID = 251138, source = "Murder Row" },  -- Shoulder: Cinderfury Shoulderguards
+            { itemID = 251190, source = "The Blinding Vale" },  -- Cloak: Bloodthorn Burnous
+            { itemID = 251193, source = "The Blinding Vale" },  -- Chest: Taproot Ribs
+            { itemID = 263193, source = "Maisara Caverns" },  -- Bracers: Trollhunter's Bands
+            { itemID = 251214, source = "Den of Nalorakk" },  -- Gloves: Bonds of the Hash'ura
+            { itemID = 251086, source = "Windrunner Spire" },  -- Belt: Riphook Defender
+            { itemID = 251208, source = "Nexus-Point Xenas" },  -- Legs: Lightscarred Cuisses
+            { itemID = 251169, source = "Maisara Caverns" },  -- Boots: Footwraps of Ill-Fate
+            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
+            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
+            { itemID = 250259, source = "The Blinding Vale" },  -- Trinket #1: Sapling of the Dawnroot
+            { itemID = 250256, source = "Windrunner Spire" },  -- Trinket #2: Heart of Wind
         },
     },
     ["PALADIN_RETRIBUTION"] = {  -- updated: 2026/03/07
@@ -1430,41 +1321,41 @@ MCS.PRESET_LISTS = {
             { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251175, source = "Maisara Caverns" },  -- Weapon: Soulblight Cleaver
-            { itemID = 251186, source = "The Blinding Vale" },  -- Helm: new item
-            { itemID = 251109, source = "Magister's Terrace" },  -- Neck: new item
-            { itemID = 251142, source = "Murder Row" },  -- Shoulder: Pendant of Malefic Fury
-            { itemID = 251171, source = "Maisara Caverns" },  -- Cloak: Enthralled Bonespines
-            { itemID = 251190, source = "The Blinding Vale" },  -- Chest: Bloodthorn Burnous
-            { itemID = 251099, source = "Windrunner Spire" },  -- Bracers: Vest of the Howling Gale
-            { itemID = 251183, source = "The Blinding Vale" },  -- Gloves: Rootwarden Wraps
-            { itemID = 251113, source = "Magister's Terrace" },  -- Belt: Gloves of Viscous Goo
+            { itemID = 251117, source = "Magister's Terrace" },  -- Weapon: Whirling Voidcleaver
+            { itemID = 251126, source = "Murder Row" },  -- Helm: Greathelm of Temptation
+            { itemID = 251142, source = "Murder Row" },  -- Neck: Pendant of Malefic Fury
+            { itemID = 251164, source = "Maisara Caverns" },  -- Shoulder: Amalgamation's Harness
+            { itemID = 251190, source = "The Blinding Vale" },  -- Cloak: Bloodthorn Burnous
+            { itemID = 251151, source = "Den of Nalorakk" },  -- Chest: Sentinel Challenger's Prize
+            { itemID = 263193, source = "Maisara Caverns" },  -- Bracers: Trollhunter's Bands
+            { itemID = 251214, source = "Den of Nalorakk" },  -- Gloves: Bonds of the Hash'ura
+            { itemID = 251086, source = "Windrunner Spire" },  -- Belt: Riphook Defender
             { itemID = 251118, source = "Magister's Terrace" },  -- Legs: Legplates of Lingering Dusk
-            { itemID = 251082, source = "Windrunner Spire" },  -- Boots: Snapvine Cinch
-            { itemID = 49812, source = "Pit of Saron" },  -- Ring #1: Purloined Wedding Ring
+            { itemID = 251107, source = "Magister's Terrace" },  -- Boots: Oathsworn Stompers
+            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #1: Omission of Light
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #2: Occlusion of Void
-            { itemID = 251136, source = "Murder Row" },  -- Trinket #1: Signet of Snarling Servitude
-            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Trinket #2: Occlusion of Void
+            { itemID = 250229, source = "Den of Nalorakk" },  -- Trinket #1: Idol of the War Loa
+            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #2: Vessel of Tortured Souls
         },
     },
-    ["PRIEST_DISCIPLINE"] = {  -- updated: 2026/02/25
+    ["PRIEST_DISCIPLINE"] = {  -- updated: 2026/03/04
         ["Overall BiS"] = {
-            { itemID = 249283, source = "Belo'ren" },  -- Weapon: Belo'melorn, the Shattered Talon
-            { itemID = 249922, source = "Chimaerus" },  -- Offhand: Tome of Alnscorned Regret
-            { itemID = 250051, source = "Tier Set" },  -- Helm: Blind Oath's Winged Crest
-            { itemID = 250247, source = "Midnight Falls" },  -- Neck: Amulet of the Abyssal Hymn
-            { itemID = 250049, source = "Tier Set" },  -- Shoulders: Blind Oath's Seraphguards
-            { itemID = 249370, source = "Vaelgor & Ezzorak" },  -- Cape: Draconic Nullcape
-            { itemID = 249912, source = "Midnight Falls" },  -- Chest: Robes of Endless Oblivion
+            { itemID = 250051, source = "Raid | Catalyst | Vault" },  -- Helm: Blind Oath's Winged Crest
+            { itemID = 250247, source = "Midnight Falls (Raid)" },  -- Neck: Amulet of the Abyssal Hymn
+            { itemID = 250049, source = "Raid | Catalyst | Vault" },  -- Shoulders: Blind Oath's Seraphguards
+            { itemID = 249370, source = "Vaelgor & Ezzorak (Raid)" },  -- Cape: Draconic Nullcape
+            { itemID = 249912, source = "Midnight Falls (Raid)" },  -- Chest: Robes of Endless Oblivion
             { itemID = 251108, source = "Magister's Terrace" },  -- Bracers: Wraps of Watchful Wrath
-            { itemID = 250052, source = "Tier Set" },  -- Gloves: Blind Oath's Touch
-            { itemID = 249376, source = "Belo'ren" },  -- Belt: Whisper-Inscribed Sash
-            { itemID = 250050, source = "Tier Set" },  -- Legs: Blind Oath's Leggings
+            { itemID = 250052, source = "Raid | Catalyst | Vault" },  -- Gloves: Blind Oath's Touch
+            { itemID = 249376, source = "Belo'ren (Raid)" },  -- Belt: Whisper-Inscribed Sash
+            { itemID = 250050, source = "Raid | Catalyst | Vault" },  -- Legs: Blind Oath's Leggings
             { itemID = 249373, source = "Chimaerus" },  -- Boots: Dream-Scorched Striders
-            { itemID = 249920, source = "Midnight Falls" },  -- Ring: Eye of Midnight
-            { itemID = 249919, source = "Belo'ren" },  -- Ring: Sin'dorei Band of Hope
-            { itemID = 249809, source = "Crown of the Cosmos" },  -- Trinket: Locus-Walker's Ribbon
-            { itemID = 249346, source = "Vaelgor & Ezzorak" },  -- Trinket: Vaelgor's Final Stare
+            { itemID = 249920, source = "Midnight Falls (Raid)" },  -- Ring: Eye of Midnight
+            { itemID = 249919, source = "Belo'ren (Raid)" },  -- Ring: Sin'dorei Band of Hope
+            { itemID = 249809, source = "Crown of the Cosmos (Raid)" },  -- Trinkets: Locus-Walker's Ribbon
+            { itemID = 249346, source = "Vaelgor & Ezzorak (Raid)" },  -- Trinkets: Vaelgor's Final Stare
+            { itemID = 249283, source = "Belo'ren (Raid)" },  -- 1h Weapon: Belo'melorn, the Shattered Talon
+            { itemID = 249922, source = "Chimaerus (Raid)" },  -- Offhand: Tome of Alnscorned Regret
         },
         ["Pre-Raid BiS"] = {
             { itemID = 251156, source = "Den of Nalorakk" },  -- Weapon: Fallen Speaker's Staff
@@ -1484,24 +1375,24 @@ MCS.PRESET_LISTS = {
             { itemID = 250214, source = "The Blinding Vale" },  -- Trinket #2: Lightspire Core
         },
     },
-    ["PRIEST_HOLY"] = {  -- updated: 2026/02/25
+    ["PRIEST_HOLY"] = {  -- updated: 2026/03/04
         ["Overall BiS"] = {
-            { itemID = 249283, source = "Belo'ren" },  -- Weapon: Belo'melorn, the Shattered Talon
-            { itemID = 249922, source = "Chimaerus" },  -- Offhand: Tome of Alnscorned Regret
-            { itemID = 250051, source = "Tier Set" },  -- Helm: Blind Oath's Winged Crest
-            { itemID = 250247, source = "Midnight Falls" },  -- Neck: Amulet of the Abyssal Hymn
-            { itemID = 250049, source = "Tier Set" },  -- Shoulders: Blind Oath's Seraphguards
-            { itemID = 249370, source = "Vaelgor & Ezzorak" },  -- Cape: Draconic Nullcape
-            { itemID = 249912, source = "Midnight Falls" },  -- Chest: Robes of Endless Oblivion
+            { itemID = 250051, source = "Raid | Catalyst | Vault" },  -- Helm: Blind Oath's Winged Crest
+            { itemID = 250247, source = "Midnight Falls (Raid)" },  -- Neck: Amulet of the Abyssal Hymn
+            { itemID = 250049, source = "Raid | Catalyst | Vault" },  -- Shoulders: Blind Oath's Seraphguards
+            { itemID = 249370, source = "Vaelgor & Ezzorak (Raid)" },  -- Cape: Draconic Nullcape
+            { itemID = 249912, source = "Midnight Falls (Raid)" },  -- Chest: Robes of Endless Oblivion
             { itemID = 251108, source = "Magister's Terrace" },  -- Bracers: Wraps of Watchful Wrath
-            { itemID = 250052, source = "Tier Set" },  -- Gloves: Blind Oath's Touch
-            { itemID = 249376, source = "Belo'ren" },  -- Belt: Whisper-Inscribed Sash
-            { itemID = 250050, source = "Tier Set" },  -- Legs: Blind Oath's Leggings
+            { itemID = 250052, source = "Raid | Catalyst | Vault" },  -- Gloves: Blind Oath's Touch
+            { itemID = 249376, source = "Belo'ren (Raid)" },  -- Belt: Whisper-Inscribed Sash
+            { itemID = 250050, source = "Raid | Catalyst | Vault" },  -- Legs: Blind Oath's Leggings
             { itemID = 249373, source = "Chimaerus" },  -- Boots: Dream-Scorched Striders
-            { itemID = 249920, source = "Midnight Falls" },  -- Ring: Eye of Midnight
-            { itemID = 249919, source = "Belo'ren" },  -- Ring: Sin'dorei Band of Hope
-            { itemID = 249809, source = "Crown of the Cosmos" },  -- Trinket: Locus-Walker's Ribbon
-            { itemID = 249346, source = "Vaelgor & Ezzorak" },  -- Trinket: Vaelgor's Final Stare
+            { itemID = 249920, source = "Midnight Falls (Raid)" },  -- Ring: Eye of Midnight
+            { itemID = 249919, source = "Belo'ren (Raid)" },  -- Ring: Sin'dorei Band of Hope
+            { itemID = 249809, source = "Crown of the Cosmos (Raid)" },  -- Trinkets: Locus-Walker's Ribbon
+            { itemID = 249346, source = "Vaelgor & Ezzorak (Raid)" },  -- Trinkets: Vaelgor's Final Stare
+            { itemID = 249283, source = "Belo'ren (Raid)" },  -- 1h Weapon: Belo'melorn, the Shattered Talon
+            { itemID = 249922, source = "Chimaerus (Raid)" },  -- Offhand: Tome of Alnscorned Regret
         },
         ["Pre-Raid BiS"] = {
             { itemID = 251123, source = "Murder Row\n            Windrunner Spire\n            Windrunner Spire" },  -- Weapon: Nibbles' Training Rod (2H)\n             Excavating Cudgel (1H)\n             Sigil of the Restless Heart (OH)
@@ -1521,25 +1412,27 @@ MCS.PRESET_LISTS = {
     },
     ["PRIEST_SHADOW"] = {  -- updated: 2026/02/25
         ["Overall BiS"] = {
-            { itemID = 249283, source = "Belo'ren" },  -- Weapon: Belo'melorn, the Shattered Talon
-            { itemID = 249922, source = "Chimaerus" },  -- Offhand: Tome of Alnscorned Regret
-            { itemID = 250051, source = "Tier Set" },  -- Helm: Blind Oath's Winged Crest
-            { itemID = 250247, source = "Midnight Falls" },  -- Neck: Amulet of the Abyssal Hymn
-            { itemID = 250049, source = "Tier Set" },  -- Shoulders: Blind Oath's Seraphguards
-            { itemID = 249370, source = "Vaelgor & Ezzorak" },  -- Cape: Draconic Nullcape
-            { itemID = 250054, source = "Tier Set" },  -- Chest: Blind Oath's Raiment
+            { itemID = 250051, source = "Raid | Catalyst | Vault" },  -- Helm: Blind Oath's Winged Crest
+            { itemID = 250247, source = "Midnight Falls (Raid)" },  -- Neck: Amulet of the Abyssal Hymn
+            { itemID = 250049, source = "Raid | Catalyst | Vault" },  -- Shoulders: Blind Oath's Seraphguards
+            { itemID = 249370, source = "Vaelgor & Ezzorak (Raid)" },  -- Cape: Draconic Nullcape
+            { itemID = 250054, source = "Raid | Catalyst | Vault" },  -- Chest: Blind Oath's Raiment
             { itemID = 251108, source = "Magister's Terrace" },  -- Bracers: Wraps of Watchful Wrath
-            { itemID = 250052, source = "Tier Set" },  -- Gloves: Blind Oath's Touch
-            { itemID = 249376, source = "Belo'ren" },  -- Belt: Whisper-Inscribed Sash
-            { itemID = 250050, source = "Tier Set" },  -- Legs: Blind Oath's Leggings
+            { itemID = 250052, source = "Raid | Catalyst | Vault" },  -- Gloves: Blind Oath's Touch
+            { itemID = 249376, source = "Belo'ren (Raid)" },  -- Belt: Whisper-Inscribed Sash
+            { itemID = 250050, source = "Raid | Catalyst | Vault" },  -- Legs: Blind Oath's Leggings
             { itemID = 249373, source = "Chimaerus" },  -- Boots: Dream-Scorched Striders
-            { itemID = 249920, source = "Midnight Falls" },  -- Ring: Eye of Midnight
-            { itemID = 249919, source = "Belo'ren" },  -- Ring: Sin'dorei Band of Hope
-            { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
-            { itemID = 249346, source = "Vaelgor & Ezzorak" },  -- Trinket: Vaelgor's Final Stare
+            { itemID = 249920, source = "Midnight Falls (Raid)" },  -- Ring: Eye of Midnight
+            { itemID = 249919, source = "Belo'ren (Raid)" },  -- Ring: Sin'dorei Band of Hope
+            { itemID = 249343, source = "Chimaerus (Raid)" },  -- Trinkets: Gaze of the Alnseer
+            { itemID = 249346, source = "Vaelgor & Ezzorak (Raid)" },  -- Trinkets: Vaelgor's Final Stare
+            { itemID = 249283, source = "Belo'ren (Raid)" },  -- 1h Weapon: Belo'melorn, the Shattered Talon
+            { itemID = 249922, source = "Chimaerus (Raid)" },  -- Offhand: Tome of Alnscorned Regret
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251188, source = "The Blinding Vale" },  -- Weapon: Doompetal
+            { itemID = 251188, source = "The Blinding Vale
+The Blinding Vale
+Nexus-Point Xenas" },  -- Weapons: Doompetal
             { itemID = 251232, source = "Voidscar Arena" },  -- Head: Overseer's Diadem
             { itemID = 251142, source = "Murder Row" },  -- Neck: Pendant of Malefic Fury
             { itemID = 251213, source = "Nexus-Point Xenas" },  -- Shoulder: Nysarra's Mantle
@@ -1550,8 +1443,14 @@ MCS.PRESET_LISTS = {
             { itemID = 251185, source = "The Blinding Vale" },  -- Waist: Lightblossom Cinch
             { itemID = 251160, source = "Den of Nalorakk" },  -- Legs: Forest Dream Leg-guards
             { itemID = 251137, source = "Murder Row" },  -- Feet: Tempestuous Sandals
-            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring: Omission of Light
-            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring: Occlusion of Void
+            { itemID = 251093, source = "Nexus-Point Xenas
+        Nexus-Point Xenas
+        Magister's Terrace
+        The Blinding Vale" },  -- Rings: Omission of Light
+            { itemID = 250258, source = "Maisara Caverns
+Maisara Caverns
+The Blinding Vale
+The Singularity Renown Level 7" },  -- Top Trinkets: Vessel of Tortured Souls
         },
     },
     ["ROGUE_ASSASSINATION"] = {  -- updated: 2026/03/02
@@ -1574,22 +1473,21 @@ MCS.PRESET_LISTS = {
             { itemID = 193701, source = "Algeth'ar Academy" },  -- Trinket: Algeth'ar Puzzle Box
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251149, source = "Den of Nalorakk" },  -- Mainhand Weapon: Victor's Flashfrozen Blade
-            { itemID = 251149, source = "Den of Nalorakk" },  -- Offhand Weapon: Victor's Flashfrozen Blade
-            { itemID = 251186, source = "The Blinding Vale" },  -- Helm: new item
+            { itemID = 251128, source = "Murder Row" },  -- Mainhand Weapon: Bladesorrow
+            { itemID = 251140, source = "Murder Row" },  -- Helm: Vilefiend's Guise
             { itemID = 251173, source = "Den of Nalorakk" },  -- Neck: Yoke of the Charging Bear
-            { itemID = 251092, source = "Windrunner Spire" },  -- Shoulder: Fallen Grunt's Mantle
-            { itemID = 251132, source = "Murder Row" },  -- Cloak: Speakeasy Shroud
-            { itemID = 251159, source = "Den of Nalorakk" },  -- Chest: War Trial Vestments
+            { itemID = 251223, source = "Voidscar Arena" },  -- Shoulder: Somber Spaulders
+            { itemID = 260312, source = "Magister's Terrace" },  -- Cloak: Defiant Defender's Drape
+            { itemID = 251226, source = "Voidscar Arena" },  -- Chest: Hide of Pestilence
             { itemID = 251183, source = "The Blinding Vale" },  -- Bracers: Rootwarden Wraps
             { itemID = 251124, source = "Murder Row" },  -- Gloves: Gauntlets of Fevered Defense
-            { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
-            { itemID = 251153, source = "Den of Nalorakk" },  -- Legs: Arctic Explorer's Legwraps
-            { itemID = 251087, source = "Windrunner Spire" },  -- Boots: Legwraps of Lingering Legacies
+            { itemID = 251166, source = "Maisara Caverns" },  -- Belt: Falconer's Cinch
+            { itemID = 251087, source = "Windrunner Spire" },  -- Legs: Legwraps of Lingering Legacies
+            { itemID = 251153, source = "Den of Nalorakk" },  -- Boots: Arctic Explorer's Legwraps
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
             { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
-            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
-            { itemID = 250225, source = "Voidscar Arena" },  -- Trinket #2: Void Execution Mandate
+            { itemID = 250144, source = "Windrunner Spire" },  -- Trinket #1: Emberwing Feather
+            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #2: Vessel of Tortured Souls
         },
     },
     ["ROGUE_OUTLAW"] = {  -- updated: 2026/02/25
@@ -1612,28 +1510,26 @@ MCS.PRESET_LISTS = {
             { itemID = 260235, source = "Belo'ren" },  -- Trinket: Umbral Plume
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251149, source = "Den of Nalorakk" },  -- Mainhand Weapon: Victor's Flashfrozen Blade
-            { itemID = 251077, source = "Windrunner Spire" },  -- Offhand Weapon: Roostwarden's Bough
-            { itemID = 251186, source = "The Blinding Vale" },  -- Helm: new item
+            { itemID = 251175, source = "Maisara Caverns" },  -- Mainhand Weapon: Soulblight Cleaver
+            { itemID = 251128, source = "Murder Row" },  -- Offhand Weapon: Bladesorrow
+            { itemID = 251140, source = "Murder Row" },  -- Helm: Vilefiend's Guise
             { itemID = 251173, source = "Den of Nalorakk" },  -- Neck: Yoke of the Charging Bear
-            { itemID = 251092, source = "Windrunner Spire" },  -- Shoulder: Fallen Grunt's Mantle
-            { itemID = 251132, source = "Murder Row" },  -- Cloak: Speakeasy Shroud
-            { itemID = 251159, source = "Den of Nalorakk" },  -- Chest: War Trial Vestments
+            { itemID = 251223, source = "Voidscar Arena" },  -- Shoulder: Somber Spaulders
+            { itemID = 260312, source = "Magister's Terrace" },  -- Cloak: Defiant Defender's Drape
+            { itemID = 251226, source = "Voidscar Arena" },  -- Chest: Hide of Pestilence
             { itemID = 251183, source = "The Blinding Vale" },  -- Bracers: Rootwarden Wraps
             { itemID = 251124, source = "Murder Row" },  -- Gloves: Gauntlets of Fevered Defense
-            { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
-            { itemID = 251153, source = "Den of Nalorakk" },  -- Legs: Arctic Explorer's Legwraps
-            { itemID = 251087, source = "Windrunner Spire" },  -- Boots: Legwraps of Lingering Legacies
+            { itemID = 251166, source = "Maisara Caverns" },  -- Belt: Falconer's Cinch
+            { itemID = 251087, source = "Windrunner Spire" },  -- Legs: Legwraps of Lingering Legacies
+            { itemID = 251153, source = "Den of Nalorakk" },  -- Boots: Arctic Explorer's Legwraps
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
             { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
-            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
-            { itemID = 250225, source = "Voidscar Arena" },  -- Trinket #2: Void Execution Mandate
+            { itemID = 250227, source = "Windrunner Spire" },  -- Trinket #1: Kroluk's Warbanner
+            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #2: Vessel of Tortured Souls
         },
     },
     ["ROGUE_SUBTLETY"] = {  -- updated: 2026/02/25
         ["Overall BiS"] = {
-            { itemID = 249925, source = "Vorasius" },  -- Weapon: Hungering Victory
-            { itemID = 237837, source = "Crafting" },  -- Offhand: Farstrider's Mercy
             { itemID = 250006, source = "Tier Set" },  -- Head: Masquerade of the Grim Jest
             { itemID = 249368, source = "Crown of the Cosmos" },  -- Neck: Eternal Voidsong Chain
             { itemID = 250004, source = "Tier Set" },  -- Shoulders: Venom Casks of the Grim Jest
@@ -1648,24 +1544,25 @@ MCS.PRESET_LISTS = {
             { itemID = 251115, source = "Magister's Terrace" },  -- Ring: Bifurcation Band
             { itemID = 249344, source = "Imperator Averzian" },  -- Trinket: Light Company Guidon
             { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
+            { itemID = 249925, source = "Vorasius" },  -- Weapon: Hungering Victory
+            { itemID = 237837, source = "Crafting" },  -- Offhand: Farstrider's Mercy
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251149, source = "Den of Nalorakk" },  -- Mainhand Weapon: Victor's Flashfrozen Blade
-            { itemID = 251149, source = "Den of Nalorakk" },  -- Offhand Weapon: Victor's Flashfrozen Blade
-            { itemID = 251186, source = "The Blinding Vale" },  -- Helm: new item
-            { itemID = 251142, source = "Murder Row" },  -- Neck: Pendant of Malefic Fury
+            { itemID = 251128, source = "Murder Row" },  -- Mainhand Weapon: Bladesorrow
+            { itemID = 251109, source = "Magister's Terrace" },  -- Helm: Spellsnap Shadowmask
+            { itemID = 251234, source = "Voidscar Arena" },  -- Neck: Graft of the Domanaar
             { itemID = 251171, source = "Maisara Caverns" },  -- Shoulder: Enthralled Bonespines
-            { itemID = 251132, source = "Murder Row" },  -- Cloak: Speakeasy Shroud
-            { itemID = 251159, source = "Den of Nalorakk" },  -- Chest: War Trial Vestments
-            { itemID = 251183, source = "The Blinding Vale" },  -- Bracers: Rootwarden Wraps
+            { itemID = 251190, source = "The Blinding Vale" },  -- Cloak: Bloodthorn Burnous
+            { itemID = 251099, source = "Windrunner Spire" },  -- Chest: Vest of the Howling Gale
+            { itemID = 244595, source = "Leatherworking" },  -- Bracers: Smuggler's Reinforced Binding
             { itemID = 251124, source = "Murder Row" },  -- Gloves: Gauntlets of Fevered Defense
             { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
-            { itemID = 251153, source = "Den of Nalorakk" },  -- Legs: Arctic Explorer's Legwraps
-            { itemID = 251087, source = "Windrunner Spire" },  -- Boots: Legwraps of Lingering Legacies
-            { itemID = 251136, source = "Murder Row" },  -- Ring #1: Signet of Snarling Servitude
-            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #2: Occlusion of Void
-            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
-            { itemID = 250225, source = "Voidscar Arena" },  -- Trinket #2: Void Execution Mandate
+            { itemID = 251130, source = "Murder Row" },  -- Legs: Breeches of Deft Deals
+            { itemID = 244585, source = "Leatherworking" },  -- Boots: Smuggler's Leather Footpads
+            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #1: Occlusion of Void
+            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
+            { itemID = 250215, source = "Murder Row" },  -- Trinket #1: Freightrunner's Flask
+            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #2: Vessel of Tortured Souls
         },
     },
     ["SHAMAN_ELEMENTAL"] = {  -- updated: 2026/03/01
@@ -1688,21 +1585,25 @@ MCS.PRESET_LISTS = {
             { itemID = 250144, source = "Windrunner Spire" },  -- Trinket: Emberwing Feather
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251188, source = "The Blinding Vale" },  -- Weapon: Doompetal
-            { itemID = 251232, source = "Voidscar Arena" },  -- Helm: Overseer's Diadem
-            { itemID = 251173, source = "Den of Nalorakk" },  -- Neck: Yoke of the Charging Bear
-            { itemID = 251213, source = "Nexus-Point Xenas" },  -- Shoulder: Nysarra's Mantle
-            { itemID = 251190, source = "The Blinding Vale" },  -- Cloak: Bloodthorn Burnous
-            { itemID = 251139, source = "Murder Row" },  -- Chest: Summoner's Searing Shirt
-            { itemID = 251127, source = "Murder Row" },  -- Bracers: Nibbling Armbands
-            { itemID = 251129, source = "Murder Row" },  -- Gloves: Counterfeit Clutches
-            { itemID = 251185, source = "The Blinding Vale" },  -- Belt: Lightblossom Cinch
-            { itemID = 251160, source = "Den of Nalorakk" },  -- Legs: Forest Dream Leg-guards
-            { itemID = 251137, source = "Murder Row" },  -- Boots: Tempestuous Sandals
+            { itemID = 251083, source = "Windrunner Spire" },  -- Weapon: Excavating Cudgel
+            { itemID = 251105, source = "Magister's Terrace" },  -- Off-hand: Ward of the Spellbreaker
+            { itemID = 251119, source = "Magister's Terrace" },  -- Helm: Vortex Visage
+            { itemID = 251142, source = "Murder Row" },  -- Neck: Pendant of Malefic Fury
+            { itemID = 251097, source = "Windrunner Spire" },  -- Shoulder: Spaulders of Arrow's Flight
+            { itemID = 239674, source = "Crafted — Leatherworking" },  -- Cloak: Courtly Cloak
+            { itemID = 251179, source = "Maisara Caverns" },  -- Chest: Decaying Cuirass
+            { itemID = 244589, source = "Crafted — Leatherworking" },  -- Bracers: Scout's Scaled Bracers
+            { itemID = 251089, source = "Windrunner Spire" },  -- Gloves: Grips of Forgotten Honor
+            { itemID = 251155, source = "Den of Nalorakk" },  -- Belt: Tribal Defender's Cord
+            { itemID = 251228, source = "Voidscar Arena" },  -- Belt alternative: Behemoth Waistband
+            { itemID = 251215, source = "Nexus-Point Xenas" },  -- Legs: Greaves of the Divine Guile
+            { itemID = 251084, source = "Windrunner Spire" },  -- Boots: Whipcoil Sabatons
             { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #1: Omission of Light
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #2: Occlusion of Void
-            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
-            { itemID = 250214, source = "The Blinding Vale" },  -- Trinket #2: Lightspire Core
+            { itemID = 251115, source = "Magister's Terrace" },  -- Ring #2 alternative (if you do not have the set): Bifurcation Band
+            { itemID = 250256, source = "Windrunner Spire" },  -- Trinket #1: Heart of Wind
+            { itemID = 250144, source = "Windrunner Spire" },  -- Trinket #2: Emberwing Feather
+            { itemID = 250215, source = "Murder Row" },  -- Trinket #2 alternative: Freightrunner's Flask
         },
     },
     ["SHAMAN_ENHANCEMENT"] = {  -- updated: 2026/02/25
@@ -1723,42 +1624,46 @@ MCS.PRESET_LISTS = {
             { itemID = 251093, source = "Nexus Point Xenas" },  -- Ring: Omission of Light
         },
         ["Pre-Raid BiS"] = {
-            { itemID = 251175, source = "Maisara Caverns" },  -- Weapon MH: Soulblight Cleaver
-            { itemID = 251175, source = "Maisara Caverns" },  -- Weapon OH: Soulblight Cleaver
-            { itemID = 251109, source = "Magister's Terrace" },  -- Helm: Spellsnap Shadowmask
+            { itemID = 251224, source = "Voidscar Arena" },  -- Weapons: Hulking Handaxe
+            { itemID = 251175, source = "Maisara Caverns" },  -- Alternative: Soulblight Cleaver
+            { itemID = 251119, source = "Magister's Terrace" },  -- Helm: Vortex Visage
             { itemID = 251142, source = "Murder Row" },  -- Neck: Pendant of Malefic Fury
-            { itemID = 251171, source = "Maisara Caverns" },  -- Shoulder: Enthralled Bonespines
+            { itemID = 251097, source = "Windrunner Spire" },  -- Shoulder: Spaulders of Arrow's Flight
             { itemID = 251190, source = "The Blinding Vale" },  -- Cloak: Bloodthorn Burnous
-            { itemID = 251099, source = "Windrunner Spire" },  -- Chest: Vest of the Howling Gale
-            { itemID = 251183, source = "The Blinding Vale" },  -- Bracers: Rootwarden Wraps
-            { itemID = 251113, source = "Magister's Terrace" },  -- Gloves: Gloves of Viscous Goo
-            { itemID = 251082, source = "Windrunner Spire" },  -- Belt: Snapvine Cinch
-            { itemID = 251087, source = "Windrunner Spire" },  -- Legs: Legwraps of Lingering Legacies
-            { itemID = 251153, source = "Den of Nalorakk" },  -- Boots: Arctic Explorer's Legwraps
-            { itemID = 251136, source = "Murder Row" },  -- Ring #1: Signet of Snarling Servitude
-            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #2: Occlusion of Void
+            { itemID = 251179, source = "Maisara Caverns" },  -- Chest: Decaying Cuirass
+            { itemID = 251079, source = "Windrunner Spire" },  -- Bracers: Amberfrond Bracers
+            { itemID = 251089, source = "Windrunner Spire" },  -- Gloves: Grips of Forgotten Honor
+            { itemID = 251228, source = "Voidscar Arena" },  -- Belt: Behemoth Waistband
+            { itemID = 251215, source = "Nexus-Point Xenas" },  -- Legs: Greaves of the Divine Guile
+            { itemID = 251084, source = "Windrunner Spire" },  -- Boots: Whipcoil Sabatons
+            { itemID = 251115, source = "Magister's Terrace" },  -- Ring #1: Bifurcation Band
+            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
             { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
             { itemID = 250225, source = "Voidscar Arena" },  -- Trinket #2: Void Execution Mandate
+            { itemID = 250144, source = "Windrunner Spire
+	Windrunner Spire
+	The Blinding Vale
+	Windrunner Spire" },  -- Trinket Alt.: Emberwing Feather
         },
     },
-    ["SHAMAN_RESTORATION"] = {  -- updated: 2026/02/25
+    ["SHAMAN_RESTORATION"] = {  -- updated: 2026/03/06
         ["Overall BiS"] = {
-            { itemID = 251178, source = "Maisara Caverns" },  -- Weapon: Ceremonial Hexblade
-            { itemID = 193709, source = "Algeth'ar Academy" },  -- Offhand: Vexamus' Expulsion Rod
-            { itemID = 249914, source = "Midnight Falls" },  -- Helm: Oblivion Guise
-            { itemID = 249337, source = "Fallen-King Salhadaar" },  -- Neck: Ribbon of Coiled Malice
-            { itemID = 249977, source = "Tier Set" },  -- Shoulders: Tempests of the Primal Core
-            { itemID = 260312, source = "Magister's Terrace" },  -- Cape: Defiant Defender's Drape
-            { itemID = 249982, source = "Tier Set" },  -- Chest: Embrace of the Primal Core
+            { itemID = 249914, source = "Midnight Falls (Raid)" },  -- Helm: Oblivion Guise
+            { itemID = 251096, source = "Windrunner Spire" },  -- Neck: Pendant of Aching Grief
+            { itemID = 249977, source = "Raid | Catalyst | Vault" },  -- Shoulders: Tempests of the Primal Core
+            { itemID = 251161, source = "Maisara Caverns" },  -- Cape: Soulhunter's Mask
+            { itemID = 249982, source = "Raid | Catalyst | Vault" },  -- Chest: Embrace of the Primal Core
             { itemID = 249975, source = "Catalyst" },  -- Bracers: Cuffs of the Primal Core
-            { itemID = 249980, source = "Tier Set" },  -- Gloves: Earthgrips of the Primal Core
-            { itemID = 249303, source = "Lightblinded Vanguard" },  -- Belt: Waistcord of the Judged
-            { itemID = 249978, source = "Tier Set" },  -- Legs: Leggings of the Primal Core
-            { itemID = 249377, source = "Belo'ren" },  -- Boots: Darkstrider Treads
-            { itemID = 249920, source = "Midnight Falls" },  -- Ring: Eye of Midnight
-            { itemID = 251217, source = "Nexus Point Xenas" },  -- Ring: Occlusion of Void
-            { itemID = 250144, source = "Windrunner Spire" },  -- Trinket: Emberwing Feather
-            { itemID = 250256, source = "Windrunner Spire" },  -- Trinket: Heart of Wind
+            { itemID = 249980, source = "Raid | Catalyst | Vault" },  -- Gloves: Earthgrips of the Primal Core
+            { itemID = 193722, source = "Algeth'ar Academy" },  -- Belt: Azure Belt of Competition
+            { itemID = 249978, source = "Raid | Catalyst | Vault" },  -- Legs: Leggings of the Primal Core
+            { itemID = 249981, source = "Catalyst" },  -- Boots: Sollerets of the Primal Core
+            { itemID = 249336, source = "Vorasius (Raid)" },  -- Ring: Signet of the Starved Beast
+            { itemID = 193708, source = "Algeth'ar Academy" },  -- Ring: Platinum Star Band
+            { itemID = 249343, source = "Chimaerus (Raid)" },  -- Trinkets: Gaze of the Alnseer
+            { itemID = 249809, source = "Crown of the Cosmos (Raid)" },  -- Trinkets: Locus-Walker's Ribbon
+            { itemID = 251178, source = "Maisara Caverns" },  -- 1h Weapon: Ceremonial Hexblade
+            { itemID = 249921, source = "Belo'ren (Raid)" },  -- Shield: Thalassian Dawnguard
         },
         ["Pre-Raid BiS"] = {
             { itemID = 251163, source = "Maisara Caverns" },  -- Weapon: Berserker's Hexclaws
@@ -1892,15 +1797,14 @@ MCS.PRESET_LISTS = {
             { itemID = 251191, source = "The Blinding Vale" },  -- Off-Hand: Luminescent Sprout (OH)
         },
     },
-    ["WARRIOR_ARMS"] = {  -- updated: 2026/02/26
+    ["WARRIOR_ARMS"] = {  -- updated: 2026/03/05
         ["Overall BiS"] = {
-            { itemID = 249296, source = "Midnight Falls" },  -- Mainhand: Alah'endal, the Dawnsong
             { itemID = 249952, source = "Tier Set" },  -- Helm: Night Ender's Tusks
             { itemID = 249337, source = "Fallen-King Salhadaar" },  -- Neck: Ribbon of Coiled Malice
             { itemID = 249950, source = "Tier Set" },  -- Shoulders: Night Ender's Pauldrons
-            { itemID = 239656, source = "Crafting" },  -- Cloak: Adherent's Silken Shroud
+            { itemID = 239656, source = "Crafted" },  -- Cloak: Adherent's Silken Shroud
             { itemID = 249955, source = "Chimaerus" },  -- Chest: Night Ender's Breastplate
-            { itemID = 237834, source = "Crafting" },  -- Bracers: Spellbreaker's Bracers
+            { itemID = 237834, source = "Crafted" },  -- Bracers: Spellbreaker's Bracers
             { itemID = 251081, source = "Windrunner Spire" },  -- Gloves: Embergrove Grasps
             { itemID = 249949, source = "Catalyst" },  -- Belt: Night Ender's Girdle
             { itemID = 249951, source = "Tier Set" },  -- Legs: Night Ender's Chausses
@@ -1909,6 +1813,7 @@ MCS.PRESET_LISTS = {
             { itemID = 251217, source = "Nexus Point Xenas" },  -- Ring: Occlusion of Void
             { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
             { itemID = 249342, source = "Vorasius" },  -- Trinket: Heart of Ancient Hunger
+            { itemID = 249296, source = "Midnight Falls" },  -- Mainhand: Alah'endal, the Dawnsong
         },
         ["Pre-Raid BiS"] = {
             { itemID = 49802, source = "Pit of Saron" },  -- Mainhand Weapon: Garfrost's Two-Ton Hammer
@@ -1928,16 +1833,14 @@ MCS.PRESET_LISTS = {
             { itemID = 252420, source = "Skyreach" },  -- Trinket #2: Solarflare Prism
         },
     },
-    ["WARRIOR_FURY"] = {  -- updated: 2026/02/26
+    ["WARRIOR_FURY"] = {  -- updated: 2026/03/05
         ["Overall BiS"] = {
-            { itemID = 249277, source = "Lightblinded Vanguard" },  -- Mainhand: Bellamy's Final Judgement
-            { itemID = 249296, source = "Midnight Falls" },  -- Offhand: Alah'endal, the Dawnsong
             { itemID = 249952, source = "Tier Set" },  -- Helm: Night Ender's Tusks
             { itemID = 250247, source = "Midnight Falls" },  -- Neck: Amulet of the Abyssal Hymn
             { itemID = 249950, source = "Tier Set" },  -- Shoulders: Night Ender's Pauldrons
-            { itemID = 239656, source = "Crafting" },  -- Cloak: Adherent's Silken Shroud
+            { itemID = 239656, source = "Crafted" },  -- Cloak: Adherent's Silken Shroud
             { itemID = 249955, source = "Chimaerus" },  -- Chest: Night Ender's Breastplate
-            { itemID = 237834, source = "Crafting" },  -- Bracers: Spellbreaker's Bracers
+            { itemID = 237834, source = "Crafted" },  -- Bracers: Spellbreaker's Bracers
             { itemID = 249953, source = "Tier Set" },  -- Gloves: Night Ender's Fists
             { itemID = 249949, source = "Catalyst" },  -- Belt: Night Ender's Girdle
             { itemID = 249951, source = "Tier Set" },  -- Legs: Night Ender's Chausses
@@ -1946,22 +1849,23 @@ MCS.PRESET_LISTS = {
             { itemID = 249369, source = "Lightblinded Vanguard" },  -- Ring: Bond of Light
             { itemID = 249343, source = "Chimaerus" },  -- Trinket: Gaze of the Alnseer
             { itemID = 249342, source = "Vorasius" },  -- Trinket: Heart of Ancient Hunger
+            { itemID = 249277, source = "Lightblinded Vanguard" },  -- Mainhand: Bellamy's Final Judgement
+            { itemID = 249296, source = "Midnight Falls" },  -- Offhand: Alah'endal, the Dawnsong
         },
         ["Pre-Raid BiS"] = {
             { itemID = 251117, source = "Magister's Terrace" },  -- Mainhand Weapon: Whirling Voidcleaver
-            { itemID = 251117, source = "Magister's Terrace" },  -- Offhand Weapon: Whirling Voidcleaver
             { itemID = 251098, source = "Windrunner Spire" },  -- Helm: Fletcher's Faded Faceplate
-            { itemID = 251234, source = "Voidscar Arena" },  -- Neck: Graft of the Domanaar
-            { itemID = 251157, source = "Nexus-Point Xenas" },  -- Shoulder: Searing Spaulders
+            { itemID = 151309, source = "Seat of the Triumvirate" },  -- Neck: Necklace of the Twisting Void
+            { itemID = 251164, source = "Maisara Caverns" },  -- Shoulder: Amalgamation's Harness
             { itemID = 260312, source = "Magister's Terrace" },  -- Cloak: Defiant Defender's Drape
-            { itemID = 50272, source = "Pit of Saron" },  -- Chest: Frost Wyrm Ribcage
-            { itemID = 151328, source = "Seat of the Triumvirate" },  -- Bracers: Vambraces of Lost Hope
+            { itemID = 151329, source = "Seat of the Triumvirate" },  -- Chest: Breastplate of the Dark Touch
+            { itemID = 263193, source = "Maisara Caverns" },  -- Bracers: Trollhunter's Bands
             { itemID = 151332, source = "Seat of the Triumvirate" },  -- Gloves: Voidclaw Gauntlets
-            { itemID = 49808, source = "Pit of Saron" },  -- Belt: Bent Gold Belt
+            { itemID = 151327, source = "Seat of the Triumvirate" },  -- Belt: Girdle of the Shadowguard
             { itemID = 251118, source = "Magister's Terrace" },  -- Legs: Legplates of Lingering Dusk
             { itemID = 251107, source = "Magister's Terrace" },  -- Boots: Oathsworn Stompers
-            { itemID = 49812, source = "Pit of Saron" },  -- Ring #1: Purloined Wedding Ring
-            { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #2: Occlusion of Void
+            { itemID = 251115, source = "Magister's Terrace" },  -- Ring #1: Bifurcation Band
+            { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #2: Omission of Light
             { itemID = 193701, source = "Algeth'ar Academy" },  -- Trinket #1: Algeth'ar Puzzle Box
             { itemID = 252420, source = "Skyreach" },  -- Trinket #2: Solarflare Prism
         },
@@ -1993,15 +1897,15 @@ MCS.PRESET_LISTS = {
             { itemID = 251193, source = "The Blinding Vale" },  -- Chest: Taproot Ribs
             { itemID = 251133, source = "Murder Row" },  -- Bracers: Overseer's Vambraces
             { itemID = 251081, source = "Windrunner Spire" },  -- Gloves: Embergrove Grasps
-            { itemID = 251144, source = "Den of Nalorakk" },  -- Belt: Autumn's Boon Belt
-            { itemID = 251118, source = "Magister's Terrace" },  -- Legs: Legplates of Lingering Dusk
+            { itemID = 251086, source = "Windrunner Spire" },  -- Belt: Riphook Defender
+            { itemID = 251208, source = "Nexus-Point Xenas" },  -- Legs: Lightscarred Cuisses
             { itemID = 251169, source = "Maisara Caverns" },  -- Boots: Footwraps of Ill-Fate
             { itemID = 251093, source = "Nexus-Point Xenas" },  -- Ring #1: Omission of Light
             { itemID = 251217, source = "Nexus-Point Xenas" },  -- Ring #2: Occlusion of Void
-            { itemID = 250258, source = "Maisara Caverns" },  -- Trinket #1: Vessel of Tortured Souls
-            { itemID = 250256, source = "Windrunner Spire" },  -- Trinket #2: Heart of Wind
-            { itemID = 251168, source = "Maisara Caverns" },  -- Weapon: Liferipper's Cutlass
-            { itemID = 251196, source = "The Blinding Vale" },  -- Shield: Teldrassil's Sacrifice
+            { itemID = 250258, source = "Maisara Caverns. It is only good if you can pickup the souls, otherwise do not use it." },  -- Trinket #1: Vessel of Tortured Souls
+            { itemID = 250256, source = "Windrunner Spire / Den of Nalorakk" },  -- Trinket #2: Heart of Wind
+            { itemID = 251195, source = "The Blinding Vale" },  -- Weapon: Thorned Reply
+            { itemID = 251105, source = "Magister's Terrace" },  -- Shield: Ward of the Spellbreaker
         },
     },
 }
